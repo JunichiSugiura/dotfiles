@@ -31,6 +31,12 @@ fi
 echo 'Setup apps and CLIs'
 brew bundle
 
+echo 'Setup rvm'
+if [ ! -d ~/.rvm ]; then
+	gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+	\curl -sSL https://get.rvm.io | bash -s stable --ruby
+fi
+
 echo 'Setup config directories'
 if [ ! -d ~/.config ]; then
 	mkdir ~/.config/
@@ -46,6 +52,12 @@ fi
 
 if [ ! -d ~/projects/github.com/LukeSugiura ]; then
 	mkdir -p ~/projects/github.com/LukeSugiura
+fi
+
+if [ ! -d ~/projects/github.com/LukeSugiura/dotfiles ]; then
+	cd ~/projects/github.com/LukeSugiura
+	git clone git@github.com:LukeSugiura/dotfiles.git
+	cd dotfiles
 fi
 
 echo 'Setup config files'
