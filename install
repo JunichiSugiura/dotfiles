@@ -53,9 +53,15 @@ echo 'Setup git'
 if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
 	gpg --default-new-key-algo rsa4096 --gen-key
 	key_id=$(gpg --list-secret-keys --keyid-format LONG | ggrep -oP "rsa4096\/[0-9a-fA-F]{16}" | cut -d"/"  -f2)
-	echo 'Copy and pates below to GitHub'
+	echo 'Copy and pates the GPG key below to GitHub'
 	gpg --armor --export "$key_id"
 	git config --global user.signingkey "$key_id"
 	echo "export GPG_TTY=$(tty)" >> ~/.zshrc
+fi
+
+if [ ! -d ~/.ssh/id_rsa.pub ]; then
+	ssh-keygen -t rsa -b 4096 -C "jun.sugiura.jp@gmail.com"
+	echo 'Copy and pates the SSH key below to GitHub'
+	cat ~/.ssh/id_rsa.pub
 fi
 
