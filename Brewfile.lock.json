@@ -205,6 +205,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "obs": {
+        "version": "24.0.6",
+        "options": {
+          "full_name": "obs",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {

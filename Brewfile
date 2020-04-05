@@ -15,6 +15,7 @@ cask "amethyst"
 cask "brave-browser"
 cask "google-japanese-ime"
 cask "homebrew/cask-versions/visual-studio-code-insiders"
+cask "obs"
 cask "slack"
 
 mas "Xcode", id: 497799835
