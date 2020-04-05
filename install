@@ -5,6 +5,8 @@ set -e
 echo 'Change default shell to zsh'
 if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
         chsh -s /bin/zsh 
+	chmod -R 755 /usr/local/share/zsh
+	chown -R root:staff zsh
 fi 
 
 echo 'Setup Homebrew'
