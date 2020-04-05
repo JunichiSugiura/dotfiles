@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "647a2ff80d1a29c93b63b07b134822137cbac204"
+        "revision": "9372fac6d0c95509ab6f247d41e4f03c0aefbcc7"
       }
     },
     "brew": {
@@ -119,6 +119,27 @@
             }
           }
         }
+      },
+      "mas": {
+        "version": "1.6.3",
+        "bottle": {
+          "cellar": ":any",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/mas-1.6.3.catalina.bottle.tar.gz",
+              "sha256": "2069b8c1c1a64c2fb91cc1c25ab9c9890c61f2182224b9e0605a35a151bb85bd"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/mas-1.6.3.mojave.bottle.tar.gz",
+              "sha256": "3dd5a50b551a37c164c31375cc8498ba870e29e50086bd5c4c294bc26708a6d2"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/mas-1.6.3.high_sierra.bottle.tar.gz",
+              "sha256": "a0d1e45203448c08420c3eab2d40ef957fd22c8e40fbeb067bc7bffe4f08dfe2"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -175,6 +196,21 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "google-japanese-ime": {
+        "version": "latest",
+        "options": {
+          "full_name": "google-japanese-ime",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      }
+    },
+    "mas": {
+      "Xcode": {
+        "id": "497799835",
+        "version": "11.4"
       }
     }
   },
@@ -183,9 +219,9 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "65afc8d879ccf8da85915796561dba853c6252e8",
+        "Homebrew/homebrew-core": "bac25e7e946dc4108397790550227964e388b066",
         "CLT": "11.4.0.0.1.1583798712",
-        "Xcode": "11.3",
+        "Xcode": "11.4",
         "macOS": "10.15.4"
       }
     }

@@ -29,7 +29,15 @@ if [ -z "$(which node)" ]; then
 fi
 
 echo 'Setup apps and CLIs'
-brew bundle
+brew bundle -v
+
+# https://github.com/mas-cli/mas/issues/164
+# HOMEBREW_BUNDLE_MAS_SKIP=$(brew bundle list --mas) brew bundle
+# mas signin jun.sugiura.jp+jp@gmail.com
+# HOMEBREW_BUNDLE_TAP_SKIP=$(brew bundle list --taps) \
+# 	HOMEBREW_BUNDLE_BREW_SKIP=$(brew bundle list --brews) \
+# 	HOMEBREW_BUNDLE_CASK_SKIP=$(brew bundle list --casks) \
+# 	brew bundle
 
 echo 'Setup rvm'
 if [ ! -d ~/.rvm ]; then
