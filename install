@@ -91,4 +91,3 @@ if [ ! -f ~/.ssh/id_rsa.pub ]; then
 	echo 'Copy and pates the SSH key below to GitHub'
 	cat ~/.ssh/id_rsa.pub
 fi
-
