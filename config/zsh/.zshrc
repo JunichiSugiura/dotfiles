@@ -1,4 +1,5 @@
 alias ll='ls -la'
+alias code="code-insiders"
 
 eval "$(starship init zsh)"
 
