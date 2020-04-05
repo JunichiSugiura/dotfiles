@@ -166,6 +166,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "visual-studio-code-insiders": {
+        "version": "1.44.0,20b88fa0694cae8e46ffd305a1450ba58ae6065b",
+        "options": {
+          "full_name": "homebrew/cask-versions/visual-studio-code-insiders",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
