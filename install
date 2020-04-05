@@ -59,7 +59,7 @@ if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; 
 	echo "export GPG_TTY=$(tty)" >> ~/.zshrc
 fi
 
-if [ ! -d ~/.ssh/id_rsa.pub ]; then
+if [ ! -f ~/.ssh/id_rsa.pub ]; then
 	ssh-keygen -t rsa -b 4096 -C "jun.sugiura.jp@gmail.com"
 	echo 'Copy and pates the SSH key below to GitHub'
 	cat ~/.ssh/id_rsa.pub
