@@ -235,6 +235,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "adobe-creative-cloud": {
+        "version": "latest",
+        "options": {
+          "full_name": "adobe-creative-cloud",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {

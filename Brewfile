@@ -12,6 +12,7 @@ brew "yarn"
 brew "zsh"
 
 cask "ableton-live-suite9"
+cask "adobe-creative-cloud"
 cask "alacritty"
 cask "amethyst"
 cask "brave-browser"
