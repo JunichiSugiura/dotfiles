@@ -1,4 +1,5 @@
 tap "homebrew/cask"
+tap "homebrew/cask-versions"
 cask_args appdir: "/Applications"
 
 brew "gpg"
@@ -10,6 +11,7 @@ brew "tmux"
 brew "yarn"
 brew "zsh"
 
+cask "ableton-live-suite9"
 cask "alacritty"
 cask "amethyst"
 cask "brave-browser"

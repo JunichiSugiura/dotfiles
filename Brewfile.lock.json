@@ -3,6 +3,9 @@
     "tap": {
       "homebrew/cask": {
         "revision": "9372fac6d0c95509ab6f247d41e4f03c0aefbcc7"
+      },
+      "homebrew/cask-versions": {
+        "revision": "498a21e54c6425187cc71b6b22c38862e9e0011c"
       }
     },
     "brew": {
@@ -210,6 +213,15 @@
         "version": "24.0.6",
         "options": {
           "full_name": "obs",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "ableton-live-suite9": {
+        "version": "9.7.7",
+        "options": {
+          "full_name": "ableton-live-suite9",
           "args": {
             "appdir": "/Applications"
           }
