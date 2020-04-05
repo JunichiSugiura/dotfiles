@@ -1,0 +1,24 @@
+[user]
+	name       = LukeSugiura
+	email      = jun.sugiura.jp@gmail.com
+	signingkey = 22807D82F75974E0
+[alias]
+	s   = status -sb
+	d   = diff
+	a   = add
+	aa  = add -A
+	b   = branch
+	co  = checkout
+	cob = checkout -b
+	c   = commit
+	cm  = commit -m
+	pso = push origin
+	plo = pull origin
+	f   = fetch
+	fup = fetch upstream
+[core]
+	excludesfile = ~/.gitignore
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg

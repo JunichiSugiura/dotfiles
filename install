@@ -1,0 +1,60 @@
+#!/bin/sh 
+ 
+set -e 
+ 
+echo 'Change default shell to zsh'
+if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
+        chsh -s /bin/zsh 
+fi 
+
+echo 'Setup Homebrew'
+if [ -z "$(which brew)" ]; then
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
+
+echo 'Setup nvm'
+if [ ! -d ~/.nvm ]; then
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+fi
+
+echo 'Setup latest node'
+if [ -z "$(which node)" ]; then
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+	nvm install node
+	nvm use node
+fi
+
+echo 'Setup apps and CLIs'
+brew bundle
+
+echo 'Setup config directories'
+if [ ! -d ~/.config ]; then
+	mkdir ~/.config/
+fi
+
+if [ ! -d ~/.config/alacritty ]; then
+	mkdir ~/.config/alacritty
+fi
+
+if [ ! -d ~/.config/starship ]; then
+	mkdir ~/.config/starship
+fi
+
+if [ ! -d ~/projects/github.com/LukeSugiura ]; then
+	mkdir -p ~/projects/github.com/LukeSugiura
+fi
+
+echo 'Setup config files'
+stow -v -d ./config -t ~ alacritty git starship tmux zsh
+
+echo 'Setup git'
+if [ ! -d ~/.gnupg -o -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
+	gpg --default-new-key-algo rsa4096 --gen-key
+	key_id=$(gpg --list-secret-keys --keyid-format LONG | ggrep -oP "rsa4096\/[0-9a-fA-F]{16}" | cut -d"/"  -f2)
+	gpg --armor --export $key_id
+	git config --global user.signingkey $key_id
+	echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
+fi
+

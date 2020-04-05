@@ -1,0 +1,7 @@
+add_newline = false
+
+[character]
+symbol = "🦄 " 
+
+[git_branch]
+symbol = "🌱 "

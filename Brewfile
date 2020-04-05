@@ -1,0 +1,16 @@
+tap "homebrew/cask"
+cask_args appdir: "/Applications"
+
+brew "gpg"
+brew "grep"
+brew "starship"
+brew "stow"
+brew "tmux"
+brew "yarn"
+brew "zsh"
+
+cask "alacritty"
+cask "amethyst"
+cask "brave-browser"
+cask "slack"
+cask "visual-studio-code"
