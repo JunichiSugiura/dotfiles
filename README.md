@@ -2,5 +2,5 @@
 
 ## installation
 ```sh
-# TODO
+curl -o - https://raw.githubusercontent.com/LukeSugiura/dotfiles/master/install | sh
 ```
