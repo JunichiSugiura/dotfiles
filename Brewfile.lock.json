@@ -226,6 +226,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "figma": {
+        "version": "latest",
+        "options": {
+          "full_name": "figma",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
