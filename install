@@ -51,6 +51,9 @@ fi
 echo 'Setup config files'
 stow -v -d ./config -t ~ alacritty git starship tmux zsh
 
+# enable key-repeating with vim bindings
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
+
 echo 'Setup git'
 if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
 	gpg --default-new-key-algo rsa4096 --gen-key
