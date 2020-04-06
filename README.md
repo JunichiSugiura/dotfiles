@@ -5,9 +5,15 @@ Dotfiles managed with [GNU stow](https://www.gnu.org/software/stow/) + [Homebrew
 
 ## Installation
 
-1. Sign in to App store manually (Temporary solution. See more: https://github.com/mas-cli/mas/issues/164)
+1. Sign in to App store manually (Temporary solution. See more: <https://github.com/mas-cli/mas/issues/164>)
 2. Run install
 
 ```sh
 curl -o - https://raw.githubusercontent.com/LukeSugiura/dotfiles/master/install | sh
 ```
+
+## Installed Apps
+
+⚠️ Screenshot may not be up to date. Check [Brewfile](./Brewfile) for latest bundle.
+
+![Apps Screenshot](./static/screenshot-apps.png)
