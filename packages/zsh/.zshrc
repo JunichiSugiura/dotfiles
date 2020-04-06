@@ -1,7 +1,8 @@
-alias ll='ls -la'
 alias code="code-insiders"
-alias work="cd $HOME/projects/github.com/LukeSugiura/ && echo \"💻 Happy coding!\""
+alias h="hunter"
+alias ll='ls -la'
 alias syncrc="echo \"🔄 Syncing zsh config...\" && source ~/.zshrc"
+alias work="cd $HOME/projects/github.com/LukeSugiura/ && echo \"💻 Happy coding!\""
 
 eval "$(starship init zsh)"
 
@@ -19,3 +20,5 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH="$HOME/.cargo/bin:$PATH"
