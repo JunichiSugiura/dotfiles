@@ -1,6 +1,7 @@
 alias ll='ls -la'
 alias code="code-insiders"
-alias work="echo \"💻 Happy coding!\" && cd $HOME/projects/github.com/LukeSugiura/"
+alias work="cd $HOME/projects/github.com/LukeSugiura/ && echo \"💻 Happy coding!\""
+alias syncrc="echo \"🔄 Syncing zsh config...\" && source ~/.zshrc"
 
 eval "$(starship init zsh)"
 
