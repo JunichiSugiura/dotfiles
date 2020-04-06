@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "9372fac6d0c95509ab6f247d41e4f03c0aefbcc7"
+        "revision": "a8ac608ee716a5ccf66b2ae4501e209ab160ddcf"
       },
       "homebrew/cask-versions": {
-        "revision": "498a21e54c6425187cc71b6b22c38862e9e0011c"
+        "revision": "d73350ec2ddcbc49bbd11ca1ba46ce37112d35a0"
       }
     },
     "brew": {
@@ -287,6 +287,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "flipper": {
+        "version": "0.36.0",
+        "options": {
+          "full_name": "flipper",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
@@ -301,7 +310,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "bac25e7e946dc4108397790550227964e388b066",
+        "Homebrew/homebrew-core": "d5b88cb32af096274f57a672a3d7410791c9faf3",
         "CLT": "11.4.0.0.1.1583798712",
         "Xcode": "11.4",
         "macOS": "10.15.4"
