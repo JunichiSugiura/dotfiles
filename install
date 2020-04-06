@@ -72,13 +72,7 @@ fi
 
 echo 'Setup config files'
 cd ~/projects/github.com/LukeSugiura/dotfiles
-stow -v -d ./config -t ~ \
-	alacritty \
-	git \
-	hunter \
-	starship \
-	tmux \
-	zsh
+stow -v -d ./packages -t ~ $(ls -m ./packages | tr ',' ' ')
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
