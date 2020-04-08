@@ -22,3 +22,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+if [ -e ~/.config/lf/lfcd.sh ]; then
+    source ~/.config/lf/lfcd.sh
+fi
