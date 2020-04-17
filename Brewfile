@@ -4,6 +4,7 @@ cask_args appdir: "/Applications"
 
 brew "gpg"
 brew "grep"
+brew "ios-deploy"
 brew "mas"
 brew "starship"
 brew "stow"
