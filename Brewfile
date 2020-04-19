@@ -25,6 +25,7 @@ cask "figma"
 cask "flipper"
 cask "google-japanese-ime"
 cask "homebrew/cask-versions/visual-studio-code-insiders"
+cask "minecraft"
 cask "obs"
 cask "slack"
 
