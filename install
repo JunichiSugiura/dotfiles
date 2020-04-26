@@ -116,3 +116,8 @@ if [ ! -f ~/.cargo/bin/hunter ]; then
     rustup override set nightly
     cargo install --no-default-features --path .
 fi
+
+echo 'Setup amethyst tools'
+if [ ! -f ~/.cargo/bin/amethyst_tools ]; then
+    cargo install amethyst_tools
+fi
