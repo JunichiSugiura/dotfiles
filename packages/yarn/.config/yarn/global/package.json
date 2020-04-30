@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ledger-live": "^12.16.1",
+    "yalc": "^1.0.0-pre.35"
+  }
+}
