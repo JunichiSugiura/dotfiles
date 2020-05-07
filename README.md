@@ -9,7 +9,7 @@ Dotfiles managed with [GNU stow](https://www.gnu.org/software/stow/) + [Homebrew
 2. Run install
 
 ```sh
-curl -o - https://raw.githubusercontent.com/LukeSugiura/dotfiles/master/install | sh
+curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/install | sh
 ```
 
 ## Installed Apps

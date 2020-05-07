@@ -68,18 +68,18 @@ if [ ! -d ~/.config/yarn ]; then
     mkdir -p ~/.config/yarn/global
 fi
 
-if [ ! -d ~/projects/github.com/LukeSugiura ]; then
-    mkdir -p ~/projects/github.com/LukeSugiura
+if [ ! -d ~/projects/github.com/JunichiSugiura ]; then
+    mkdir -p ~/projects/github.com/JunichiSugiura
 fi
 
-if [ ! -d ~/projects/github.com/LukeSugiura/dotfiles ]; then
-    cd ~/projects/github.com/LukeSugiura
-    git clone git@github.com:LukeSugiura/dotfiles.git
+if [ ! -d ~/projects/github.com/JunichiSugiura/dotfiles ]; then
+    cd ~/projects/github.com/JunichiSugiura
+    git clone git@github.com:JunichiSugiura/dotfiles.git
     cd dotfiles
 fi
 
 echo 'Setup config files'
-cd ~/projects/github.com/LukeSugiura/dotfiles
+cd ~/projects/github.com/JunichiSugiura/dotfiles
 stow -v -d ./packages -t ~ $(ls -m ./packages | tr ',' ' ')
 
 # enable key-repeating with vim bindings
