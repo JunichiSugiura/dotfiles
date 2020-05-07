@@ -6,6 +6,9 @@
       },
       "homebrew/cask-versions": {
         "revision": "621025d38be15529463b3a38cd46a94f8b563f98"
+      },
+      "wix/brew": {
+        "revision": "d2dfddf14e72f0fedb0688fb825b65002ab7ec36"
       }
     },
     "brew": {
@@ -211,6 +214,31 @@
             "sierra": {
               "url": "https://homebrew.bintray.com/bottles/lf-13.sierra.bottle.tar.gz",
               "sha256": "49a61cf93df5beac903c441087755cc81a4062bcd6f4665aa678cbf21e5c286b"
+            }
+          }
+        }
+      },
+      "applesimutils": {
+        "version": "0.7.7",
+        "bottle": {
+          "cellar": "/usr/local/Cellar",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://github.com/wix/AppleSimulatorUtils/releases/download/0.7.7/applesimutils-0.7.7.catalina.bottle.tar.gz",
+              "sha256": "273894479baf991291339d6ea3a68ce7f9a8dccff0c7ec3e745074ffbfdc17ff"
+            },
+            "mojave": {
+              "url": "https://github.com/wix/AppleSimulatorUtils/releases/download/0.7.7/applesimutils-0.7.7.mojave.bottle.tar.gz",
+              "sha256": "273894479baf991291339d6ea3a68ce7f9a8dccff0c7ec3e745074ffbfdc17ff"
+            },
+            "high_sierra": {
+              "url": "https://github.com/wix/AppleSimulatorUtils/releases/download/0.7.7/applesimutils-0.7.7.high_sierra.bottle.tar.gz",
+              "sha256": "273894479baf991291339d6ea3a68ce7f9a8dccff0c7ec3e745074ffbfdc17ff"
+            },
+            "sierra": {
+              "url": "https://github.com/wix/AppleSimulatorUtils/releases/download/0.7.7/applesimutils-0.7.7.sierra.bottle.tar.gz",
+              "sha256": "273894479baf991291339d6ea3a68ce7f9a8dccff0c7ec3e745074ffbfdc17ff"
             }
           }
         }

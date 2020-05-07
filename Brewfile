@@ -1,7 +1,9 @@
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
+tap "wix/brew"
 cask_args appdir: "/Applications"
 
+brew "applesimutils"
 brew "gpg"
 brew "grep"
 brew "ios-deploy"
