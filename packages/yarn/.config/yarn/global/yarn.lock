@@ -978,7 +978,7 @@ command-line-args@^5.1.1:
     lodash.camelcase "^4.3.0"
     typical "^4.0.0"
 
-commander@^2.11.0, commander@^2.17.0, commander@^2.20.0:
+commander@^2.11.0, commander@^2.17.0, commander@^2.20.0, commander@^2.9.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -1178,6 +1178,14 @@ detect-libc@^1.0.2, detect-libc@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
   integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
+
+detox-cli@^10.0.7:
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/detox-cli/-/detox-cli-10.0.7.tgz#8b6069f3ceb3a973666e5ae0b98ebfaa841be0a1"
+  integrity sha512-TEnaE+Fts6VQP5WyObnKSTla5k0grvUJsmqpBvaFYjDrG4bNs2laQkaHMoihvda+Vc39VBtF+bxo+wUX2XtOVA==
+  dependencies:
+    commander "^2.9.0"
+    minimist "^1.2.0"
 
 diagnostics@^1.1.1:
   version "1.1.1"
