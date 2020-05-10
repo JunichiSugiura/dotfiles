@@ -379,6 +379,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "soundflower": {
+        "version": "2.0b2",
+        "options": {
+          "full_name": "soundflower",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
