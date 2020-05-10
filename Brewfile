@@ -30,5 +30,6 @@ cask "homebrew/cask-versions/visual-studio-code-insiders"
 cask "minecraft"
 cask "obs"
 cask "slack"
+cask "soundflower"
 
 mas "Xcode", id: 497799835
