@@ -25,25 +25,6 @@ if [ ! -d ~/.nvm ]; then
     nvm use node
 fi
 
-echo 'Setup apps and CLIs'
-brew bundle -v
-
-# https://github.com/mas-cli/mas/issues/164
-# HOMEBREW_BUNDLE_MAS_SKIP=$(brew bundle list --mas) brew bundle
-# mas signin jun.sugiura.jp+jp@gmail.com
-# HOMEBREW_BUNDLE_TAP_SKIP=$(brew bundle list --taps) \
-# 	HOMEBREW_BUNDLE_BREW_SKIP=$(brew bundle list --brews) \
-# 	HOMEBREW_BUNDLE_CASK_SKIP=$(brew bundle list --casks) \
-# 	brew bundle
-
-echo 'Setup rvm'
-if [ ! -d ~/.rvm ]; then
-    gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    \curl -sSL https://get.rvm.io | bash -s stable --ruby
-    gem install bundler
-    sudo xcode-select --switch /Applications/Xcode.app
-fi
-
 echo 'Setup config directories'
 if [ ! -d ~/.config ]; then
     mkdir ~/.config/
@@ -73,6 +54,25 @@ if [ ! -d ~/projects/github.com/JunichiSugiura/dotfiles ]; then
     cd ~/projects/github.com/JunichiSugiura
     git clone git@github.com:JunichiSugiura/dotfiles.git
     cd dotfiles
+fi
+
+echo 'Setup apps and CLIs'
+brew bundle -v
+
+# https://github.com/mas-cli/mas/issues/164
+# HOMEBREW_BUNDLE_MAS_SKIP=$(brew bundle list --mas) brew bundle
+# mas signin jun.sugiura.jp+jp@gmail.com
+# HOMEBREW_BUNDLE_TAP_SKIP=$(brew bundle list --taps) \
+# 	HOMEBREW_BUNDLE_BREW_SKIP=$(brew bundle list --brews) \
+# 	HOMEBREW_BUNDLE_CASK_SKIP=$(brew bundle list --casks) \
+# 	brew bundle
+
+echo 'Setup rvm'
+if [ ! -d ~/.rvm ]; then
+    gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+    \curl -sSL https://get.rvm.io | bash -s stable --ruby
+    gem install bundler
+    sudo xcode-select --switch /Applications/Xcode.app
 fi
 
 echo 'Setup config files'
