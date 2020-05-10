@@ -10,17 +10,14 @@ if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then
 fi 
 
 echo 'Setup Homebrew'
-if [ -z "$(which brew)" ]; then
+if [ ! -f /usr/local/bin/brew ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-echo 'Setup nvm'
+echo 'Setup node'
 if [ ! -d ~/.nvm ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-fi
 
-echo 'Setup latest node'
-if [ -z "$(which node)" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
@@ -29,7 +26,7 @@ if [ -z "$(which node)" ]; then
 fi
 
 echo 'Setup apps and CLIs'
-brew bundle -v
+/usr/local/bin/brew bundle -v
 
 # https://github.com/mas-cli/mas/issues/164
 # HOMEBREW_BUNDLE_MAS_SKIP=$(brew bundle list --mas) brew bundle
