@@ -25,27 +25,7 @@ if [ ! -d ~/.nvm ]; then
     nvm use node
 fi
 
-echo 'Setup config directories'
-if [ ! -d ~/.config ]; then
-    mkdir ~/.config/
-fi
-
-if [ ! -d ~/.config/alacritty ]; then
-    mkdir ~/.config/alacritty
-fi
-
-if [ ! -d ~/.config/lf ]; then
-    mkdir ~/.config/lf
-fi
-
-if [ ! -d ~/.config/starship ]; then
-    mkdir ~/.config/starship
-fi
-
-if [ ! -d ~/.config/yarn ]; then
-    mkdir -p ~/.config/yarn/global
-fi
-
+echo 'Clone dotfiles'
 if [ ! -d ~/projects/github.com/JunichiSugiura ]; then
     mkdir -p ~/projects/github.com/JunichiSugiura
 fi
@@ -76,6 +56,26 @@ if [ ! -d ~/.rvm ]; then
 fi
 
 echo 'Setup config files'
+if [ ! -d ~/.config ]; then
+    mkdir ~/.config/
+fi
+
+if [ ! -d ~/.config/alacritty ]; then
+    mkdir ~/.config/alacritty
+fi
+
+if [ ! -d ~/.config/lf ]; then
+    mkdir ~/.config/lf
+fi
+
+if [ ! -d ~/.config/starship ]; then
+    mkdir ~/.config/starship
+fi
+
+if [ ! -d ~/.config/yarn ]; then
+    mkdir -p ~/.config/yarn/global
+fi
+
 cd ~/projects/github.com/JunichiSugiura/dotfiles
 stow -v -d ./packages -t ~ $(ls -m ./packages | tr ',' ' ')
 
