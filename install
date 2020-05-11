@@ -77,7 +77,8 @@ if [ ! -d ~/.config/yarn ]; then
     mkdir -p ~/.config/yarn/global
 fi
 
-stow -v -d "$REPO_PATH"/dotfiles/packages -t ~ $(ls -m ./packages | tr ',' ' ')
+PACKAGES_PATH="$REPO_PATH"/dotfiles/packages
+stow -v -d "$PACKAGES_PATH" -t ~ $(ls -m "$PACKAGES_PATH" | tr ',' ' ')
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
