@@ -26,18 +26,18 @@ if [ ! -d ~/.nvm ]; then
 fi
 
 echo 'Clone dotfiles'
-if [ ! -d ~/projects/github.com/JunichiSugiura ]; then
-    mkdir -p ~/projects/github.com/JunichiSugiura
+REPO_PATH=~/projects/github.com/JunichiSugiura
+if [ ! -d "$REPO_PATH" ]; then
+    mkdir -p "$REPO_PATH"
 fi
 
-if [ ! -d ~/projects/github.com/JunichiSugiura/dotfiles ]; then
-    cd ~/projects/github.com/JunichiSugiura
+if [ ! -d "$REPO_PATH"/dotfiles ]; then
+    cd "$REPO_PATH"
     git clone git@github.com:JunichiSugiura/dotfiles.git
-    cd dotfiles
 fi
 
 echo 'Setup apps and CLIs'
-brew bundle -v
+brew bundle -v --file "$REPO_PATH"/dotfiles/Brewfile
 
 # https://github.com/mas-cli/mas/issues/164
 # HOMEBREW_BUNDLE_MAS_SKIP=$(brew bundle list --mas) brew bundle
@@ -76,8 +76,7 @@ if [ ! -d ~/.config/yarn ]; then
     mkdir -p ~/.config/yarn/global
 fi
 
-cd ~/projects/github.com/JunichiSugiura/dotfiles
-stow -v -d ./packages -t ~ $(ls -m ./packages | tr ',' ' ')
+stow -v -d "$REPO_PATH"/dotfiles/packages -t ~ $(ls -m ./packages | tr ',' ' ')
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
@@ -119,6 +118,6 @@ if [ ! -f ~/.cargo/bin/hunter ]; then
 fi
 
 echo 'Setup amethyst tools'
-if [ ! -f ~/.cargo/bin/amethyst_tools ]; then
+if [ ! -f ~/.cargo/bin/amethyst ]; then
     cargo install amethyst_tools
 fi
