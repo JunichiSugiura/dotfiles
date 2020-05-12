@@ -10,17 +10,14 @@ if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then
 fi 
 
 echo 'Setup Homebrew'
-if [ -z "$(which brew)" ]; then
+if [ ! -f /usr/local/bin/brew ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-echo 'Setup nvm'
+echo 'Setup node'
 if [ ! -d ~/.nvm ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-fi
 
-echo 'Setup latest node'
-if [ -z "$(which node)" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
@@ -28,8 +25,19 @@ if [ -z "$(which node)" ]; then
     nvm use node
 fi
 
+echo 'Clone dotfiles'
+REPO_PATH=~/projects/github.com/JunichiSugiura
+if [ ! -d "$REPO_PATH" ]; then
+    mkdir -p "$REPO_PATH"
+fi
+
+if [ ! -d "$REPO_PATH"/dotfiles ]; then
+    cd "$REPO_PATH"
+    git clone git@github.com:JunichiSugiura/dotfiles.git
+fi
+
 echo 'Setup apps and CLIs'
-brew bundle -v
+brew bundle -v --file "$REPO_PATH"/dotfiles/Brewfile
 
 # https://github.com/mas-cli/mas/issues/164
 # HOMEBREW_BUNDLE_MAS_SKIP=$(brew bundle list --mas) brew bundle
@@ -39,15 +47,8 @@ brew bundle -v
 # 	HOMEBREW_BUNDLE_CASK_SKIP=$(brew bundle list --casks) \
 # 	brew bundle
 
-echo 'Setup rvm'
-if [ ! -d ~/.rvm ]; then
-    gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    \curl -sSL https://get.rvm.io | bash -s stable --ruby
-    gem install bundler
-    sudo xcode-select --switch /Applications/Xcode.app
-fi
 
-echo 'Setup config directories'
+echo 'Setup config files'
 if [ ! -d ~/.config ]; then
     mkdir ~/.config/
 fi
@@ -68,19 +69,8 @@ if [ ! -d ~/.config/yarn ]; then
     mkdir -p ~/.config/yarn/global
 fi
 
-if [ ! -d ~/projects/github.com/JunichiSugiura ]; then
-    mkdir -p ~/projects/github.com/JunichiSugiura
-fi
-
-if [ ! -d ~/projects/github.com/JunichiSugiura/dotfiles ]; then
-    cd ~/projects/github.com/JunichiSugiura
-    git clone git@github.com:JunichiSugiura/dotfiles.git
-    cd dotfiles
-fi
-
-echo 'Setup config files'
-cd ~/projects/github.com/JunichiSugiura/dotfiles
-stow -v -d ./packages -t ~ $(ls -m ./packages | tr ',' ' ')
+PACKAGES_PATH="$REPO_PATH"/dotfiles/packages
+stow -v -d "$PACKAGES_PATH" -t ~ $(ls -m "$PACKAGES_PATH" | tr ',' ' ')
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
@@ -92,13 +82,20 @@ if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; 
     echo 'Copy and pates the GPG key below to GitHub'
     gpg --armor --export "$key_id"
     git config --global user.signingkey "$key_id"
-    echo "export GPG_TTY=$(tty)" >> ~/.zshrc
 fi
 
 if [ ! -f ~/.ssh/id_rsa.pub ]; then
     ssh-keygen -t rsa -b 4096 -C "jun.sugiura.jp@gmail.com"
     echo 'Copy and pates the SSH key below to GitHub'
     cat ~/.ssh/id_rsa.pub
+fi
+
+echo 'Setup Ruby'
+RUBY_VERSION=2.7.1
+if [ "$(which ruby)" = /usr/bin/ruby ]; then
+    rbenv install -s "$RUBY_VERSION"
+    rbenv local "$RUBY_VERSION"
+    ~/.rbenv/shims/gem install bundler
 fi
 
 echo 'Setup Rust'
@@ -122,6 +119,6 @@ if [ ! -f ~/.cargo/bin/hunter ]; then
 fi
 
 echo 'Setup amethyst tools'
-if [ ! -f ~/.cargo/bin/amethyst_tools ]; then
+if [ ! -f ~/.cargo/bin/amethyst ]; then
     cargo install amethyst_tools
 fi
