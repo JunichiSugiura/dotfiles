@@ -77,6 +77,7 @@ defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
 echo 'Setup gpg signing with git'
 if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
+    export GPG_TTY=$(tty)
     gpg --default-new-key-algo rsa4096 --gen-key
     key_id=$(gpg --list-secret-keys --keyid-format LONG | ggrep -oP "rsa4096\/[0-9a-fA-F]{16}" | cut -d"/"  -f2)
     echo 'Copy and pates the GPG key below to GitHub'
