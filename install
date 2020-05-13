@@ -94,7 +94,7 @@ echo 'Setup Ruby'
 RUBY_VERSION=2.7.1
 if [ "$(which ruby)" = /usr/bin/ruby ]; then
     rbenv install -s "$RUBY_VERSION"
-    rbenv local "$RUBY_VERSION"
+    rbenv global "$RUBY_VERSION"
     ~/.rbenv/shims/gem install bundler
 fi
 
