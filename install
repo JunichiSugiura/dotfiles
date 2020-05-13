@@ -104,6 +104,11 @@ if [ ! -d ~/.cargo ]; then
     rustup toolchain install nightly
 fi
 
+echo 'Setup Yarn global'
+if [ ! -d ~/.config/yarn/global/node_modules ]; then
+    yarn global add
+fi
+
 echo 'Setup hunter'
 if [ ! -f ~/.cargo/bin/hunter ]; then
     if [ ! -d ~/projects/github.com/rabite0/hunter ]; then
