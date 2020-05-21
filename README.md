@@ -17,3 +17,6 @@ curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/insta
 ⚠️ Screenshot may not be up to date. Check [Brewfile](./Brewfile) for latest bundle.
 
 ![Apps Screenshot](./static/screenshot-apps.png)
+
+## Tutorial
+If you like to learn how to create dotfiles, check out my tutorial [here](https://github.com/JunichiSugiura/tutorials/tree/master/dotfiles).
