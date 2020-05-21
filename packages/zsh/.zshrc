@@ -1,6 +1,8 @@
 alias code="code-insiders"
 alias h="hunter"
-alias ll='ls -la'
+alias ls="exa"
+alias ll="ls -la --git"
+alias lt="ls -TL 3"
 alias syncrc="echo \"🔄 Syncing zsh config...\" && source ~/.zshrc"
 alias work="cd $HOME/projects/github.com/JunichiSugiura/ && echo \"💻 Happy coding!\""
 
