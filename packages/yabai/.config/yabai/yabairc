@@ -26,3 +26,5 @@ yabai -m config right_padding                0
 yabai -m config window_gap                   06
 
 # echo "yabai configuration loaded.."
+
+yabai -m config debug_output on

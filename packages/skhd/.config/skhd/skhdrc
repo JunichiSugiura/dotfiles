@@ -4,13 +4,8 @@ shift + alt - up    : yabai -m window --grid 1:1:0:0:1:1
 shift + alt - left  : yabai -m window --grid 1:3:0:0:2:1
 shift + alt - right : yabai -m window --grid 1:3:2:0:2:1
 
-cmd - 1 : id=$(yabai -m query --windows | jq 'map(select(.app == "Alacritty")) | .[0] | .id') && \
-            yabai -m window --focus "$id"
-cmd - 2 : id=$(yabai -m query --windows | jq 'map(select(.app == "Brave Browser")) | .[0] | .id') && \
-            yabai -m window --focus "$id"
-cmd - 3 : id=$(yabai -m query --windows | jq 'map(select(.app == "Code - Insiders")) | .[0] | .id') && \
-            yabai -m window --focus "$id"
-cmd - 4 : id=$(yabai -m query --windows | jq 'map(select(.app == "Slack")) | .[0] | .id') && \
-            yabai -m window --focus "$id"
-cmd - 5 : id=$(yabai -m query --windows | jq 'map(select(.app == "OBS")) | .[0] | .id') && \
-            yabai -m window --focus "$id"
+cmd - 1 : open -a Alacritty
+cmd - 2 : open -a 'Brave Browser'
+cmd - 3 : open -a 'Visual Studio Code - Insiders'
+cmd - 4 : open -a Slack
+cmd - 5 : open -a OBS
