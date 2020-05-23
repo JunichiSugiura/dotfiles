@@ -1,18 +1,19 @@
+export PATH=$PATH:$HOME/scripts
+export GIT_CLONE_PATH="$HOME"/projects/github.com/JunichiSugiura
+
 alias code="code-insiders"
 alias h="hunter"
 alias ls="exa"
 alias ll="ls -la --git"
 alias lt="ls -TL 3"
-alias syncsh=". ~/scripts/syncsh"
-alias work="cd $HOME/projects/github.com/JunichiSugiura/ && echo \"💻 Happy coding!\""
+alias syncsh=". syncsh"
+alias cdrepo=". cdrepo"
 
 eval "$(starship init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH=$PATH:$HOME/scripts/syncapp
 
 export GPG_TTY=$(tty)
 
