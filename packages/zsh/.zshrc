@@ -1,10 +1,13 @@
+export PATH=$PATH:$HOME/scripts
+export GIT_CLONE_PATH="$HOME"/projects/github.com/JunichiSugiura
+
 alias code="code-insiders"
 alias h="hunter"
 alias ls="exa"
 alias ll="ls -la --git"
 alias lt="ls -TL 3"
-alias syncrc="echo \"🔄 Syncing zsh config...\" && source ~/.zshrc"
-alias work="cd $HOME/projects/github.com/JunichiSugiura/ && echo \"💻 Happy coding!\""
+alias syncsh=". syncsh"
+alias cdrepo=". cdrepo"
 
 eval "$(starship init zsh)"
 

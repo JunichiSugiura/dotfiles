@@ -1,0 +1,4 @@
+#!/bin/sh 
+
+cd "$GIT_CLONE_PATH"
+echo "💻 Happy coding!"
