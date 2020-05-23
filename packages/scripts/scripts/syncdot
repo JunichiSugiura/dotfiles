@@ -1,6 +1,9 @@
 #!/bin/sh 
  
 set -e 
+
+GIT_CLONE_PATH=~/projects/github.com/JunichiSugiura
+STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
  
 echo 'Change default shell to zsh'
 if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
@@ -26,18 +29,17 @@ if [ ! -d ~/.nvm ]; then
 fi
 
 echo 'Clone dotfiles'
-REPO_PATH=~/projects/github.com/JunichiSugiura
-if [ ! -d "$REPO_PATH" ]; then
-    mkdir -p "$REPO_PATH"
+if [ ! -d "$GIT_CLONE_PATH" ]; then
+    mkdir -p "$GIT_CLONE_PATH"
 fi
 
-if [ ! -d "$REPO_PATH"/dotfiles ]; then
-    cd "$REPO_PATH"
+if [ ! -d "$GIT_CLONE_PATH"/dotfiles ]; then
+    cd "$GIT_CLONE_PATH"
     git clone git@github.com:JunichiSugiura/dotfiles.git
 fi
 
 echo 'Setup apps and CLIs'
-brew bundle -v --file "$REPO_PATH"/dotfiles/Brewfile
+brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 
 # https://github.com/mas-cli/mas/issues/164
 # HOMEBREW_BUNDLE_MAS_SKIP=$(brew bundle list --mas) brew bundle
@@ -68,8 +70,7 @@ if [ ! -d ~/.config/yarn ]; then
     mkdir -p ~/.config/yarn/global
 fi
 
-PACKAGES_PATH="$REPO_PATH"/dotfiles/packages
-stow -v -d "$PACKAGES_PATH" -t ~ $(ls -m "$PACKAGES_PATH" | tr ',' ' ')
+stow -v -d "$STOW_PACKAGES_PATH" -t ~ $(ls -m "$STOW_PACKAGES_PATH" | tr ',' ' ')
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
