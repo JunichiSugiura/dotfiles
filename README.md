@@ -9,7 +9,7 @@ Dotfiles managed with [GNU stow](https://www.gnu.org/software/stow/) + [Homebrew
 2. Run install
 
 ```sh
-curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/install | sh
+curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/scripts/scripts/syncapp | sh
 ```
 
 ## Installed Apps
@@ -19,4 +19,5 @@ curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/insta
 ![Apps Screenshot](./static/screenshot-apps.png)
 
 ## Tutorial
+
 If you like to learn how to create dotfiles, check out my tutorial [here](https://github.com/JunichiSugiura/tutorials/tree/master/dotfiles).
