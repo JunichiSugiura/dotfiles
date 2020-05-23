@@ -4,8 +4,8 @@ export GIT_CLONE_PATH="$HOME"/projects/github.com/JunichiSugiura
 alias code="code-insiders"
 alias h="hunter"
 alias ls="exa"
-alias ll="ls -la --git"
-alias lt="ls -TL 3"
+alias ll="ls -lah --git"
+alias lt="ll -TL 3 --ignore-glob=.git"
 alias syncsh=". syncsh"
 alias cdrepo=". cdrepo"
 
