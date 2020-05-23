@@ -47,7 +47,6 @@ brew bundle -v --file "$REPO_PATH"/dotfiles/Brewfile
 # 	HOMEBREW_BUNDLE_CASK_SKIP=$(brew bundle list --casks) \
 # 	brew bundle
 
-
 echo 'Setup config files'
 if [ ! -d ~/.config ]; then
     mkdir ~/.config/

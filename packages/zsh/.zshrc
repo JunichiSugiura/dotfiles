@@ -3,7 +3,7 @@ alias h="hunter"
 alias ls="exa"
 alias ll="ls -la --git"
 alias lt="ls -TL 3"
-alias syncrc="echo \"🔄 Syncing zsh config...\" && source ~/.zshrc"
+alias syncsh=". ~/scripts/syncsh"
 alias work="cd $HOME/projects/github.com/JunichiSugiura/ && echo \"💻 Happy coding!\""
 
 eval "$(starship init zsh)"
