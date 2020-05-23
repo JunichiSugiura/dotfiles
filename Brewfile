@@ -15,6 +15,7 @@ brew "watchman"
 brew "yarn"
 brew "zsh"
 
+brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 brew "wix/brew/applesimutils"
 
