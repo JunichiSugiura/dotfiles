@@ -9,7 +9,7 @@ Dotfiles managed with [GNU stow](https://www.gnu.org/software/stow/) + [Homebrew
 2. Run install
 
 ```sh
-curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/scripts/scripts/syncapp | sh
+curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/scripts/scripts/syncdot | sh
 ```
 
 ## Installed Apps
