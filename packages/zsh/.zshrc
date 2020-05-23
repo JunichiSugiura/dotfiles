@@ -8,6 +8,7 @@ alias ll="ls -lah --git"
 alias lt="ll -TL 3 --ignore-glob=.git"
 alias syncsh=". syncsh"
 alias cdrepo=". cdrepo"
+alias lscmd="ls ~/scripts"
 
 eval "$(starship init zsh)"
 
