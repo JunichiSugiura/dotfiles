@@ -254,6 +254,8 @@
           }
         }
       },
+      "koekeishiya/formulae/skhd": null,
+      "koekeishiya/formulae/yabai": null,
       "wix/brew/applesimutils": null
     },
     "cask": {
@@ -279,15 +281,6 @@
         "version": "0.4.2",
         "options": {
           "full_name": "alacritty",
-          "args": {
-            "appdir": "/Applications"
-          }
-        }
-      },
-      "amethyst": {
-        "version": "0.15.3",
-        "options": {
-          "full_name": "amethyst",
           "args": {
             "appdir": "/Applications"
           }

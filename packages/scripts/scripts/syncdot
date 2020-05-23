@@ -66,6 +66,10 @@ if [ ! -d ~/.config/starship ]; then
     mkdir ~/.config/starship
 fi
 
+if [ ! -d ~/.config/yabai ]; then
+    mkdir ~/.config/yabai
+fi
+
 if [ ! -d ~/.config/yarn ]; then
     mkdir -p ~/.config/yarn/global
 fi
@@ -126,4 +130,9 @@ fi
 echo 'Setup amethyst tools'
 if [ ! -f ~/.cargo/bin/amethyst ]; then
     cargo install amethyst_tools
+fi
+
+echo 'Setup yabai'
+if [ ! -d /Library/ScriptingAdditions/yabai.osax ]; then
+    sudo yabai --install-sa
 fi
