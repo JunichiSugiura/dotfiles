@@ -1,10 +1,6 @@
 tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/cask-fonts"
-tap "wix/brew"
 cask_args appdir: "/Applications"
 
-brew "applesimutils"
 brew "exa"
 brew "gpg"
 brew "grep"
@@ -19,7 +15,8 @@ brew "watchman"
 brew "yarn"
 brew "zsh"
 
-cask "ableton-live-suite9"
+brew "wix/brew/applesimutils"
+
 cask "adobe-creative-cloud"
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
 cask "alacritty"
@@ -28,13 +25,15 @@ cask "android-studio"
 cask "brave-browser"
 cask "figma"
 cask "flipper"
-cask "font-roboto-mono"
 cask "google-japanese-ime"
-cask "homebrew/cask-versions/visual-studio-code-insiders"
 cask "minecraft"
 cask "obs"
 cask "slack"
 cask "soundflower"
+cask "visual-studio-code"
+
+cask "homebrew/cask-fonts/font-roboto-mono"
+cask "homebrew/cask-versions/visual-studio-code-insiders"
 
 mas "Xcode", id: 497799835
 mas "Final Cut Pro", id: 424389933
