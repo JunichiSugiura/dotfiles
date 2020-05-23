@@ -254,7 +254,8 @@
           }
         }
       },
-      "wix/brew/applesimutils": null
+      "wix/brew/applesimutils": null,
+      "koekeishiya/formulae/yabai": null
     },
     "cask": {
       "adobe-creative-cloud": {
