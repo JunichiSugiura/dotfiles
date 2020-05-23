@@ -62,6 +62,10 @@ if [ ! -d ~/.config/lf ]; then
     mkdir ~/.config/lf
 fi
 
+if [ ! -d ~/.config/neofetch ]; then
+    mkdir ~/.config/neofetch
+fi
+
 if [ ! -d ~/.config/starship ]; then
     mkdir ~/.config/starship
 fi
