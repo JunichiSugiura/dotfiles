@@ -16,6 +16,7 @@ brew "watchman"
 brew "yarn"
 brew "zsh"
 
+brew "extrawurst/tap/gitui"
 brew "github/gh/gh"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"

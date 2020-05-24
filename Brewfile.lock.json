@@ -278,7 +278,8 @@
       "koekeishiya/formulae/skhd": null,
       "koekeishiya/formulae/yabai": null,
       "wix/brew/applesimutils": null,
-      "github/gh/gh": null
+      "github/gh/gh": null,
+      "extrawurst/tap/gitui": null
     },
     "cask": {
       "adobe-creative-cloud": {
