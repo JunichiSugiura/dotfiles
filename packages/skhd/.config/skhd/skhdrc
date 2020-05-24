@@ -9,7 +9,7 @@ shift + alt - m : yabai -m window --display recent && \
     yabai -m window --grid 1:1:0:0:1:1
 
 cmd - 1 : open -a Alacritty
-cmd - 2 : open -a 'Brave Browser'
-cmd - 3 : open -a 'Visual Studio Code - Insiders'
+cmd - 2 : open -a 'Visual Studio Code - Insiders'
+cmd - 3 : open -a 'Brave Browser'
 cmd - 4 : open -a Slack
 cmd - 5 : open -a OBS
