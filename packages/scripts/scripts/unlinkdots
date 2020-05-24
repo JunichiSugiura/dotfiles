@@ -1,0 +1,3 @@
+#!/bin/sh
+
+stow -vD -d $HOME/projects/github.com/JunichiSugiura/dotfiles/packages -t ~ "$1"
