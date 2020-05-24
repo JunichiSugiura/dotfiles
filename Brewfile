@@ -1,6 +1,7 @@
 tap "homebrew/cask"
 cask_args appdir: "/Applications"
 
+brew "bat"
 brew "exa"
 brew "gpg"
 brew "grep"
