@@ -416,6 +416,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "gpg-suite": {
+        "version": "2019.2",
+        "options": {
+          "full_name": "gpg-suite",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
