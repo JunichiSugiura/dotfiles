@@ -21,7 +21,7 @@ target_display_index=$(yabai -m query --displays \
                 length: . | length
             }
             | if $reverse == "1" then
-                if .index == .0 then
+                if .index == 1 then
                     .length
                 else
                     .index - 1
