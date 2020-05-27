@@ -4,7 +4,8 @@ shift + alt - space : yabai -m window --grid 1:1:0:0:1:1
 shift + alt - h : yabai -m window --grid 1:3:0:0:2:1
 shift + alt - l : yabai -m window --grid 1:3:2:0:2:1
 
-shift + alt - m : ~/scripts/move-windows
+shift + alt - m : ~/scripts/move-app
+shift + alt + ctrl -m : ~/scripts/move-app -r
 
 ctrl - 1 : open -a Alacritty
 ctrl - 2 : open -a 'Visual Studio Code - Insiders'
