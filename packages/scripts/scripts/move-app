@@ -1,14 +1,12 @@
 #!/bin/sh
 
-reverse=
-
-while :; do
-    case $1 in
-        -r) reverse=1 ;;
-        --reverse) reverse=1 ;;
-        *) break ;;
+for i in "$@"; do
+    case "$i" in
+        -r=*|--reverse=*)
+            reverse="${i#*=}"
+            shift ;;
+        *) ;;
     esac
-    shift
 done
 
 current_display_id=$(yabai -m query --displays --display | jq '.id')
@@ -38,7 +36,7 @@ target_display_index=$(yabai -m query --displays \
 current_app=$(yabai -m query --windows --window | jq ".app")
 target_window_ids=$(yabai -m query --windows \
     | jq --arg app "$current_app" '
-        map(select(.app==($app | fromjson)))
+        map(select(.app == ($app | fromjson)))
         | reverse
         | .[].id
     ')

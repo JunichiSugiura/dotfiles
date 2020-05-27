@@ -1,8 +1,12 @@
-# gred forat: <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
+# grid forat: <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
 
-shift + alt - space : yabai -m window --grid 1:1:0:0:1:1
-shift + alt - h : yabai -m window --grid 1:3:0:0:2:1
-shift + alt - l : yabai -m window --grid 1:3:2:0:2:1
+shift + alt - space : ~/scripts/resize -a
+shift + alt - h : ~/scripts/resize -g=1:3:0:0:2:1 -a
+shift + alt - l : ~/scripts/resize -g=1:3:2:0:2:1 -a
+
+shift + alt + ctrl - space : ~/scripts/resize
+shift + alt + ctrl - h : ~/scripts/resize -g=1:3:0:0:2:1
+shift + alt + ctrl - l : ~/scripts/resize -g=1:3:2:0:2:1
 
 shift + alt - m : ~/scripts/move-app
 shift + alt + ctrl -m : ~/scripts/move-app -r
