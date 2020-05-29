@@ -15,4 +15,9 @@ ctrl - 1 : open -a Alacritty
 ctrl - 2 : open -a 'Visual Studio Code - Insiders'
 ctrl - 3 : open -a 'Brave Browser'
 ctrl - 4 : open -a Slack
-ctrl - 5 : open -a OBS
+ctrl - 5 : open -a Figma
+ctrl - 6 : open -a Xcode
+# ctrl - 7 : open -a
+ctrl - 8 : open -a 'Final Cut Pro'
+ctrl - 9 : open -a Finder
+ctrl - 0 : open -a OBS
