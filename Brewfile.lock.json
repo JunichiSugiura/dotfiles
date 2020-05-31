@@ -325,6 +325,27 @@
             }
           }
         }
+      },
+      "deno": {
+        "version": "0.42.0",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/deno-0.42.0.catalina.bottle.tar.gz",
+              "sha256": "b4f91dd079eee18b85b157bb03b1535935a37d9fb6f078e271a7b48b2afd34ea"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/deno-0.42.0.mojave.bottle.tar.gz",
+              "sha256": "84a8eb4da2582495d00de7124f2fef3f6337d8f307334aa34b129d5fa762fb22"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/deno-0.42.0.high_sierra.bottle.tar.gz",
+              "sha256": "da96ecc72fc26eeb23fd83df934ca5a95fc9a1b02de42f732905231b2f51bee2"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -467,6 +488,15 @@
         "version": "2019.2",
         "options": {
           "full_name": "gpg-suite",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "postman": {
+        "version": "7.24.0",
+        "options": {
+          "full_name": "postman",
           "args": {
             "appdir": "/Applications"
           }
