@@ -140,3 +140,13 @@ echo 'Setup yabai'
 if [ ! -d /Library/ScriptingAdditions/yabai.osax ]; then
     sudo yabai --install-sa
 fi
+
+echo 'Setup denon'
+if [ ! -f ~/.deno/bin/denon ]; then
+    deno install \
+        --allow-read \
+        --allow-run \
+        --allow-write \
+        -f \
+        --unstable https://deno.land/x/denon@v2.0.2/denon.ts
+fi

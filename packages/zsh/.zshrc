@@ -33,4 +33,7 @@ if [ -e ~/.config/lf/lfcd.sh ]; then
     source ~/.config/lf/lfcd.sh
 fi
 
+export PATH="$HOME/.deno/bin:$PATH"
+. <(denon --completion)
+
 neofetch
