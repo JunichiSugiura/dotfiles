@@ -3,6 +3,27 @@
     "tap": {
       "homebrew/cask": {
         "revision": "d5c2aa7fd893b909c4c8f1c741e2ecb82a47d45b"
+      },
+      "extrawurst/tap": {
+        "revision": "37a7c758cb6867a32f59de704d1f82ab989c0a32"
+      },
+      "github/gh": {
+        "revision": "6494b987d843adab8da427935797e05134cc957e"
+      },
+      "koekeishiya/formulae": {
+        "revision": "7f77756a435e691c141f682202980ac3e2e30aa7"
+      },
+      "wix/brew": {
+        "revision": "fc93f2f4c6375450745b5e19cafb3aab52195cfb"
+      },
+      "adoptopenjdk/openjdk": {
+        "revision": "8b57564cc0fe84bffb0104078636df4ed34d0d8a"
+      },
+      "homebrew/cask-versions": {
+        "revision": "666ea8f0dcc3c167d644678d6820acc646ef1904"
+      },
+      "homebrew/cask-fonts": {
+        "revision": "5a51d2e83d155c4510cb663d18701cb4ba82ae2c"
       }
     },
     "brew": {
@@ -342,6 +363,64 @@
             }
           }
         }
+      },
+      "gitui": {
+        "version": "v0.6.0",
+        "bottle": false
+      },
+      "gh": {
+        "version": "0.9.0_1",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/gh-0.9.0_1.catalina.bottle.tar.gz",
+              "sha256": "8f3207fc10b3f11c3821817bfeaec688b7dbffa3b7e5cb46bba58516c119d098"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/gh-0.9.0_1.mojave.bottle.tar.gz",
+              "sha256": "2ef36b969325e2a4ff5bff3e726f0aca62744e708b92d861e07f9ce8905302ac"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/gh-0.9.0_1.high_sierra.bottle.tar.gz",
+              "sha256": "f03c5689148154498bc5fb3267b839bdce5a6a7803187df7b2eb84b65838d610"
+            }
+          }
+        }
+      },
+      "skhd": {
+        "version": "0.3.5",
+        "bottle": false
+      },
+      "yabai": {
+        "version": "3.1.2",
+        "bottle": false
+      },
+      "applesimutils": {
+        "version": "0.7.8",
+        "bottle": {
+          "cellar": "/usr/local/Cellar",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://github.com/wix/AppleSimulatorUtils/releases/download/0.7.8/applesimutils-0.7.8.catalina.bottle.tar.gz",
+              "sha256": "7b8dbaa8a3da1f63788bd11bbf149fc6d17f4f605692cbb3f6b553350a080b5f"
+            },
+            "mojave": {
+              "url": "https://github.com/wix/AppleSimulatorUtils/releases/download/0.7.8/applesimutils-0.7.8.mojave.bottle.tar.gz",
+              "sha256": "7b8dbaa8a3da1f63788bd11bbf149fc6d17f4f605692cbb3f6b553350a080b5f"
+            },
+            "high_sierra": {
+              "url": "https://github.com/wix/AppleSimulatorUtils/releases/download/0.7.8/applesimutils-0.7.8.high_sierra.bottle.tar.gz",
+              "sha256": "7b8dbaa8a3da1f63788bd11bbf149fc6d17f4f605692cbb3f6b553350a080b5f"
+            },
+            "sierra": {
+              "url": "https://github.com/wix/AppleSimulatorUtils/releases/download/0.7.8/applesimutils-0.7.8.sierra.bottle.tar.gz",
+              "sha256": "7b8dbaa8a3da1f63788bd11bbf149fc6d17f4f605692cbb3f6b553350a080b5f"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -465,7 +544,7 @@
       "font-roboto-mono": {
         "version": "latest",
         "options": {
-          "full_name": "homebrew/cask-fonts/font-roboto-mono",
+          "full_name": "font-roboto-mono",
           "args": {
             "appdir": "/Applications"
           }
@@ -474,7 +553,7 @@
       "visual-studio-code-insiders": {
         "version": "1.45.0,d4b8ec9da3bf1061a948fbb1b0d9d3db750cc79f",
         "options": {
-          "full_name": "homebrew/cask-versions/visual-studio-code-insiders",
+          "full_name": "visual-studio-code-insiders",
           "args": {
             "appdir": "/Applications"
           }
@@ -510,7 +589,16 @@
       "font-roboto": {
         "version": "latest",
         "options": {
-          "full_name": "homebrew/cask-fonts/font-roboto",
+          "full_name": "font-roboto",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "zoomus": {
+        "version": "5.0.26223.0603",
+        "options": {
+          "full_name": "zoomus",
           "args": {
             "appdir": "/Applications"
           }
@@ -536,7 +624,7 @@
         "Homebrew/homebrew-core": "c912019f3cad9648dd9d85d3a69b9c240f8aa11b",
         "CLT": "11.0.33.17",
         "Xcode": "11.5",
-        "macOS": "10.15.4"
+        "macOS": "10.15.5"
       }
     }
   }
