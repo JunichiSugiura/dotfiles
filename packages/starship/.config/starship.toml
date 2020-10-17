@@ -1,7 +1,7 @@
 add_newline = false
 
 [character]
-symbol = "🦄 " 
+success_symbol = "🦄 " 
 
 [git_branch]
 symbol = "🌱 "

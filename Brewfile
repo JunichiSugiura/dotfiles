@@ -4,7 +4,6 @@ tap "github/gh"
 tap "koekeishiya/formulae"
 tap "wix/brew"
 tap "adoptopenjdk/openjdk"
-tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
 cask_args appdir: "/Applications"
 
@@ -32,7 +31,7 @@ brew "yarn"
 brew "zsh"
 
 cask "adobe-creative-cloud"
-cask "adoptopenjdk/openjdk/adoptopenjdk8"
+cask "adoptopenjdk8"
 cask "alacritty"
 cask "android-file-transfer"
 cask "android-studio"
@@ -41,8 +40,10 @@ cask "figma"
 cask "flipper"
 cask "font-roboto"
 cask "font-roboto-mono"
+cask "google-chrome"
 cask "google-japanese-ime"
 cask "gpg-suite"
+cask "karabiner-elements"
 cask "minecraft"
 cask "obs"
 cask "postman"
@@ -54,3 +55,4 @@ cask "zoomus"
 
 mas "Xcode", id: 497799835
 mas "Final Cut Pro", id: 424389933
+mas "Motion", id: 434290957
