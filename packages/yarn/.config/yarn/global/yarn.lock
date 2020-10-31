@@ -1179,10 +1179,10 @@ detect-libc@^1.0.2, detect-libc@^1.0.3:
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
   integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
 
-detox-cli@^10.0.7:
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/detox-cli/-/detox-cli-10.0.7.tgz#8b6069f3ceb3a973666e5ae0b98ebfaa841be0a1"
-  integrity sha512-TEnaE+Fts6VQP5WyObnKSTla5k0grvUJsmqpBvaFYjDrG4bNs2laQkaHMoihvda+Vc39VBtF+bxo+wUX2XtOVA==
+detox-cli@^17.4.3:
+  version "17.4.3"
+  resolved "https://registry.yarnpkg.com/detox-cli/-/detox-cli-17.4.3.tgz#c44f4f07b1027b69a9ace85660e9670ccb45acd7"
+  integrity sha512-zx/zdCdcn3oJxz5iGMR3wc/jCkPJGatJ38x/p4g0zstwFrVPamgaj7RRPPmkwRm9TIkT2ToYDzNAwoPnRo+TOQ==
   dependencies:
     commander "^2.9.0"
     minimist "^1.2.0"
