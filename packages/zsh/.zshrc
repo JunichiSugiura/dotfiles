@@ -3,7 +3,6 @@ export GIT_CLONE_PATH="$HOME"/projects/github.com/JunichiSugiura
 
 alias cat="bat"
 alias code="code-insiders"
-alias h="hunter"
 alias ls="exa"
 alias ll="ls -lah --git"
 alias lt="ll -TL 3 --ignore-glob=.git"

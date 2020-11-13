@@ -116,20 +116,6 @@ if [ ! -d ~/.config/yarn/global/node_modules ]; then
     yarn global add
 fi
 
-echo 'Setup hunter'
-if [ ! -f ~/.cargo/bin/hunter ]; then
-    if [ ! -d ~/projects/github.com/rabite0/hunter ]; then
-        mkdir -p ~/projects/github.com/rabite0
-        cd ~/projects/github.com/rabite0
-        git clone https://github.com/rabite0/hunter.git
-    fi
-
-    cd ~/projects/github.com/rabite0/hunter
-    git checkout tags/v1.3.5
-    rustup override set nightly
-    cargo install --no-default-features --path .
-fi
-
 echo 'Setup amethyst tools'
 if [ ! -f ~/.cargo/bin/amethyst ]; then
     cargo install amethyst_tools
