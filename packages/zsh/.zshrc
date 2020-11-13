@@ -33,5 +33,3 @@ export PATH="$HOME/.cargo/bin:$PATH"
 if [ -e ~/.config/lf/lfcd.sh ]; then
     source ~/.config/lf/lfcd.sh
 fi
-
-neofetch

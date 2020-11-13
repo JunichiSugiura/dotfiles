@@ -22,7 +22,9 @@ if [ ! -d ~/.nvm ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
     export NVM_DIR="$HOME/.nvm"
+    # shellcheck disable=SC1090
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    # shellcheck disable=SC1090
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
     nvm install node
     nvm use node
@@ -62,10 +64,6 @@ if [ ! -d ~/.config/lf ]; then
     mkdir ~/.config/lf
 fi
 
-if [ ! -d ~/.config/neofetch ]; then
-    mkdir ~/.config/neofetch
-fi
-
 if [ ! -d ~/.config/starship ]; then
     mkdir ~/.config/starship
 fi
@@ -78,7 +76,8 @@ if [ ! -d ~/.config/yarn ]; then
     mkdir -p ~/.config/yarn/global
 fi
 
-stow -v -d "$STOW_PACKAGES_PATH" -t ~ $(ls -m "$STOW_PACKAGES_PATH" | tr ',' ' ')
+# shellcheck disable=SC2046
+stow -v -d "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
