@@ -4,6 +4,13 @@ set -e
 
 GIT_CLONE_PATH=~/projects/github.com/JunichiSugiura
 STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
+
+ensure_dir() {
+    path=$1
+    if [ ! -d "$path" ]; then
+        mkdir -p "$path"
+    fi
+}
  
 echo 'Change default shell to zsh'
 if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
@@ -31,9 +38,7 @@ if [ ! -d ~/.nvm ]; then
 fi
 
 echo 'Clone dotfiles'
-if [ ! -d "$GIT_CLONE_PATH" ]; then
-    mkdir -p "$GIT_CLONE_PATH"
-fi
+ensure_dir "$GIT_CLONE_PATH"
 
 if [ ! -d "$GIT_CLONE_PATH"/dotfiles ]; then
     cd "$GIT_CLONE_PATH"
@@ -52,25 +57,9 @@ brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 # 	brew bundle
 
 echo 'Setup config files'
-if [ ! -d ~/.config ]; then
-    mkdir ~/.config/
-fi
-
-if [ ! -d ~/.config/alacritty ]; then
-    mkdir ~/.config/alacritty
-fi
-
-if [ ! -d ~/.config/starship ]; then
-    mkdir ~/.config/starship
-fi
-
-if [ ! -d ~/.config/yabai ]; then
-    mkdir ~/.config/yabai
-fi
-
-if [ ! -d ~/.config/yarn ]; then
-    mkdir -p ~/.config/yarn/global
-fi
+ensure_dir ~/.config/alacritty
+ensure_dir ~/.config/starship
+ensure_dir ~/.config/yarn/global
 
 # shellcheck disable=SC2046
 stow -v -d "$STOW_PACKAGES_PATH" -t ~ $(ls packages)

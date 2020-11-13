@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "712406dbbbacd25b41f3a1272a61db8c843baff2"
+        "revision": "6272d29817f2e174e558f4cfdf59908af33033a9"
       },
       "extrawurst/tap": {
         "revision": "7274e63c0f2ee6685fc28c8f61d87594a2086d55"
