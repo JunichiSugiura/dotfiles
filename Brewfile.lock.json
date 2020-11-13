@@ -424,15 +424,6 @@
           }
         }
       },
-      "flipper": {
-        "version": "0.64.0",
-        "options": {
-          "full_name": "flipper",
-          "args": {
-            "appdir": "/Applications"
-          }
-        }
-      },
       "font-roboto": {
         "version": "latest",
         "options": {
