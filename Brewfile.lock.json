@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "3a6f3b4fdf613dc717c97b8555c1efa6bc8802e1"
+        "revision": "712406dbbbacd25b41f3a1272a61db8c843baff2"
       },
       "extrawurst/tap": {
         "revision": "7274e63c0f2ee6685fc28c8f61d87594a2086d55"
@@ -98,16 +98,16 @@
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/exa-0.9.0.catalina.bottle.3.tar.gz",
-              "sha256": "68719677084cc6f1143459636e500fc1e1eb7ab368284ea3f6a1d94eaba320d5"
+              "url": "https://homebrew.bintray.com/bottles/exa-0.9.0.catalina.bottle.4.tar.gz",
+              "sha256": "b0c1b9366cb7c6753a9e8467b5fe1e4dcbc3e148df59b5d79bcd8b8814c30443"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/exa-0.9.0.mojave.bottle.3.tar.gz",
-              "sha256": "e448fee9de62074020492565166bb214da1ba85045a70389df4a366d1f79a43c"
+              "url": "https://homebrew.bintray.com/bottles/exa-0.9.0.mojave.bottle.4.tar.gz",
+              "sha256": "2770559fa1082afeb6755a38ed8b5c2f72b7e88e41132caec9c2a22b7164ef69"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/exa-0.9.0.high_sierra.bottle.3.tar.gz",
-              "sha256": "e1afc4b73ef02f23012b0c76a4aaadb7ca256530ffc685ccfda79a5d846bae49"
+              "url": "https://homebrew.bintray.com/bottles/exa-0.9.0.high_sierra.bottle.4.tar.gz",
+              "sha256": "f93d7eaeeffbf42a471aaec0d466767187f47fa68d25e0cb448763ee169d30c9"
             }
           }
         }
@@ -201,27 +201,6 @@
             "sierra": {
               "url": "https://homebrew.bintray.com/bottles/jq-1.6.sierra.bottle.1.tar.gz",
               "sha256": "bb4d19dc026c2d72c53eed78eaa0ab982e9fcad2cd2acc6d13e7a12ff658e877"
-            }
-          }
-        }
-      },
-      "lf": {
-        "version": "17",
-        "bottle": {
-          "cellar": ":any_skip_relocation",
-          "prefix": "/usr/local",
-          "files": {
-            "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/lf-17.catalina.bottle.tar.gz",
-              "sha256": "577b07faf529ac6934b52a8c34453d76865938876b34ad8c860e14fbec5732b6"
-            },
-            "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/lf-17.mojave.bottle.tar.gz",
-              "sha256": "7381c831dc9444b1b151d6b9c8bb8d4c6a8bf0030ebf6dee7fa0e34b00b5a78b"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/lf-17.high_sierra.bottle.tar.gz",
-              "sha256": "6231de35fbdbc59be8ce3fb69cd5e87fee84dbfcb5aa81300835900109cc8161"
             }
           }
         }
@@ -619,7 +598,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "6ef6a0bde2ea079e90fd9822992d501b1020b126",
+        "Homebrew/homebrew-core": "e723892a860e7fae583f8e5cb33ce4d041d6d839",
         "CLT": "11.0.33.17",
         "Xcode": "12.2",
         "macOS": "10.15.7"

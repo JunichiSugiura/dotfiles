@@ -60,10 +60,6 @@ if [ ! -d ~/.config/alacritty ]; then
     mkdir ~/.config/alacritty
 fi
 
-if [ ! -d ~/.config/lf ]; then
-    mkdir ~/.config/lf
-fi
-
 if [ ! -d ~/.config/starship ]; then
     mkdir ~/.config/starship
 fi

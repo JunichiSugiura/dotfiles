@@ -28,7 +28,3 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 eval "$(rbenv init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
-
-if [ -e ~/.config/lf/lfcd.sh ]; then
-    source ~/.config/lf/lfcd.sh
-fi
