@@ -370,15 +370,6 @@
       }
     },
     "cask": {
-      "adobe-creative-cloud": {
-        "version": "5.2.0.436",
-        "options": {
-          "full_name": "adobe-creative-cloud",
-          "args": {
-            "appdir": "/Applications"
-          }
-        }
-      },
       "adoptopenjdk8": {
         "version": "8,275:b01",
         "options": {

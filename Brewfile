@@ -28,7 +28,6 @@ brew "yabai"
 brew "yarn"
 brew "zsh"
 
-cask "adobe-creative-cloud"
 cask "adoptopenjdk8"
 cask "alacritty"
 cask "android-file-transfer"
