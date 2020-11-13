@@ -4,6 +4,13 @@ set -e
 
 GIT_CLONE_PATH=~/projects/github.com/JunichiSugiura
 STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
+
+ensure_dir() {
+    path=$1
+    if [ ! -d "$path" ]; then
+        mkdir -p "$path"
+    fi
+}
  
 echo 'Change default shell to zsh'
 if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
@@ -22,16 +29,16 @@ if [ ! -d ~/.nvm ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
     export NVM_DIR="$HOME/.nvm"
+    # shellcheck disable=SC1090
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    # shellcheck disable=SC1090
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
     nvm install node
     nvm use node
 fi
 
 echo 'Clone dotfiles'
-if [ ! -d "$GIT_CLONE_PATH" ]; then
-    mkdir -p "$GIT_CLONE_PATH"
-fi
+ensure_dir "$GIT_CLONE_PATH"
 
 if [ ! -d "$GIT_CLONE_PATH"/dotfiles ]; then
     cd "$GIT_CLONE_PATH"
@@ -50,35 +57,12 @@ brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 # 	brew bundle
 
 echo 'Setup config files'
-if [ ! -d ~/.config ]; then
-    mkdir ~/.config/
-fi
+ensure_dir ~/.config/alacritty
+ensure_dir ~/.config/starship
+ensure_dir ~/.config/yarn/global
 
-if [ ! -d ~/.config/alacritty ]; then
-    mkdir ~/.config/alacritty
-fi
-
-if [ ! -d ~/.config/lf ]; then
-    mkdir ~/.config/lf
-fi
-
-if [ ! -d ~/.config/neofetch ]; then
-    mkdir ~/.config/neofetch
-fi
-
-if [ ! -d ~/.config/starship ]; then
-    mkdir ~/.config/starship
-fi
-
-if [ ! -d ~/.config/yabai ]; then
-    mkdir ~/.config/yabai
-fi
-
-if [ ! -d ~/.config/yarn ]; then
-    mkdir -p ~/.config/yarn/global
-fi
-
-stow -v -d "$STOW_PACKAGES_PATH" -t ~ $(ls -m "$STOW_PACKAGES_PATH" | tr ',' ' ')
+# shellcheck disable=SC2046
+stow -v -d "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
@@ -117,36 +101,7 @@ if [ ! -d ~/.config/yarn/global/node_modules ]; then
     yarn global add
 fi
 
-echo 'Setup hunter'
-if [ ! -f ~/.cargo/bin/hunter ]; then
-    if [ ! -d ~/projects/github.com/rabite0/hunter ]; then
-        mkdir -p ~/projects/github.com/rabite0
-        cd ~/projects/github.com/rabite0
-        git clone https://github.com/rabite0/hunter.git
-    fi
-
-    cd ~/projects/github.com/rabite0/hunter
-    git checkout tags/v1.3.5
-    rustup override set nightly
-    cargo install --no-default-features --path .
-fi
-
-echo 'Setup amethyst tools'
-if [ ! -f ~/.cargo/bin/amethyst ]; then
-    cargo install amethyst_tools
-fi
-
 echo 'Setup yabai'
 if [ ! -d /Library/ScriptingAdditions/yabai.osax ]; then
     sudo yabai --install-sa
-fi
-
-echo 'Setup denon'
-if [ ! -f ~/.deno/bin/denon ]; then
-    deno install \
-        --allow-read \
-        --allow-run \
-        --allow-write \
-        -f \
-        --unstable https://deno.land/x/denon@v2.0.2/denon.ts
 fi

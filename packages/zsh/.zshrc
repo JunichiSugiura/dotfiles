@@ -3,7 +3,6 @@ export GIT_CLONE_PATH="$HOME"/projects/github.com/JunichiSugiura
 
 alias cat="bat"
 alias code="code-insiders"
-alias h="hunter"
 alias ls="exa"
 alias ll="ls -lah --git"
 alias lt="ll -TL 3 --ignore-glob=.git"
@@ -29,12 +28,3 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 eval "$(rbenv init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
-
-if [ -e ~/.config/lf/lfcd.sh ]; then
-    source ~/.config/lf/lfcd.sh
-fi
-
-export PATH="$HOME/.deno/bin:$PATH"
-. <(denon --completion)
-
-neofetch
