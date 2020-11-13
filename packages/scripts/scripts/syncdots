@@ -112,11 +112,6 @@ if [ ! -d ~/.config/yarn/global/node_modules ]; then
     yarn global add
 fi
 
-echo 'Setup amethyst tools'
-if [ ! -f ~/.cargo/bin/amethyst ]; then
-    cargo install amethyst_tools
-fi
-
 echo 'Setup yabai'
 if [ ! -d /Library/ScriptingAdditions/yabai.osax ]; then
     sudo yabai --install-sa
