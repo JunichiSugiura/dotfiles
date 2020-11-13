@@ -133,10 +133,6 @@
           }
         }
       },
-      "gitui": {
-        "version": "v0.9.0",
-        "bottle": false
-      },
       "gpg": null,
       "grep": {
         "version": "3.6",
