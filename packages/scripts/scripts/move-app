@@ -5,6 +5,9 @@ for i in "$@"; do
         -r=*|--reverse=*)
             reverse="${i#*=}"
             shift ;;
+        -a|--all)
+            move_all=1
+            shift ;;
         *) ;;
     esac
 done
@@ -33,13 +36,17 @@ target_display_index=$(yabai -m query --displays \
             end
         ')
 
-current_app=$(yabai -m query --windows --window | jq ".app")
-target_window_ids=$(yabai -m query --windows \
-    | jq --arg app "$current_app" '
-        map(select(.app == ($app | fromjson)))
-        | reverse
-        | .[].id
-    ')
+if [ -z $move_all ]; then
+    target_window_ids=$(yabai -m query --windows --window | jq '.id')
+else
+    current_app=$(yabai -m query --windows --window | jq ".app")
+    target_window_ids=$(yabai -m query --windows \
+        | jq --arg app "$current_app" '
+            map(select(.app == ($app | fromjson)))
+            | reverse
+            | .[].id
+        ')
+fi
 
 echo "$target_window_ids" | tr ' ' '\n' | while read id; do
     yabai -m window "$id" --display "$target_display_index"

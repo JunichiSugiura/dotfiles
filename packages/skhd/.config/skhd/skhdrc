@@ -1,22 +1,23 @@
 # grid forat: <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
 
-shift + alt - space : ~/scripts/resize -a
-shift + alt - h : ~/scripts/resize -g=1:3:0:0:2:1 -a
-shift + alt - l : ~/scripts/resize -g=1:3:2:0:2:1 -a
+shift + alt - space : ~/scripts/resize
+shift + alt - h : ~/scripts/resize -g=1:3:0:0:2:1
+shift + alt - l : ~/scripts/resize -g=1:3:2:0:2:1
 
-shift + alt + ctrl - space : ~/scripts/resize
-shift + alt + ctrl - h : ~/scripts/resize -g=1:3:0:0:2:1
-shift + alt + ctrl - l : ~/scripts/resize -g=1:3:2:0:2:1
+shift + alt + ctrl - space : ~/scripts/resize -a
+shift + alt + ctrl - h : ~/scripts/resize -g=1:3:0:0:2:1 -a
+shift + alt + ctrl - l : ~/scripts/resize -g=1:3:2:0:2:1 -a
 
 shift + alt - m : ~/scripts/move-app
-shift + alt + ctrl -m : ~/scripts/move-app -r
+shift + alt + ctrl - m : ~/scripts/move-app -a
 
 ctrl - 1 : open -a Alacritty
 ctrl - 2 : open -a 'Visual Studio Code - Insiders'
+shift + ctrl - 2 : open -a 'Visual Studio Code'
 ctrl - 3 : open -a 'Brave Browser'
 ctrl - 4 : open -a Slack
-ctrl - 5 : open -a Figma
-ctrl - 6 : open -a Xcode
+# ctrl - 5 : open -a
+# ctrl - 6 : open -a
 # ctrl - 7 : open -a
 ctrl - 8 : open -a 'Final Cut Pro'
 ctrl - 9 : open -a Finder
