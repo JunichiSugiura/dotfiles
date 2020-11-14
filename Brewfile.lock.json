@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "d2e82ff814147c5cf2f458da8308537e6652bc4e"
+        "revision": "c4d66dec001f8a560c5146343df1a8525cc20679"
       },
       "extrawurst/tap": {
         "revision": "7274e63c0f2ee6685fc28c8f61d87594a2086d55"
@@ -11,13 +11,13 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "koekeishiya/formulae": {
-        "revision": "c8a4d741c2fc916fcc92849be71a219a3c70aa8a"
+        "revision": "425c0806649643447cbe1e1021ed7a84a9c23790"
       },
       "wix/brew": {
-        "revision": "d47d64eaa34b062216f5243514efad45593b8e11"
+        "revision": "0d9a49038b968afd640489dd18e8407e507682bc"
       },
       "adoptopenjdk/openjdk": {
-        "revision": "f1cd9327294cd99f1fc667a4cce0fcee0c0b47df"
+        "revision": "7226e432d84bd2479b0b35997ec79540662ff053"
       },
       "homebrew/cask-fonts": {
         "revision": "77e6259591da7689a654a0276c574c730c9e44eb"
@@ -336,7 +336,7 @@
         }
       },
       "yabai": {
-        "version": "3.3.3",
+        "version": "3.3.4",
         "bottle": false
       },
       "yarn": {
@@ -554,6 +554,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "signal": {
+        "version": "1.37.3",
+        "options": {
+          "full_name": "signal",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
@@ -563,7 +572,7 @@
       },
       "Final Cut Pro": {
         "id": "424389933",
-        "version": "10.4.10"
+        "version": "10.5"
       }
     }
   },
@@ -572,7 +581,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "93ddeba2df0962d9c6bf2e69c30370d14c8a1a2e",
+        "Homebrew/homebrew-core": "d91ca591c20033ee9c76dd7e7f73f52686199c07",
         "CLT": "11.0.33.17",
         "Xcode": "12.2",
         "macOS": "10.15.7"
