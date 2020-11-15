@@ -13,6 +13,8 @@ alias lscmd="ls ~/scripts"
 
 eval "$(starship init zsh)"
 
+echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -29,3 +31,5 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 eval "$(rbenv init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+. /usr/local/opt/asdf/asdf.sh
