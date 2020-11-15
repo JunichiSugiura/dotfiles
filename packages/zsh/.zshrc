@@ -10,6 +10,7 @@ alias lt="ll -TL 3 --ignore-glob=.git"
 alias syncsh=". syncsh"
 alias cdrepo=". cdrepo"
 alias lscmd="ls ~/scripts"
+alias pr="gh pr view --web"
 
 eval "$(starship init zsh)"
 
