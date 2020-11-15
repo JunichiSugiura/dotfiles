@@ -25,16 +25,8 @@ if [ ! -f /usr/local/bin/brew ]; then
 fi
 
 echo 'Setup node'
-if [ ! -d ~/.nvm ]; then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-
-    export NVM_DIR="$HOME/.nvm"
-    # shellcheck disable=SC1090
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    # shellcheck disable=SC1090
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
-    nvm install node
-    nvm use node
+if [ ! -d ~/.asdf/plugins/nodejs ]; then
+    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 fi
 
 echo 'Clone dotfiles'
