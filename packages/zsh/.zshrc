@@ -24,6 +24,4 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-eval "$(rbenv init -)"
-
 export PATH="$HOME/.cargo/bin:$PATH"

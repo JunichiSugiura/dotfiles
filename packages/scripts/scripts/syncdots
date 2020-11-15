@@ -11,6 +11,15 @@ ensure_dir() {
         mkdir -p "$path"
     fi
 }
+
+ensure_asdf_plugin() {
+    plugin=$1
+    git_repo=$2
+    if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
+        asdf plugin-add "$plugin" "$git_repo"
+        asdf install "$plugin"
+    fi
+}
  
 echo 'Change default shell to zsh'
 if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
@@ -24,10 +33,8 @@ if [ ! -f /usr/local/bin/brew ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-echo 'Setup node'
-if [ ! -d ~/.asdf/plugins/nodejs ]; then
-    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-fi
+echo 'Setup NodeJS'
+ensure_asdf_plugin nodejs https://github.com/asdf-vm/asdf-nodejs.git 
 
 echo 'Clone dotfiles'
 ensure_dir "$GIT_CLONE_PATH"
@@ -75,12 +82,7 @@ if [ ! -f ~/.ssh/id_rsa.pub ]; then
 fi
 
 echo 'Setup Ruby'
-RUBY_VERSION=2.7.1
-if [ "$(which ruby)" = /usr/bin/ruby ]; then
-    rbenv install -s "$RUBY_VERSION"
-    rbenv global "$RUBY_VERSION"
-    ~/.rbenv/shims/gem install bundler
-fi
+ensure_asdf_plugin ruby https://github.com/asdf-vm/asdf-ruby.git
 
 echo 'Setup Rust'
 if [ ! -d ~/.cargo ]; then
