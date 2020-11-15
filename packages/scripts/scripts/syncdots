@@ -17,6 +17,8 @@ ensure_asdf_plugin() {
     git_repo=$2
     if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
         asdf plugin-add "$plugin" "$git_repo"
+        # TODO: run when plugin is added but not installed
+        # TODO: handle version change
         asdf install "$plugin"
     fi
 }
@@ -44,24 +46,16 @@ if [ ! -d "$GIT_CLONE_PATH"/dotfiles ]; then
     git clone git@github.com:JunichiSugiura/dotfiles.git
 fi
 
-echo 'Setup apps and CLIs'
-brew bundle -v --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
+echo 'Install Apps and CLIs'
+brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 
-# https://github.com/mas-cli/mas/issues/164
-# HOMEBREW_BUNDLE_MAS_SKIP=$(brew bundle list --mas) brew bundle
-# mas signin jun.sugiura.jp+jp@gmail.com
-# HOMEBREW_BUNDLE_TAP_SKIP=$(brew bundle list --taps) \
-# 	HOMEBREW_BUNDLE_BREW_SKIP=$(brew bundle list --brews) \
-# 	HOMEBREW_BUNDLE_CASK_SKIP=$(brew bundle list --casks) \
-# 	brew bundle
-
-echo 'Setup config files'
+echo 'Link dotfiles'
 ensure_dir ~/.config/alacritty
 ensure_dir ~/.config/starship
 ensure_dir ~/.config/yarn/global
 
 # shellcheck disable=SC2046
-stow -v -d "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
+stow -d "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
@@ -86,6 +80,9 @@ ensure_asdf_plugin ruby https://github.com/asdf-vm/asdf-ruby.git
 
 echo 'Setup Rust'
 ensure_asdf_plugin rust https://github.com/code-lever/asdf-rust.git
+
+echo 'Setup Golang'
+ensure_asdf_plugin golang https://github.com/kennyp/asdf-golang.git
 
 echo 'Setup Yarn global'
 if [ ! -d ~/.config/yarn/global/node_modules ]; then

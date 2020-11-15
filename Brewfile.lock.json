@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "85128fc2f552cb1054c7160b5d3ddcc5dc9e11bd"
+        "revision": "35dca29e19e34be790f250e78696cdd8c003d0cc"
       },
       "extrawurst/tap": {
         "revision": "7274e63c0f2ee6685fc28c8f61d87594a2086d55"
@@ -688,7 +688,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "ccd3a02b688f8d544cf57dbdc715dccf13b8b97d",
+        "Homebrew/homebrew-core": "5519f28dd3c0827de5dfb7a987137229256e6d5b",
         "CLT": "11.0.33.17",
         "Xcode": "12.2",
         "macOS": "10.15.7"
