@@ -85,10 +85,7 @@ echo 'Setup Ruby'
 ensure_asdf_plugin ruby https://github.com/asdf-vm/asdf-ruby.git
 
 echo 'Setup Rust'
-if [ ! -d ~/.cargo ]; then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    rustup toolchain install nightly
-fi
+ensure_asdf_plugin rust https://github.com/code-lever/asdf-rust.git
 
 echo 'Setup Yarn global'
 if [ ! -d ~/.config/yarn/global/node_modules ]; then
