@@ -17,8 +17,13 @@ ensure_asdf_plugin() {
     git_repo=$2
     if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
         asdf plugin-add "$plugin" "$git_repo"
-        # TODO: run when plugin is added but not installed
-        # TODO: handle version change
+    fi
+
+    version=$(grep -n nodejs "$STOW_PACKAGES_PATH"/asdf/.tool-versions | cut -d ' ' -f 2)
+    if [ ! -d ~/.asdf/installs/"$plugin"/"$version" ]; then
+        if [ "$plugin" = nodejs ]; then
+            bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+        fi
         asdf install "$plugin"
     fi
 }
