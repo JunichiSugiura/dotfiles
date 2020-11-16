@@ -1,10 +1,10 @@
-tap "homebrew/cask"
+tap "adoptopenjdk/openjdk"
 tap "extrawurst/tap"
 tap "github/gh"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "koekeishiya/formulae"
 tap "wix/brew"
-tap "adoptopenjdk/openjdk"
-tap "homebrew/cask-fonts"
 cask_args appdir: "/Applications"
 
 brew "asdf"
