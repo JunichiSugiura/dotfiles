@@ -10,12 +10,11 @@ alias lt="ll -TL 3 --ignore-glob=.git"
 alias syncsh=". syncsh"
 alias cdrepo=". cdrepo"
 alias lscmd="ls ~/scripts"
+alias pr="gh pr view --web"
 
 eval "$(starship init zsh)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. /usr/local/opt/asdf/asdf.sh
 
 export GPG_TTY=$(tty)
 
@@ -25,7 +24,3 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=$(/usr/libexec/java_home)
-
-eval "$(rbenv init -)"
-
-export PATH="$HOME/.cargo/bin:$PATH"

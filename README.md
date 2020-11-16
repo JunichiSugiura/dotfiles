@@ -1,6 +1,11 @@
 # Dotfiles
 
-Dotfiles managed with [GNU stow](https://www.gnu.org/software/stow/) + [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) + [VSCode Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync)
+Dotfiles managed with
+- [GNU stow](https://www.gnu.org/software/stow/)
+- [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
+- [VSCode Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync)
+- [asdf](https://asdf-vm.com/#/)
+
 ![CLI Screenshot](./static/screenshot-cli.png)
 
 ## Installation
