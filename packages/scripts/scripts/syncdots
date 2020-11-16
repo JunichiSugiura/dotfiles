@@ -16,7 +16,7 @@ ensure_asdf_plugin() {
     plugin=$1
     git_repo=$2
     if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
-        asdf plugin-add "$plugin" "$git_repo"
+        asdf plugin add "$plugin" "$git_repo"
     fi
 
     version=$(grep -n nodejs "$STOW_PACKAGES_PATH"/asdf/.tool-versions | cut -d ' ' -f 2)
@@ -24,6 +24,26 @@ ensure_asdf_plugin() {
         if [ "$plugin" = nodejs ]; then
             bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
         fi
+    fi
+
+    set +e
+    current=$(asdf current "$plugin" 2>&1)
+    set -e
+
+    is_version=
+    for word in $current
+    do
+        if [ "$is_version" = 1 ]; then
+            current_version="$word"
+            break
+        fi
+
+        if [ "$word" = "$plugin" ]; then
+            is_version=1
+        fi
+    done
+
+    if [ ! "$current_version" = "$version" ]; then
         asdf install "$plugin"
     fi
 }
