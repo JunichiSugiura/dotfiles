@@ -1,9 +1,6 @@
 {
   "entries": {
     "tap": {
-      "adoptopenjdk/openjdk": {
-        "revision": "7226e432d84bd2479b0b35997ec79540662ff053"
-      },
       "ethereum/ethereum": {
         "revision": "e362b582fa2768170902f836ca529c0b2953c9c2"
       },
@@ -14,10 +11,10 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "homebrew/cask": {
-        "revision": "5bd93d882ba04a0d863294d32bafcdb3bdb0bd89"
+        "revision": "fa221aa19ee42d9bfaac36fe37d2e1ca04707349"
       },
       "homebrew/cask-fonts": {
-        "revision": "711d1405b999107d0ccd57f1d37ec28adc3ea5b4"
+        "revision": "a6b5503ecab081fca3b6e084d718ec17a5446315"
       },
       "koekeishiya/formulae": {
         "revision": "425c0806649643447cbe1e1021ed7a84a9c23790"
@@ -162,6 +159,10 @@
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/exa-0.9.0.big_sur.bottle.4.tar.gz",
+              "sha256": "3f7b47cd10cce1ab2e51f59d0b3bea05153b5027e4541091e0eeeb5510f585db"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/exa-0.9.0.catalina.bottle.4.tar.gz",
               "sha256": "b0c1b9366cb7c6753a9e8467b5fe1e4dcbc3e148df59b5d79bcd8b8814c30443"
@@ -436,10 +437,6 @@
         "version": "3.3.4",
         "bottle": false
       },
-      "yarn": {
-        "version": "1.22.10",
-        "bottle": false
-      },
       "zsh": {
         "version": "5.8_1",
         "bottle": {
@@ -464,18 +461,34 @@
             }
           }
         }
+      },
+      "cocoapods": {
+        "version": "1.10.0",
+        "bottle": {
+          "cellar": "/usr/local/Cellar",
+          "prefix": "/usr/local",
+          "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/cocoapods-1.10.0.big_sur.bottle.tar.gz",
+              "sha256": "5fec9be27505bf6858fdbd409f50247987a03471dd0dfe0af15ddb58c267f604"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/cocoapods-1.10.0.catalina.bottle.tar.gz",
+              "sha256": "e134955d0501635a62e16c9c9b10e01c5f8b9e0ffdeee3d7b778db5845bd88a1"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/cocoapods-1.10.0.mojave.bottle.tar.gz",
+              "sha256": "9977145a066bf2545f5fe3d1ddd41f0360c7efe46523087d56cf06ac305eb069"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/cocoapods-1.10.0.high_sierra.bottle.tar.gz",
+              "sha256": "783448183d3bb63dc46c8148fe1f3b783b705bfda763fb6f6237760e30b94ff6"
+            }
+          }
+        }
       }
     },
     "cask": {
-      "adoptopenjdk8": {
-        "version": "8,275:b01",
-        "options": {
-          "full_name": "adoptopenjdk8",
-          "args": {
-            "appdir": "/Applications"
-          }
-        }
-      },
       "alacritty": {
         "version": "0.5.0",
         "options": {
@@ -691,7 +704,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "c299dfb55abbba82e70a642ba459ec23b6bced3b",
+        "Homebrew/homebrew-core": "74c5817fa7c708beae3ba11b7dce3c430af9f45c",
         "CLT": "11.0.33.17",
         "Xcode": "12.2",
         "macOS": "10.15.7"

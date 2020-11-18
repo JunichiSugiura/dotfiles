@@ -1,5 +1,7 @@
-nodejs 15.2.1
+nodejs 14.15.1
 ruby 2.7.2
 rust 1.47.0
 golang 1.15
 deno 1.5.2
+java adoptopenjdk-15.0.1+9
+yarn 1.22.10

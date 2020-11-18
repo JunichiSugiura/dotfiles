@@ -15,64 +15,34 @@ ensure_dir() {
 ensure_asdf_plugin() {
     plugin=$1
     git_repo=$2
+
     if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
         asdf plugin add "$plugin" "$git_repo"
     fi
-
-    version=$(grep -n nodejs "$STOW_PACKAGES_PATH"/asdf/.tool-versions | cut -d ' ' -f 2)
-    if [ ! -d ~/.asdf/installs/"$plugin"/"$version" ]; then
-        if [ "$plugin" = nodejs ]; then
-            bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-        fi
-    fi
-
-    set +e
-    current=$(asdf current "$plugin" 2>&1)
-    set -e
-
-    is_version=
-    for word in $current
-    do
-        if [ "$is_version" = 1 ]; then
-            current_version="$word"
-            break
-        fi
-
-        if [ "$word" = "$plugin" ]; then
-            is_version=1
-        fi
-    done
-
-    if [ ! "$current_version" = "$version" ]; then
-        asdf install "$plugin"
-    fi
 }
  
-echo 'Change default shell to zsh'
 if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
+    echo 'Change default shell to zsh'
     chsh -s /bin/zsh
     chmod -R 755 /usr/local/share/zsh
     chown -R root:staff zsh
 fi 
 
-echo 'Setup Homebrew'
 if [ ! -f /usr/local/bin/brew ]; then
+    echo 'Setup Homebrew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-echo 'Setup NodeJS'
-ensure_asdf_plugin nodejs https://github.com/asdf-vm/asdf-nodejs.git 
-
-echo 'Clone dotfiles'
 ensure_dir "$GIT_CLONE_PATH"
 
 if [ ! -d "$GIT_CLONE_PATH"/dotfiles ]; then
+    echo 'Clone dotfiles'
     cd "$GIT_CLONE_PATH"
     git clone git@github.com:JunichiSugiura/dotfiles.git
 fi
 
 echo 'Install Apps and CLIs'
-brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
+brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile --quiet
 
 echo 'Link dotfiles'
 ensure_dir ~/.config/alacritty
@@ -85,8 +55,8 @@ stow -d "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
-echo 'Setup gpg signing with git'
 if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
+    echo 'Install gpg signing with git'
     gpg --default-new-key-algo rsa4096 --gen-key
     key_id=$(gpg --list-secret-keys --keyid-format LONG | ggrep -oP "rsa4096\/[0-9a-fA-F]{16}" | cut -d"/"  -f2)
     echo 'Copy and pates the GPG key below to GitHub'
@@ -95,29 +65,32 @@ if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; 
 fi
 
 if [ ! -f ~/.ssh/id_rsa.pub ]; then
+    echo 'Setup gpg signing for git'
     ssh-keygen -t rsa -b 4096 -C "jun.sugiura.jp@gmail.com"
     echo 'Copy and pates the SSH key below to GitHub'
     cat ~/.ssh/id_rsa.pub
 fi
 
-echo 'Setup Ruby'
+echo 'Setup Lang Runtimes'
+ensure_asdf_plugin nodejs https://github.com/asdf-vm/asdf-nodejs.git 
+ensure_asdf_plugin yarn https://github.com/twuni/asdf-yarn
+ensure_asdf_plugin rust https://github.com/code-lever/asdf-rust.git
+ensure_asdf_plugin golang https://github.com/kennyp/asdf-golang.git
+ensure_asdf_plugin deno https://github.com/asdf-community/asdf-deno.git
+ensure_asdf_plugin java https://github.com/halcyon/asdf-java.git
 ensure_asdf_plugin ruby https://github.com/asdf-vm/asdf-ruby.git
 
-echo 'Setup Rust'
-ensure_asdf_plugin rust https://github.com/code-lever/asdf-rust.git
+# for nodejs. more info -> https://github.com/asdf-vm/asdf-nodejs#install
+bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 
-echo 'Setup Golang'
-ensure_asdf_plugin golang https://github.com/kennyp/asdf-golang.git
+asdf install
 
-echo 'Setup Deno'
-ensure_asdf_plugin deno https://github.com/asdf-community/asdf-deno.git
-
-echo 'Setup Yarn global'
 if [ ! -d ~/.config/yarn/global/node_modules ]; then
+    echo 'Setup Yarn global'
     yarn global add
 fi
 
-echo 'Setup yabai'
 if [ ! -d /Library/ScriptingAdditions/yabai.osax ]; then
+    echo 'Setup yabai'
     sudo yabai --install-sa
 fi

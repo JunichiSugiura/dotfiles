@@ -14,12 +14,12 @@ Dotfiles managed with
 2. Run install
 
 ```sh
-curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/packages/scripts/scripts/syncdots | sh
+curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/packages/scripts/scripts/install-dots | sh
 ```
 
 ## Installed Apps
 
-⚠️ Screenshot may not be up to date. Check [Brewfile](./Brewfile) for latest bundle.
+⚠️ Screenshot may not be up to date. Check [Brewfile](./Brewfile) for the latest bundle.
 
 ![Apps Screenshot](./static/screenshot-apps.png)
 
