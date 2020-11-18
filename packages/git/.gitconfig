@@ -23,3 +23,5 @@
 	gpgsign = true
 [gpg]
 	program = /usr/local/MacGPG2/bin/gpg
+[pull]
+	rebase = false
