@@ -12,8 +12,8 @@ shift + alt - m : ~/scripts/move-app
 shift + alt + ctrl - m : ~/scripts/move-app -a
 
 ctrl - 1 : open -a Alacritty
-ctrl - 2 : open -a 'Visual Studio Code - Insiders'
-shift + ctrl - 2 : open -a 'Visual Studio Code'
+ctrl - 2 : open -a 'Visual Studio Code'
+shift + ctrl - 2 : open -a 'Visual Studio Code - Insiders'
 ctrl - 3 : open -a 'Brave Browser'
 ctrl - 4 : open -a Slack
 # ctrl - 5 : open -a
