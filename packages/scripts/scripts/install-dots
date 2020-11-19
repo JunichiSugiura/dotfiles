@@ -5,46 +5,62 @@ set -e
 GIT_CLONE_PATH=~/projects/github.com/JunichiSugiura
 STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
 
+for i in "$@"; do
+    case "$i" in
+        -s=*|--skip-apps=*)
+            skip_apps=1
+            shift ;;
+        *) ;;
+    esac
+done
+
 ensure_dir() {
-    path=$1
+    path="$1"
     if [ ! -d "$path" ]; then
         mkdir -p "$path"
     fi
 }
 
 ensure_asdf_plugin() {
-    plugin=$1
-    git_repo=$2
+    plugin="$1"
+    git_repo="$2"
 
     if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
         asdf plugin add "$plugin" "$git_repo"
     fi
 }
+
+log() {
+    message=$1
+    echo 📌 "$message"
+}
  
 if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
-    echo 'Change default shell to zsh'
+    log 'Change default shell to zsh'
     chsh -s /bin/zsh
     chmod -R 755 /usr/local/share/zsh
     chown -R root:staff zsh
 fi 
 
 if [ ! -f /usr/local/bin/brew ]; then
-    echo 'Setup Homebrew'
+    log 'Setup Homebrew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 ensure_dir "$GIT_CLONE_PATH"
 
 if [ ! -d "$GIT_CLONE_PATH"/dotfiles ]; then
-    echo 'Clone dotfiles'
+    log 'Clone dotfiles'
     cd "$GIT_CLONE_PATH"
     git clone git@github.com:JunichiSugiura/dotfiles.git
 fi
 
-echo 'Install Apps and CLIs'
-brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile --quiet
+if [ ! "$skip_apps" ]; then
+    log 'Install Apps and CLIs'
+    brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile --quiet
+fi
 
-echo 'Link dotfiles'
+log 'Link dotfiles'
 ensure_dir ~/.config/alacritty
 ensure_dir ~/.config/starship
 ensure_dir ~/.config/yarn/global
@@ -56,41 +72,56 @@ stow -d "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
 if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
-    echo 'Install gpg signing with git'
+    log 'Install gpg signing with git'
     gpg --default-new-key-algo rsa4096 --gen-key
     key_id=$(gpg --list-secret-keys --keyid-format LONG | ggrep -oP "rsa4096\/[0-9a-fA-F]{16}" | cut -d"/"  -f2)
-    echo 'Copy and pates the GPG key below to GitHub'
+    log 'Copy and pates the GPG key below to GitHub'
     gpg --armor --export "$key_id"
     git config --global user.signingkey "$key_id"
 fi
 
 if [ ! -f ~/.ssh/id_rsa.pub ]; then
-    echo 'Setup gpg signing for git'
+    log 'Setup gpg signing for git'
     ssh-keygen -t rsa -b 4096 -C "jun.sugiura.jp@gmail.com"
-    echo 'Copy and pates the SSH key below to GitHub'
+    log 'Copy and pates the SSH key below to GitHub'
     cat ~/.ssh/id_rsa.pub
 fi
 
-echo 'Setup Lang Runtimes'
-ensure_asdf_plugin nodejs https://github.com/asdf-vm/asdf-nodejs.git 
-ensure_asdf_plugin yarn https://github.com/twuni/asdf-yarn
-ensure_asdf_plugin rust https://github.com/code-lever/asdf-rust.git
-ensure_asdf_plugin golang https://github.com/kennyp/asdf-golang.git
-ensure_asdf_plugin deno https://github.com/asdf-community/asdf-deno.git
-ensure_asdf_plugin java https://github.com/halcyon/asdf-java.git
-ensure_asdf_plugin ruby https://github.com/asdf-vm/asdf-ruby.git
+log 'Setup Lang Runtimes'
+# shellcheck disable=SC2013
+for plugin in $(awk '{print $1}' ~/.tool-versions); do
+    if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
+        asdf plugin add "$plugin" "$git_repo"
+    fi
+done
 
-# for nodejs. more info -> https://github.com/asdf-vm/asdf-nodejs#install
-bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+is_asdf_version_changed() {
+    plugin="$1"
+    installed=$(asdf list "$plugin" | awk '{gsub(/^ +| +$/,""); print $0}')
+    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; gsub(/^ +| +$/,""); print $0}')
+
+    if [ "$installed" = "$specified" ]; then
+        return 1
+    else
+        return 0
+    fi
+}
+
+# import release team keyring if nodejs versions changed
+# more info -> https://github.com/asdf-vm/asdf-nodejs#install
+if is_asdf_version_changed nodejs; then
+    log 'Import release team keyring for Node.JS'
+    bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+fi
 
 asdf install
 
 if [ ! -d ~/.config/yarn/global/node_modules ]; then
-    echo 'Setup Yarn global'
+    log 'Setup Yarn global'
     yarn global add
 fi
 
 if [ ! -d /Library/ScriptingAdditions/yabai.osax ]; then
-    echo 'Setup yabai'
+    log 'Setup yabai'
     sudo yabai --install-sa
 fi

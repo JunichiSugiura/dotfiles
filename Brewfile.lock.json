@@ -11,10 +11,10 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "homebrew/cask": {
-        "revision": "fa221aa19ee42d9bfaac36fe37d2e1ca04707349"
+        "revision": "f00eb6f9cd8a2923e3aeac27acac29961032a7e4"
       },
       "homebrew/cask-fonts": {
-        "revision": "a6b5503ecab081fca3b6e084d718ec17a5446315"
+        "revision": "4f65d0605eb215621fb24d34342e54c1f5470488"
       },
       "koekeishiya/formulae": {
         "revision": "425c0806649643447cbe1e1021ed7a84a9c23790"
@@ -704,7 +704,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "74c5817fa7c708beae3ba11b7dce3c430af9f45c",
+        "Homebrew/homebrew-core": "2e012daabc4880522abfee89a7ed8d7139cb4e42",
         "CLT": "11.0.33.17",
         "Xcode": "12.2",
         "macOS": "10.15.7"
