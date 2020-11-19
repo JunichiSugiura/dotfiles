@@ -7,32 +7,41 @@ STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
 
 for i in "$@"; do
     case "$i" in
-        -s=*|--skip-apps=*)
+        -s|--skip-apps)
             skip_apps=1
             shift ;;
         *) ;;
     esac
 done
 
-ensure_dir() {
-    path="$1"
-    if [ ! -d "$path" ]; then
-        mkdir -p "$path"
-    fi
-}
-
-ensure_asdf_plugin() {
-    plugin="$1"
-    git_repo="$2"
-
-    if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
-        asdf plugin add "$plugin" "$git_repo"
-    fi
-}
-
 log() {
     message=$1
     echo 📌 "$message"
+}
+
+is_file() {
+    path="$1"
+    if [ -d path ]; then
+        return 1
+    else
+        return 0
+    fi
+}
+
+is_dir() {
+    path="$1"
+    if [ -d path ]; then
+        return 1
+    else
+        return 0
+    fi
+}
+
+ensure_dir() {
+    path="$1"
+    if ! is_dir "$path"; then
+        mkdir -p "$path"
+    fi
 }
  
 if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
@@ -42,14 +51,14 @@ if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then
     chown -R root:staff zsh
 fi 
 
-if [ ! -f /usr/local/bin/brew ]; then
+if ! is_file /usr/local/bin/brew; then
     log 'Setup Homebrew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 ensure_dir "$GIT_CLONE_PATH"
 
-if [ ! -d "$GIT_CLONE_PATH"/dotfiles ]; then
+if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
     log 'Clone dotfiles'
     cd "$GIT_CLONE_PATH"
     git clone git@github.com:JunichiSugiura/dotfiles.git
@@ -57,7 +66,7 @@ fi
 
 if [ ! "$skip_apps" ]; then
     log 'Install Apps and CLIs'
-    brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile --quiet
+    brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 fi
 
 log 'Link dotfiles'
@@ -71,7 +80,7 @@ stow -d "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
-if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
+if ! is_dir ~/.gnupg || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
     log 'Install gpg signing with git'
     gpg --default-new-key-algo rsa4096 --gen-key
     key_id=$(gpg --list-secret-keys --keyid-format LONG | ggrep -oP "rsa4096\/[0-9a-fA-F]{16}" | cut -d"/"  -f2)
@@ -80,7 +89,7 @@ if [ ! -d ~/.gnupg ] || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; 
     git config --global user.signingkey "$key_id"
 fi
 
-if [ ! -f ~/.ssh/id_rsa.pub ]; then
+if ! is_file ~/.ssh/id_rsa.pub; then
     log 'Setup gpg signing for git'
     ssh-keygen -t rsa -b 4096 -C "jun.sugiura.jp@gmail.com"
     log 'Copy and pates the SSH key below to GitHub'
@@ -90,8 +99,8 @@ fi
 log 'Setup Lang Runtimes'
 # shellcheck disable=SC2013
 for plugin in $(awk '{print $1}' ~/.tool-versions); do
-    if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
-        asdf plugin add "$plugin" "$git_repo"
+    if ! is_dir ~/.asdf/plugins/"$plugin"; then
+        asdf plugin add "$plugin"
     fi
 done
 
@@ -116,12 +125,12 @@ fi
 
 asdf install
 
-if [ ! -d ~/.config/yarn/global/node_modules ]; then
+if ! is_dir ~/.config/yarn/global/node_modules; then
     log 'Setup Yarn global'
     yarn global add
 fi
 
-if [ ! -d /Library/ScriptingAdditions/yabai.osax ]; then
+if ! is_dir /Library/ScriptingAdditions/yabai.osax; then
     log 'Setup yabai'
     sudo yabai --install-sa
 fi
