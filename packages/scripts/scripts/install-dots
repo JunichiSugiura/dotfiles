@@ -21,20 +21,12 @@ log() {
 
 is_file() {
     path="$1"
-    if [ -d path ]; then
-        return 1
-    else
-        return 0
-    fi
+    [ -f "$path" ]
 }
 
 is_dir() {
     path="$1"
-    if [ -d path ]; then
-        return 1
-    else
-        return 0
-    fi
+    [ -d "$path" ]
 }
 
 ensure_dir() {
@@ -75,7 +67,7 @@ ensure_dir ~/.config/starship
 ensure_dir ~/.config/yarn/global
 
 # shellcheck disable=SC2046
-stow -d "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
+stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
@@ -96,7 +88,6 @@ if ! is_file ~/.ssh/id_rsa.pub; then
     cat ~/.ssh/id_rsa.pub
 fi
 
-log 'Setup Lang Runtimes'
 # shellcheck disable=SC2013
 for plugin in $(awk '{print $1}' ~/.tool-versions); do
     if ! is_dir ~/.asdf/plugins/"$plugin"; then
@@ -104,26 +95,32 @@ for plugin in $(awk '{print $1}' ~/.tool-versions); do
     fi
 done
 
-is_asdf_version_changed() {
+is_runtime_versions_changed() {
     plugin="$1"
-    installed=$(asdf list "$plugin" | awk '{gsub(/^ +| +$/,""); print $0}')
-    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; gsub(/^ +| +$/,""); print $0}')
+    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
 
-    if [ "$installed" = "$specified" ]; then
-        return 1
-    else
-        return 0
-    fi
+    installed=$(asdf list "$plugin" 2>&1)
+    is_changed=
+    for version in $specified; do
+        match=$(echo "$installed" | grep "$version")
+        [ -z "$match" ] && is_changed=1
+    done
+
+    [ "$is_changed" ]
 }
 
-# import release team keyring if nodejs versions changed
-# more info -> https://github.com/asdf-vm/asdf-nodejs#install
-if is_asdf_version_changed nodejs; then
-    log 'Import release team keyring for Node.JS'
-    bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-fi
+for plugin in $(asdf plugin list); do
+    if is_runtime_versions_changed "$plugin"; then
+        if [ "$plugin" = nodejs ]; then
+            log 'Import release team keyring for Node.JS'
+            # more info -> https://github.com/asdf-vm/asdf-nodejs#install
+            bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+        fi
 
-asdf install
+        log "Install runtime: $plugin"
+        asdf install "$plugin"
+    fi
+done
 
 if ! is_dir ~/.config/yarn/global/node_modules; then
     log 'Setup Yarn global'
@@ -133,4 +130,19 @@ fi
 if ! is_dir /Library/ScriptingAdditions/yabai.osax; then
     log 'Setup yabai'
     sudo yabai --install-sa
+fi
+
+is_file ~/prysm/prysm.sh
+
+if ! is_file ~/prysm/prysm.sh; then
+    log 'Setup Ethereum 2.0 client'
+    if ! is_dir ~/prysm; then
+        mkdir ~/prysm
+    fi
+
+    (
+        cd ~/prysm
+        curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh
+        chmod +x prysm.sh
+    )
 fi
