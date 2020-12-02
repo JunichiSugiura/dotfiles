@@ -67,7 +67,7 @@ ensure_dir ~/.config/starship
 ensure_dir ~/.config/yarn/global
 
 # shellcheck disable=SC2046
-stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls packages)
+stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
 # enable key-repeating with vim bindings
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
