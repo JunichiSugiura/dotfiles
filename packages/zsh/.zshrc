@@ -3,7 +3,6 @@ export GIT_CLONE_PATH="$HOME"/projects/github.com/JunichiSugiura
 
 alias cat="bat"
 alias code="open -a 'Visual Studio Code'"
-alias vscode="code-insiders"
 alias ls="exa"
 alias ll="ls -lah --git"
 alias lt="ll -TL 3 --ignore-glob=.git"
@@ -11,6 +10,7 @@ alias syncsh=". syncsh"
 alias cdrepo=". cdrepo"
 alias lscmd="ls ~/scripts"
 alias pr="gh pr view --web"
+alias prysm="~/prysm/prysm.sh"
 
 eval "$(starship init zsh)"
 
