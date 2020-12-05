@@ -14,7 +14,7 @@ Dotfiles managed with
 2. Run install
 
 ```sh
-curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/packages/scripts/scripts/install-dots | sh
+curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/packages/scripts/scripts/dotfiles | sh
 ```
 
 ## Installed Apps

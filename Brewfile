@@ -52,7 +52,7 @@ cask "soundflower"
 cask "steam"
 cask "virtualbox"
 cask "visual-studio-code"
-cask "zoomus"
+cask "zoom"
 
 mas "Xcode", id: 497799835
 mas "Final Cut Pro", id: 424389933
