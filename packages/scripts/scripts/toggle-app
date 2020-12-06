@@ -1,0 +1,35 @@
+#!/bin/sh
+set -e
+
+apps="$*"
+
+current_app=$(yabai -m query --windows --window | jq '.app')
+windows=$(yabai -m query --windows | jq --arg apps "$apps" '. | map(. | select(.app | inside($apps)))')
+
+current_app_converted=$(echo "$current_app" | sed -e s/\"//g | sed -e s/Code/Visual\ Studio\ Code/g)
+apps_without_current_app=$(echo "$apps" | sed -e "s/$current_app_converted//g")
+target=$(echo "$windows" \
+    | jq \
+        --arg apps_without_current_app "$apps_without_current_app" '
+            .
+            | map(. | select(.app | inside($apps_without_current_app)))
+            | .[0].app
+        ')
+
+if [ "$target" != null ]; then
+    target_converted=$(echo "$target" | sed -e s/\"//g | sed -e s/Code/Visual\ Studio\ Code/g)
+    open -a "$target_converted"
+    exit 0
+fi
+
+for app in "$@"; do
+    app_converted=$(echo "$app" | sed -e s/\"//g | sed -e s/Code/Visual\ Studio\ Code/g)
+
+    [ "\"$app_converted\"" = "$current_app" ] && continue
+
+    echo "$app_converted"
+    echo "$current_app"
+
+    open -a "$app"
+    exit 0
+done
