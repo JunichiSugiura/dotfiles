@@ -2,11 +2,12 @@
 
 shift + alt - space : ~/scripts/resize
 shift + alt - h : ~/scripts/resize -g=1:3:0:0:2:1
+shift + alt - j : ~/scripts/resize -g=2:1:0:1:1:1
+shift + alt - k : ~/scripts/resize -g=2:1:0:0:1:1
 shift + alt - l : ~/scripts/resize -g=1:3:2:0:2:1
 
 shift + alt + ctrl - space : ~/scripts/resize -a
 shift + alt + ctrl - h : ~/scripts/resize -g=1:3:0:0:2:1 -a
-shift + alt + ctrl - l : ~/scripts/resize -g=1:3:2:0:2:1 -a
 
 shift + alt - m : ~/scripts/move-app
 shift + alt + ctrl - m : ~/scripts/move-app -a
