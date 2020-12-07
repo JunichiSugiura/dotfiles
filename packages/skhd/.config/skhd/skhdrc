@@ -16,11 +16,11 @@ shift + alt + ctrl - m : ~/scripts/move-app -a
 
 ctrl - 1 : ~/scripts/toggle-app Alacritty 'Visual Studio Code'
 ctrl - 2 : ~/scripts/toggle-app 'Brave Browser' 'Google Chrome'
-ctrl - 3 : ~/scripts/toggle-app Slack Discord Signal
-# ctrl - 4 : open -a
+ctrl - 3 : ~/scripts/toggle-app Slack Signal Discord
+ctrl - 4 : ~/scripts/toggle-app Postlab 'Final Cut Pro'
 # ctrl - 5 : open -a
 # ctrl - 6 : open -a
 # ctrl - 7 : open -a
-ctrl - 8 : open -a 'Final Cut Pro'
+# ctrl - 8 : open -a
 ctrl - 9 : open -a Finder
-ctrl - 0 : open -a OBS
+# ctrl - 0 : open -a
