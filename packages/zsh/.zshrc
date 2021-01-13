@@ -11,6 +11,7 @@ alias cdrepo=". cdrepo"
 alias lscmd="ls ~/scripts"
 alias pr="gh pr view --web"
 alias prysm="~/prysm/prysm.sh"
+alias lldlib="open ~/Library/Application\ Support/Electron"
 
 eval "$(starship init zsh)"
 
