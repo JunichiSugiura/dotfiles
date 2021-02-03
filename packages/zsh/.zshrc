@@ -12,6 +12,7 @@ alias lscmd="ls ~/scripts"
 alias pr="gh pr view --web"
 alias prysm="~/prysm/prysm.sh"
 alias lldlib="open ~/Library/Application\ Support/Electron"
+alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
 
 eval "$(starship init zsh)"
 
