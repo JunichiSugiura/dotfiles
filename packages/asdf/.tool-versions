@@ -3,7 +3,7 @@ yarn 1.22.10
 golang 1.15
 rust 1.47.0
 deno 1.5.2
-python 3.9.0 2.7.18
+python 3.9.1 2.7.18
 ruby 2.6.6
 java adoptopenjdk-11.0.9+11
 
