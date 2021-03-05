@@ -7,6 +7,7 @@ if [ "$dir_name" != "ledger-live-desktop" ] && [ "$dir_name" != "ledger-live-mob
 fi
 
 seconds=
+clean=
 for i in "$@"; do
   case "$i" in
     -w=*|--wait=*)
@@ -15,6 +16,9 @@ for i in "$@"; do
             seconds="$val"
         fi
         shift ;;
+    -c|--clean)
+        clean=1
+        shift ;;
     *)
         shift ;;
   esac
@@ -22,7 +26,22 @@ done
 
 if [ -n "$seconds" ]; then
     echo "Sleeping for $seconds seconds... 🛌"
-    sleep seconds
+    sleep "$seconds"
+fi
+
+if [ -n "$clean" ]; then
+    if [ "$dir_name" = "ledger-live-desktop" ]; then
+        electron_cache_path=~/Library/Application\ Support/Electron/
+        echo "Cleaning Electron cache"
+        rm -rf "$electron_cache_path"
+        app_json_path=~/Documents/app.json
+        if [ -f "$app_json_path" ]; then
+            echo "app.json found in ~/Documents"
+            echo "Copying app.json..."
+            mkdir "$electron_cache_path"
+            mv "$app_json_path" "$electron_cache_path"
+        fi
+    fi
 fi
 
 yalc link @ledgerhq/live-common
