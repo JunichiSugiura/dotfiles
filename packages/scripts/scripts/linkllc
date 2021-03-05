@@ -1,0 +1,30 @@
+#!/bin/sh 
+
+dir_name=$(basename "$PWD")
+if [ "$dir_name" != "ledger-live-desktop" ] && [ "$dir_name" != "ledger-live-mobile" ]; then
+    echo Curren directory is not linkable
+    exit 1
+fi
+
+seconds=
+for i in "$@"; do
+  case "$i" in
+    -w=*|--wait=*)
+        val="${i#*=}"
+        if [[ "$val" =~ ^[0-9]+$ ]]; then
+            seconds="$val"
+        fi
+        shift ;;
+    *)
+        shift ;;
+  esac
+done
+
+if [ -n "$seconds" ]; then
+    echo "Sleeping for $seconds seconds... 🛌"
+    sleep seconds
+fi
+
+yalc link @ledgerhq/live-common
+yarn 
+yarn start
