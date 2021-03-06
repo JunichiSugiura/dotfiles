@@ -32,14 +32,14 @@ fi
 if [ -n "$clean" ]; then
     if [ "$dir_name" = "ledger-live-desktop" ]; then
         electron_cache_path=~/Library/Application\ Support/Electron/
-        echo "Cleaning Electron cache"
+        echo "Clearing Electron cache 🧹"
         rm -rf "$electron_cache_path"
         app_json_path=~/Documents/app.json
         if [ -f "$app_json_path" ]; then
             echo "app.json found in ~/Documents"
             echo "Copying app.json..."
             mkdir "$electron_cache_path"
-            mv "$app_json_path" "$electron_cache_path"
+            cp "$app_json_path" "$electron_cache_path"
         fi
     fi
 fi
