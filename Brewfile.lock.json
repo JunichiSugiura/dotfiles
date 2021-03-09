@@ -11,7 +11,7 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "homebrew/cask": {
-        "revision": "660f1018d4e7ae9eb14efffbec938998eae26deb"
+        "revision": "b763979ebd71b17de16717aa6e5aba29bdef6f89"
       },
       "homebrew/cask-fonts": {
         "revision": "de82e5c295491dd0abc0275f04cc2dc1504b8009"
@@ -21,6 +21,9 @@
       },
       "wix/brew": {
         "revision": "55b23679c79ce928006974ccc1706a7819746627"
+      },
+      "homebrew/services": {
+        "revision": "31bb79235694bdd39143843fae37bdfb297cc5cd"
       }
     },
     "brew": {
@@ -784,7 +787,7 @@
         }
       },
       "postman": {
-        "version": "8.0.6",
+        "version": "8.0.7",
         "options": {
           "full_name": "postman",
           "args": {
@@ -882,7 +885,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.4",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "6de8c1455224f0c7949aa103a6cf5721a7dcdde5",
+        "Homebrew/homebrew-core": "3cde08c142d6f0005fb0f4fcd953e65f86eca593",
         "CLT": "11.0.33.17",
         "Xcode": "12.4",
         "macOS": "10.15.7"
