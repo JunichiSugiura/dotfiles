@@ -5,10 +5,14 @@ set -e
 GIT_CLONE_PATH=~/projects/github.com/JunichiSugiura
 STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
 
+unlink_packages=
 for i in "$@"; do
     case "$i" in
         -s|--skip-apps)
             skip_apps=1
+            shift ;;
+        -u=*|--unlink=*)
+            unlink_packages="${i#*=}"
             shift ;;
         *) ;;
     esac
@@ -35,6 +39,12 @@ ensure_dir() {
         mkdir -p "$path"
     fi
 }
+
+if [ -n "$unlink_packages" ]; then
+    log 'Unlinking dotfiles...'
+    stow -vD -d "$STOW_PACKAGES_PATH" -t ~ "$unlink_packages"
+    exit
+fi
  
 if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
     log 'Change default shell to zsh'
