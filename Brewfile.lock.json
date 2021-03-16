@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "ethereum/ethereum": {
-        "revision": "becf5cf3dd9fb166ba7e1d17f70b766c7848cd6b"
+        "revision": "34ad67b47f01027263e4cc8bffac927574552a97"
       },
       "extrawurst/tap": {
         "revision": "7274e63c0f2ee6685fc28c8f61d87594a2086d55"
@@ -11,10 +11,10 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "homebrew/cask": {
-        "revision": "b763979ebd71b17de16717aa6e5aba29bdef6f89"
+        "revision": "ee88ff9f7924c100f207f3d373a42fa63c4a6a70"
       },
       "homebrew/cask-fonts": {
-        "revision": "de82e5c295491dd0abc0275f04cc2dc1504b8009"
+        "revision": "2fd99c79288967e35a828d1d23f940456be31793"
       },
       "koekeishiya/formulae": {
         "revision": "399a882864581dbb9f003ee5ce1d00b2f438695d"
@@ -175,7 +175,7 @@
         }
       },
       "ethereum": {
-        "version": "1.10.0",
+        "version": "1.10.1",
         "bottle": {
           "rebuild": 0,
           "cellar": ":any_skip_relocation",
@@ -183,20 +183,20 @@
           "root_url": "https://homebrew.bintray.com/bottles",
           "files": {
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/ethereum-1.10.0.arm64_big_sur.bottle.tar.gz",
-              "sha256": "9210769c0db416007d4c527988ec141b6f8e94df104ee9f5a27c0200e22cc7cf"
+              "url": "https://homebrew.bintray.com/bottles/ethereum-1.10.1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "f57ac503a784028d5252d08c34f770bb42e438a7a9ab5dd465ccd6ee9a38c86e"
             },
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/ethereum-1.10.0.big_sur.bottle.tar.gz",
-              "sha256": "3b6e9af32e3633328aa807a25be3c7a065dd4469d85d8f5ac8221c2278689a23"
+              "url": "https://homebrew.bintray.com/bottles/ethereum-1.10.1.big_sur.bottle.tar.gz",
+              "sha256": "acab9d99b760645bda2bc942afc1d854f82208689e7d85c0af49b51112318bd4"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/ethereum-1.10.0.catalina.bottle.tar.gz",
-              "sha256": "838dc89173fed12283334907e07357c0b647a94ff7cdeebdb6dcccf3f2a7589d"
+              "url": "https://homebrew.bintray.com/bottles/ethereum-1.10.1.catalina.bottle.tar.gz",
+              "sha256": "bfd3fd35787a554da49bad238e9d2477eb33733593c0dcab1a0f7b0d4b73f34d"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/ethereum-1.10.0.mojave.bottle.tar.gz",
-              "sha256": "f7c5d947f01046be88a2e93311a5fa09749e3859d42a7cf04eb271064027002e"
+              "url": "https://homebrew.bintray.com/bottles/ethereum-1.10.1.mojave.bottle.tar.gz",
+              "sha256": "4d0d76de9f326cbe149f2a7286f831c376c24c860ceb482ff24abdb69fdc50b0"
             }
           }
         }
@@ -256,7 +256,7 @@
         }
       },
       "git": {
-        "version": "2.30.1",
+        "version": "2.31.0",
         "bottle": {
           "rebuild": 0,
           "cellar": "/usr/local/Cellar",
@@ -264,20 +264,20 @@
           "root_url": "https://homebrew.bintray.com/bottles",
           "files": {
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/git-2.30.1.arm64_big_sur.bottle.tar.gz",
-              "sha256": "53c147ae99043706072a5ada0ecf764a8f386fb4f3afa7aa20546cc33a349d84"
+              "url": "https://homebrew.bintray.com/bottles/git-2.31.0.arm64_big_sur.bottle.tar.gz",
+              "sha256": "6d9c5ec4655d1f44ee8f415f4cab796379b18c1dbf1ec2ef03e1ff9945e0b20a"
             },
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/git-2.30.1.big_sur.bottle.tar.gz",
-              "sha256": "c0be5c5895bd3a85bd83953fd9f6fec3864d8ea419b4678b43afaac7217b9853"
+              "url": "https://homebrew.bintray.com/bottles/git-2.31.0.big_sur.bottle.tar.gz",
+              "sha256": "074d8a4e3355018281e0ffd3eaff484d4b26bd39e0771f740eede3042872b46e"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/git-2.30.1.catalina.bottle.tar.gz",
-              "sha256": "0dd5f43dc263da3d87a83216392fedd96774bd0c9f89e2dc717c549b1803e8d6"
+              "url": "https://homebrew.bintray.com/bottles/git-2.31.0.catalina.bottle.tar.gz",
+              "sha256": "4070268c3d4b22a48a35b40c6d55c5d31bc29a41f19794189b7f4edf147dd9f2"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/git-2.30.1.mojave.bottle.tar.gz",
-              "sha256": "c84740ee72f1909fe019bba32ccf265b393df5c2fbd5d31886cca5904928f1b9"
+              "url": "https://homebrew.bintray.com/bottles/git-2.31.0.mojave.bottle.tar.gz",
+              "sha256": "a1aab277df069962a738aa5ff354043d84bdcef3472e65d9e9e59b932b06b19f"
             }
           }
         }
@@ -403,7 +403,7 @@
         }
       },
       "mas": {
-        "version": "1.8.0",
+        "version": "1.8.1",
         "bottle": {
           "rebuild": 0,
           "cellar": ":any",
@@ -411,16 +411,16 @@
           "root_url": "https://homebrew.bintray.com/bottles",
           "files": {
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/mas-1.8.0.arm64_big_sur.bottle.tar.gz",
-              "sha256": "ef2ed904d1283722af006811471484cb1c9c73b255a766b5c0c65ecd1654c8d8"
+              "url": "https://homebrew.bintray.com/bottles/mas-1.8.1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "f5ef4f44057f43ecc14f970687d832bd152bc6142c0ad848977f0a6527aa934f"
             },
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/mas-1.8.0.big_sur.bottle.tar.gz",
-              "sha256": "dc98d69cfa94467e046b443c088a6097fe0ce0d2935e37046815fa3a984a0ca4"
+              "url": "https://homebrew.bintray.com/bottles/mas-1.8.1.big_sur.bottle.tar.gz",
+              "sha256": "d92cfc734e730fde87b29c6bf4a50ce63a78b9e505f464dc557eee128aa06d05"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/mas-1.8.0.catalina.bottle.tar.gz",
-              "sha256": "2e7ffedf674543f98c2b95868b6a23db208cb2e6a3ec1ddbb3553ddab0cf9a68"
+              "url": "https://homebrew.bintray.com/bottles/mas-1.8.1.catalina.bottle.tar.gz",
+              "sha256": "163eb9cfdfed3d8fbda133b4079d104ad687f1ddb71d70d5661d02b22f562e76"
             }
           }
         }
@@ -688,7 +688,7 @@
         }
       },
       "brave-browser": {
-        "version": "89.1.21.74,121.74",
+        "version": "89.1.21.76,121.76",
         "options": {
           "full_name": "brave-browser",
           "args": {
@@ -706,7 +706,7 @@
         }
       },
       "figma": {
-        "version": "95.7.0",
+        "version": "95.8.0",
         "options": {
           "full_name": "figma",
           "args": {
@@ -733,7 +733,7 @@
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.82,4389.82",
+        "version": "89.0.4389.90,4389.90",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -769,7 +769,7 @@
         }
       },
       "minecraft": {
-        "version": "883,1",
+        "version": "933,1",
         "options": {
           "full_name": "minecraft",
           "args": {
@@ -841,7 +841,7 @@
         }
       },
       "visual-studio-code": {
-        "version": "1.54.1",
+        "version": "1.54.3",
         "options": {
           "full_name": "visual-studio-code",
           "args": {
@@ -859,7 +859,7 @@
         }
       },
       "notion": {
-        "version": "2.0.15",
+        "version": "2.0.16",
         "options": {
           "full_name": "notion",
           "args": {
@@ -883,9 +883,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "3.0.4",
+        "HOMEBREW_VERSION": "3.0.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "3cde08c142d6f0005fb0f4fcd953e65f86eca593",
+        "Homebrew/homebrew-core": "f41216305863c06c3f147f2a3d6d8896b84216af",
         "CLT": "11.0.33.17",
         "Xcode": "12.4",
         "macOS": "10.15.7"
