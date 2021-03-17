@@ -13,6 +13,7 @@ alias pr="gh pr view --web"
 alias prysm="~/prysm/prysm.sh"
 alias lldlib="open ~/Library/Application\ Support/Electron"
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
+alias vi="nvim"
 
 eval "$(starship init zsh)"
 

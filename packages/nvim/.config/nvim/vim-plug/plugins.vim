@@ -1,0 +1,12 @@
+call plug#begin('~/.local/share/nvim/autoload/plugged')
+
+    Plug 'cespare/vim-toml'
+    Plug 'dense-analysis/ale'
+    Plug 'rust-lang/rust.vim'
+    Plug 'preservim/nerdtree'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'frazrepo/vim-rainbow'
+    Plug 'HerringtonDarkholme/yats.vim'
+
+call plug#end()

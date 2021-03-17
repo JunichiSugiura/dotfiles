@@ -153,3 +153,9 @@ if ! is_file ~/prysm/prysm.sh; then
         chmod +x prysm.sh
     )
 fi
+
+plug_path=~/.local/share/nvim/site/autoload/plug.vim
+if ! is_file "$plug_path" ; then
+    log 'Setup vim-plug}"'
+    sh -c "curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+fi
