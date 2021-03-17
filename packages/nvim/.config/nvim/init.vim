@@ -33,6 +33,7 @@ autocmd VimEnter * wincmd p
 let NERDTreeShowHidden=1
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
+let g:NERDTreeQuitOnOpen = 1
 
 let g:rainbow_active = 1
 
