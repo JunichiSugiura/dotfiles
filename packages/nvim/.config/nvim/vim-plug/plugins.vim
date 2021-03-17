@@ -8,5 +8,6 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'terryma/vim-multiple-cursors'
     Plug 'frazrepo/vim-rainbow'
     Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'tpope/vim-commentary'
 
 call plug#end()
