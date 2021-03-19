@@ -1,7 +1,6 @@
 call plug#begin('~/.local/share/nvim/autoload/plugged')
 
     Plug 'cespare/vim-toml'
-    Plug 'dense-analysis/ale'
     Plug 'rust-lang/rust.vim'
     Plug 'preservim/nerdtree'
     Plug 'ctrlpvim/ctrlp.vim'
@@ -9,5 +8,10 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'frazrepo/vim-rainbow'
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'tpope/vim-commentary'
+    Plug 'itchyny/lightline.vim'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
 
 call plug#end()
+

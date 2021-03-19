@@ -2,29 +2,20 @@ source ~/.config/nvim/vim-plug/plugins.vim
 
 syntax enable
 filetype plugin indent on
+colorscheme cyberpunk-neon
 set number relativenumber
 set expandtab
 set smarttab
 set tabstop=4
 set shiftwidth=4
 set wrap
-
 set nobackup
 set noswapfile
 set noundofile
 
-" ALE
-set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
-let g:ale_sign_column_always = 1
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '🟡'
-let g:ale_linters = {
-\    'javascript': ['flow-language-server' ]
-\}
-let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
+" colors
+" transparent background
+hi Normal guibg=NONE ctermbg=NONE
 
 " NERDTree
 inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -39,83 +30,33 @@ let g:rainbow_active = 1
 
 let g:ctrlp_show_hidden = 1
 
-" Highline-ish
-set laststatus=2
-set statusline=
-set statusline+=%2*
-set statusline+=%{StatuslineMode()}
-set statusline+=%1*
-set statusline+=\ 
-set statusline+=<
-set statusline+=<
-set statusline+=\ 
-set statusline+=%f
-set statusline+=\ 
-set statusline+=>
-set statusline+=>
-set statusline+=%=
-set statusline+=%m
-set statusline+=%h
-set statusline+=%r
-set statusline+=\ 
-set statusline+=%3*
-set statusline+=%{b:gitbranch}
-set statusline+=%1*
-set statusline+=\ 
-set statusline+=%4*
-set statusline+=%F
-set statusline+=:
-set statusline+=:
-set statusline+=%5*
-set statusline+=%l
-set statusline+=/
-set statusline+=%L
-set statusline+=%1*
-set statusline+=|
-set statusline+=%y
-hi User2 ctermbg=lightgreen ctermfg=black guibg=lightgreen guifg=black
-hi User1 ctermbg=black ctermfg=white guibg=black guifg=white
-hi User3 ctermbg=black ctermfg=lightblue guibg=black guifg=lightblue
-hi User4 ctermbg=black ctermfg=lightgreen guibg=black guifg=lightgreen
-hi User5 ctermbg=black ctermfg=magenta guibg=black guifg=magenta
+" Lightline
+set noshowmode
+let g:lightline = {
+    \ 'colorscheme': 'Tomorrow_Night_Blue',
+    \ 'component_function': {
+    \   'filename': 'FilenameForLightline'
+    \ }
+    \ }
 
-function! StatuslineMode()
-  let l:mode=mode()
-  if l:mode==#"n"
-    return "NORMAL"
-  elseif l:mode==?"v"
-    return "VISUAL"
-  elseif l:mode==#"i"
-    return "INSERT"
-  elseif l:mode==#"R"
-    return "REPLACE"
-  elseif l:mode==?"s"
-    return "SELECT"
-  elseif l:mode==#"t"
-    return "TERMINAL"
-  elseif l:mode==#"c"
-    return "COMMAND"
-  elseif l:mode==#"!"
-    return "SHELL"
-  endif
+function! FilenameForLightline()
+    return expand('%')
 endfunction
 
-function! StatuslineGitBranch()
-  let b:gitbranch=""
-  if &modifiable
-    try
-      let l:dir=expand('%:p:h')
-      let l:gitrevparse = system("git -C ".l:dir." rev-parse --abbrev-ref HEAD")
-      if !v:shell_error
-        let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
-      endif
-    catch
-    endtry
-  endif
-endfunction
+" completion
+set completeopt=menuone,noinsert,noselect
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
-augroup GetGitBranch
-  autocmd!
-  autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
-augroup END
+" LSP
+lua require'lspconfig'.rust_analyzer.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.flow.setup{on_attach=require'completion'.on_attach}
 
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
