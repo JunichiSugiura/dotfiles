@@ -5,9 +5,10 @@ filetype plugin indent on
 set number relativenumber
 set ts=4 sts=4 sw=4 expandtab
 set wrap
-set nobackup
-set noswapfile
-set noundofile
+set nobackup noswapfile noundofile
+
+let g:rainbow_active = 1
+let g:ctrlp_show_hidden = 1
 
 " Colors
 colorscheme material
@@ -31,10 +32,6 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 let g:NERDTreeQuitOnOpen = 1
 
-let g:rainbow_active = 1
-
-let g:ctrlp_show_hidden = 1
-
 function! FilenameForLightline()
     return expand('%')
 endfunction
@@ -48,6 +45,7 @@ lua require'lspconfig'.rust_analyzer.setup{on_attach=require'completion'.on_atta
 lua require'lspconfig'.flow.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
 
+" Key Bindings
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
@@ -57,6 +55,11 @@ nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> <c-p> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <c-n> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <c-l> :tabprevious<CR>
+nnoremap <c-h> :tabnext<CR>
+let g:ctrlp_map = '<C-o>'
 
 " ALE
 let g:ale_fix_on_save = 1
