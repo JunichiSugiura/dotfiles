@@ -4,10 +4,7 @@ syntax enable
 filetype plugin indent on
 colorscheme palenight
 set number relativenumber
-set expandtab
-set smarttab
-set tabstop=4
-set shiftwidth=4
+set ts=4 sts=4 sw=4 expandtab
 set wrap
 set nobackup
 set noswapfile
@@ -50,6 +47,7 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 " LSP
 lua require'lspconfig'.rust_analyzer.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.flow.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
 
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
