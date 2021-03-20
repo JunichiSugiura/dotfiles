@@ -14,6 +14,8 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'nvim-lua/completion-nvim'
     Plug 'dense-analysis/ale'
     Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'mxw/vim-jsx'
+    Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
