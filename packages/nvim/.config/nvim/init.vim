@@ -2,7 +2,7 @@ source ~/.config/nvim/vim-plug/plugins.vim
 
 syntax enable
 filetype plugin indent on
-colorscheme cyberpunk-neon
+colorscheme palenight
 set number relativenumber
 set expandtab
 set smarttab
@@ -33,7 +33,7 @@ let g:ctrlp_show_hidden = 1
 " Lightline
 set noshowmode
 let g:lightline = {
-    \ 'colorscheme': 'Tomorrow_Night_Blue',
+    \ 'colorscheme': 'palenight',
     \ 'component_function': {
     \   'filename': 'FilenameForLightline'
     \ }
@@ -60,3 +60,6 @@ nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+
+" ALE
+let g:ale_fix_on_save = 1

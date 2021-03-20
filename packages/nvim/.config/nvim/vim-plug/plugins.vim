@@ -12,6 +12,8 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
+    Plug 'dense-analysis/ale'
+    Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
