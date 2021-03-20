@@ -56,9 +56,12 @@ nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <F8> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <c-l> :tabprevious<CR>
-nnoremap <c-h> :tabnext<CR>
+nnoremap <c-l> :tabnext<CR>
+nnoremap <c-h> :tabprevious<CR>
 let g:ctrlp_map = '<C-o>'
 
 " ALE
+let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'
