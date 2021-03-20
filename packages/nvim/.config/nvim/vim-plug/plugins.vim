@@ -1,21 +1,25 @@
 call plug#begin('~/.local/share/nvim/autoload/plugged')
 
     Plug 'cespare/vim-toml'
-    Plug 'rust-lang/rust.vim'
-    Plug 'preservim/nerdtree'
     Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'terryma/vim-multiple-cursors'
+    Plug 'dense-analysis/ale'
     Plug 'frazrepo/vim-rainbow'
     Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'tpope/vim-commentary'
     Plug 'itchyny/lightline.vim'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'mxw/vim-jsx'
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
-    Plug 'dense-analysis/ale'
-    Plug 'drewtempelmeyer/palenight.vim'
-    Plug 'mxw/vim-jsx'
     Plug 'pangloss/vim-javascript'
+    Plug 'preservim/nerdtree'
+    Plug 'rust-lang/rust.vim'
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'tpope/vim-commentary'
+
+    " Color Scheme
+    Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'haishanh/night-owl.vim'
+    Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 call plug#end()
 

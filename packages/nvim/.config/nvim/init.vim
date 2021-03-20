@@ -2,7 +2,6 @@ source ~/.config/nvim/vim-plug/plugins.vim
 
 syntax enable
 filetype plugin indent on
-colorscheme palenight
 set number relativenumber
 set ts=4 sts=4 sw=4 expandtab
 set wrap
@@ -10,9 +9,18 @@ set nobackup
 set noswapfile
 set noundofile
 
-" colors
-" transparent background
-hi Normal guibg=NONE ctermbg=NONE
+" Colors
+colorscheme material
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'palenight'
+set noshowmode
+let g:lightline = {
+    \ 'colorscheme': 'material_vim',
+    \ 'component_function': {
+    \   'filename': 'FilenameForLightline'
+    \ }
+    \ }
+
 
 " NERDTree
 inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -27,20 +35,11 @@ let g:rainbow_active = 1
 
 let g:ctrlp_show_hidden = 1
 
-" Lightline
-set noshowmode
-let g:lightline = {
-    \ 'colorscheme': 'palenight',
-    \ 'component_function': {
-    \   'filename': 'FilenameForLightline'
-    \ }
-    \ }
-
 function! FilenameForLightline()
     return expand('%')
 endfunction
 
-" completion
+" Completion
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
