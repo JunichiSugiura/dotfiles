@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "ledger-live": "^18.0.0",
-    "yalc": "^1.0.0-pre.35"
+    "yalc": "^1.0.0-pre.35",
+    "yaml-language-server": "^0.16.0"
   }
 }

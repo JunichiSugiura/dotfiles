@@ -5,6 +5,9 @@ shell:
   args:
     - --login
 
+env:
+  TERM: xterm-256color
+
 # colors:
 #   # Default colors
 #   primary:
