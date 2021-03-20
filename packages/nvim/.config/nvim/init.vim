@@ -55,8 +55,7 @@ nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <c-p> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <c-n> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <F8> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <c-l> :tabprevious<CR>
 nnoremap <c-h> :tabnext<CR>
 let g:ctrlp_map = '<C-o>'
