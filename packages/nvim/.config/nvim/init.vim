@@ -15,7 +15,7 @@ let g:material_terminal_italics = 1
 let g:material_theme_style = 'palenight'
 set noshowmode
 let g:lightline = {
-    \ 'colorscheme': 'material_vim',
+    \ 'colorscheme': 'material',
     \ 'component_function': {
     \   'filename': 'FilenameForLightline'
     \ }
@@ -62,6 +62,6 @@ let g:fzf_layout = { 'down': '40%' }
 " LF
 let g:lf_map_keys = 0
 let g:lf_replace_netrw = 1
-map <leader>f :LfWorkingDirectoryNewTab<CR>
-" TODO: open tab not in split panel
-" TODO: setup ~/.config/lf/lfrc
+
+" TODO: why it opens in split panel?
+map <c-t> :LfWorkingDirectoryExistingOrNewTab<CR>
