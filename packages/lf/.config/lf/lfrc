@@ -1,4 +1,4 @@
 set preview true
-set hidden true
+set hidden false
 set icons true
 set ignorecase true
