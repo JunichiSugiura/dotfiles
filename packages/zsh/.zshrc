@@ -29,3 +29,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+export FZF_DEFAULT_COMMAND="rg --files --hidden -lg '!.git/*'"
+export FZF_DEFAULT_OPTS="-m --height 100% --border --preview 'cat {}'"

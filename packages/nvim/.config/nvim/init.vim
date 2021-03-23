@@ -8,7 +8,6 @@ set wrap
 set nobackup noswapfile noundofile
 
 let g:rainbow_active = 1
-let g:ctrlp_show_hidden = 1
 
 " Colors
 colorscheme material
@@ -22,20 +21,6 @@ let g:lightline = {
     \ }
     \ }
 
-
-" NERDTree
-inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-nnoremap <C-t> :NERDTreeToggle<CR>
-autocmd VimEnter * wincmd p
-let NERDTreeShowHidden=1
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
-let g:NERDTreeQuitOnOpen = 1
-
-function! FilenameForLightline()
-    return expand('%')
-endfunction
-
 " Completion
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
@@ -46,6 +31,7 @@ lua require'lspconfig'.flow.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
 
 " Key Bindings
+let mapleader = ";"
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
@@ -55,13 +41,27 @@ nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <F8> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>n <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>p <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <c-l> :tabnext<CR>
 nnoremap <c-h> :tabprevious<CR>
-let g:ctrlp_map = '<C-o>'
+nnoremap <c-p> :GFiles<CR>
+nnoremap <c-f> :Rg<CR>
+nnoremap <c-g> :Commits<CR>
 
 " ALE
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
+
+" FZF
+let g:fzf_buffers_jump = 1
+let g:fzf_layout = { 'down': '40%' }
+
+" LF
+let g:lf_map_keys = 0
+let g:lf_replace_netrw = 1
+map <leader>f :LfWorkingDirectoryNewTab<CR>
+" TODO: open tab not in split panel
+" TODO: setup ~/.config/lf/lfrc
