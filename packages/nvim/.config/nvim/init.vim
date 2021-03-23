@@ -65,3 +65,12 @@ let g:lf_replace_netrw = 1
 
 " TODO: why it opens in split panel?
 map <c-t> :LfWorkingDirectoryExistingOrNewTab<CR>
+
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
