@@ -14,6 +14,9 @@ colorscheme material
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'palenight'
 set noshowmode
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " Lightline
 let g:lightline = {
