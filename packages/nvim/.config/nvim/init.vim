@@ -12,15 +12,21 @@ let g:rainbow_active = 1
 " Colors
 colorscheme material
 let g:material_terminal_italics = 1
-let g:material_theme_style = 'palenight'
+let g:material_theme_style = 'default'
 set noshowmode
+
 if (has("termguicolors"))
   set termguicolors
 endif
 
+if !has('nvim')
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
+endif
+
 " Lightline
 let g:lightline = {
-    \ 'colorscheme': 'material',
+    \ 'colorscheme': 'material_vim',
     \ 'component_function': {
     \   'filename': 'FilenameForLightline'
     \ }
