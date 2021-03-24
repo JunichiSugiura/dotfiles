@@ -14,12 +14,18 @@ colorscheme material
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'palenight'
 set noshowmode
+
+" Lightline
 let g:lightline = {
     \ 'colorscheme': 'material',
     \ 'component_function': {
     \   'filename': 'FilenameForLightline'
     \ }
     \ }
+
+function! FilenameForLightline()
+    return expand('%')
+endfunction
 
 " Completion
 set completeopt=menuone,noinsert,noselect
