@@ -32,6 +32,3 @@ export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 export FZF_DEFAULT_COMMAND="rg --files --hidden -l -g '!.git/*' -g '!node_modules/*'"
 export FZF_DEFAULT_OPTS="-m --height 100% --border --preview 'cat {}'"
-
-export EDITOR=nvim
-export VISUAL="$EDITOR"
