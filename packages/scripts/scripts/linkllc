@@ -61,4 +61,7 @@ terminal-notifier \
     -title "Starting app..." \
     -message "Get back to work. No more Twitter." \
     -contentImage "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/bellhop-bell_1f6ce-fe0f.png"
-yarn start
+
+if [ $dir_name != "cli" ]; then
+    yarn start
+fi
