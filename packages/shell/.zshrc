@@ -16,10 +16,10 @@ alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulato
 alias vi="nvim"
 alias fd="fd -H"
 
+ . /usr/local/opt/asdf/asdf.sh
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-
-. /usr/local/opt/asdf/asdf.sh
 
 export GPG_TTY=$(tty)
 
