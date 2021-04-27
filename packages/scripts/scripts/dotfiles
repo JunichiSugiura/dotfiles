@@ -131,6 +131,12 @@ for plugin in $(asdf plugin list); do
     fi
 done
 
+system_node_path=/usr/local/bin/node
+if ! is_file "$system_node_path"; then
+    log "Create symlink to $system_node_path so that XCode can reference"
+    ln -s ~/.asdf/shims/node "$system_node_path"
+fi
+
 if ! is_dir ~/.config/yarn/global/node_modules; then
     log 'Setup Yarn global'
     yarn global add
@@ -155,7 +161,7 @@ if ! is_file ~/prysm/prysm.sh; then
 fi
 
 plug_path=~/.local/share/nvim/site/autoload/plug.vim
-if ! is_file "$plug_path" ; then
+if ! is_file "$plug_path"; then
     log 'Setup vim-plug"'
     sh -c "curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 fi
