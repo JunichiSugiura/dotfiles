@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "ledger-live": "^18.8.1",
+    "typescript": "^4.2.4",
+    "typescript-language-server": "^0.5.1",
     "yalc": "^1.0.0-pre.35",
     "yaml-language-server": "^0.16.0"
   }

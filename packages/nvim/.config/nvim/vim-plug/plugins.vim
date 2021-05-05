@@ -19,11 +19,12 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
 
     " Language Specific
-    Plug 'cespare/vim-toml'
+    Plug 'yuezk/vim-js'
+    Plug 'maxmellon/vim-jsx-pretty'
     Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'mxw/vim-jsx'
-    Plug 'pangloss/vim-javascript'
+
     Plug 'rust-lang/rust.vim'
+    Plug 'cespare/vim-toml'
 
     " Color Scheme
     Plug 'drewtempelmeyer/palenight.vim'

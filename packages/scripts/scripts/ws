@@ -13,6 +13,7 @@ ensure_session() {
 }
 
 ensure_session Personal JunichiSugiura/dotfiles
+ensure_session ledgerjs JunichiSugiura/ledgerjs
 ensure_session LLC JunichiSugiura/ledger-live-common
 ensure_session LLD JunichiSugiura/ledger-live-desktop
 ensure_session LLM JunichiSugiura/ledger-live-mobile
