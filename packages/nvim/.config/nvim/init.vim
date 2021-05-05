@@ -41,10 +41,15 @@ set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
 " LSP
-lua require'lspconfig'.rust_analyzer.setup{on_attach=require'completion'.on_attach}
-lua require'lspconfig'.flow.setup{on_attach=require'completion'.on_attach}
-lua require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
-lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+lua << EOF
+    require'lspconfig'.rust_analyzer.setup{on_attach=require'completion'.on_attach}
+    require'lspconfig'.flow.setup{on_attach=require'completion'.on_attach}
+    require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
+    require'lspconfig'.tsserver.setup{
+        on_attach=require'completion'.on_attach;
+        filetypes = {"typescript", "typescriptreact", "typescript.tsx"};
+    }
+EOF
 
 " Key Bindings
 let mapleader = ";"
