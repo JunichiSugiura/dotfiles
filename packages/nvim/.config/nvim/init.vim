@@ -70,6 +70,12 @@ nnoremap <c-p> :GFiles<CR>
 nnoremap <c-f> :Rg<CR>
 nnoremap <c-g> :Commits<CR>
 
+" netrw
+let g:netrw_banner       = 0
+let g:netrw_keepdir      = 0
+let g:netrw_liststyle    = 3 " or 3
+let g:netrw_sort_options = 'i'
+
 " ALE
 let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
@@ -83,7 +89,6 @@ let g:fzf_layout = { 'down': '40%' }
 
 " LF
 let g:lf_map_keys = 0
-let g:lf_replace_netrw = 1
 
 " TODO: why it opens in split panel?
 map <c-t> :LfWorkingDirectoryExistingOrNewTab<CR>
