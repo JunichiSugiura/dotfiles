@@ -6,10 +6,14 @@ GIT_CLONE_PATH=~/projects/github.com/JunichiSugiura
 STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
 
 unlink_packages=
+verbose=
 for i in "$@"; do
     case "$i" in
         -s|--skip-apps)
             skip_apps=1
+            shift ;;
+        -v|--verbose)
+            verbose=1
             shift ;;
         -u=*|--unlink=*)
             unlink_packages="${i#*=}"
@@ -68,7 +72,7 @@ fi
 
 if [ ! "$skip_apps" ]; then
     log 'Install Apps and CLIs'
-    brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
+    brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile $([ -n "$verbose" ] && echo -v)
 fi
 
 log 'Link dotfiles'
@@ -121,8 +125,7 @@ is_runtime_versions_changed () {
 
 for plugin in $(asdf plugin list); do
     if is_runtime_versions_changed "$plugin"; then
-        if [ "$plugin" = nodejs ]; then
-            log "Import release team keyring for Node.JS"
+        if [ "$plugin" = nodejs ]; then log "Import release team keyring for Node.JS"
             bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
         fi
 
