@@ -71,6 +71,7 @@ nnoremap <c-f> :Rg<CR>
 nnoremap <c-g> :Commits<CR>
 
 " ALE
+let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = 'E'
