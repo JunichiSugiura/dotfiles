@@ -6,6 +6,8 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
+    Plug 'ruanyl/vim-gh-line'
+    Plug 'taohexxx/lightline-buffer'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-commentary'
     Plug 'voldikss/vim-floaterm'
