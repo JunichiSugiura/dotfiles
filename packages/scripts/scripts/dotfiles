@@ -180,3 +180,16 @@ if ! is_file "$limelight_path"; then
     cd ../
     rm -rf limelight
 fi
+
+if ! is_dir ~/.hammerspoon; then
+    mkdir ~/.hammerspoon
+fi
+
+if ! is_dir ~/.hammerspoon/stackline; then
+    git clone https://github.com/AdamWagner/stackline.git ~/.hammerspoon/stackline
+    (
+        cd ~/.hammerspoon
+        echo 'stackline = require "stackline.stackline.stackline"' >> init.lua
+        echo 'stackline:init()' >> init.lua
+    )
+fi
