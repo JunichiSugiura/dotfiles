@@ -15,7 +15,7 @@ alt - space : [ "$(yabai -m query --spaces --space | jq -r '.type')" = bsp ] \
 ###########################################################
 # Open
 alt + shift - return : open -n -a Alacritty
-alt + shift - b : open -n -a 'Brave Browser'
+alt + shift - 0 : open -n -a 'Brave Browser'
 
 # Close
 alt + shift - c : yabai -m window --close
@@ -71,3 +71,9 @@ shift + alt - 0 : yabai -m space --balance
 
 # Toggle mission control
 shift + alt - m : yabai -m space --toggle mission-control
+
+
+###########################################################
+# Stackline
+###########################################################
+# shift + alt - b : hs -c 'stackline.config:toggle("appearance.showIcons")'
