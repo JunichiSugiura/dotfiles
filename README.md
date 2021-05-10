@@ -3,10 +3,7 @@
 Dotfiles managed with
 - [GNU stow](https://www.gnu.org/software/stow/)
 - [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
-- [VSCode Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync)
 - [asdf](https://asdf-vm.com/#/)
-
-![CLI Screenshot](./static/screenshot-cli.png)
 
 ## Installation
 
@@ -14,15 +11,13 @@ Dotfiles managed with
 2. Run install
 
 ```sh
-curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/packages/scripts/scripts/dotfiles | sh
+curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/packages/cli/scripts/dotfiles | sh
 ```
 
 ## Installed Apps
 
-⚠️ Screenshot may not be up to date. Check [Brewfile](./Brewfile) for the latest bundle.
-
-![Apps Screenshot](./static/screenshot-apps.png)
+Check [Brewfile](./Brewfile) for the latest bundle.
 
 ## Tutorial
 
-If you like to learn how to create dotfiles, check out my tutorial [here](https://github.com/JunichiSugiura/tutorials/tree/master/dotfiles).
+If you like to learn how to create dotfiles, check out my [tutorial ](https://github.com/JunichiSugiura/tutorials/tree/master/dotfiles).

@@ -1,4 +1,0 @@
-#!/bin/sh 
-
-echo "🔄 Syncing zsh config..."
-source ~/.zshrc
