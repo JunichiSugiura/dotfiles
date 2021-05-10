@@ -1,26 +1,73 @@
-# grid forat: <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
+###########################################################
+# Layout
+###########################################################
+alt - t : yabai -m space --layout bsp
+alt - m : yabai -m space --layout stack
+alt - f : yabai -m space --layout float
 
-shift + alt - space : ~/scripts/resize
-shift + alt - h : ~/scripts/resize -g=1:3:0:0:2:1
-shift + alt - j : ~/scripts/resize -g=2:1:0:1:1:1
-shift + alt - k : ~/scripts/resize -g=2:1:0:0:1:1
-shift + alt - l : ~/scripts/resize -g=1:3:2:0:2:1
+# Toggle between bsp and stack
+alt - space : [ "$(yabai -m query --spaces --space | jq -r '.type')" = bsp ] \
+    && yabai -m space --layout stack \
+    || yabai -m space --layout bsp
 
-shift + alt - t : ~/scripts/clock
+###########################################################
+# Window
+###########################################################
+# Open
+alt + shift - return : open -n -a Alacritty
+alt + shift - b : open -n -a 'Brave Browser'
 
-shift + alt + ctrl - space : ~/scripts/resize -a
-shift + alt + ctrl - h : ~/scripts/resize -g=1:3:0:0:2:1 -a
+# Close
+alt + shift - c : yabai -m window --close
 
-shift + alt - m : ~/scripts/move-app
-shift + alt + ctrl - m : ~/scripts/move-app -a
+# Navigate
+alt - k : [ "$(yabai -m query --spaces --space | jq -r '.type')" = stack ] \
+    && yabai -m window --focus stack.prev \
+    || yabai -m window --focus prev
+alt - j : [ "$(yabai -m query --spaces --space | jq -r '.type')" = stack ] \
+    && yabai -m window --focus stack.next \
+    || yabai -m window --focus next
+alt - tab : [ "$(yabai -m query --spaces --space | jq -r '.type')" = stack ] \
+    && yabai -m window --focus stack.recent \
+    || yabai -m window --focus recent
 
-ctrl - 1 : ~/scripts/toggle-app Alacritty 'Visual Studio Code'
-ctrl - 2 : open -a 'Brave Browser'
-ctrl - 3 : open -a Slack
-ctrl - 4 : open -a Notion
-ctrl - 5 : open -a Electron
-# ctrl - 6 : open -a
-# ctrl - 7 : open -a
-ctrl - 8 : ~/scripts/toggle-app Postlab 'Final Cut Pro'
-ctrl - 9 : open -a Finder
-# ctrl - 0 : open -a
+# Mirror
+alt - s : yabai -m space --mirror y-axis
+
+# Rotate
+alt - r : yabai -m space --rotate 270
+
+# Full screen
+alt - return : yabai -m window --toggle zoom-fullscreen
+
+# Resize
+alt - h : yabai -m window --resize left:-40:0 \
+    || yabai -m window --resize right:-40:0
+# alt - j : yabai -m window --resize bottom:0:40 \
+#     || yabai -m window --resize top:0:40
+# alt - k : yabai -m window --resize top:0:-40 \
+#     || yabai -m window --resize bottom:0:-40
+alt - l : yabai -m window --resize right:40:0 \
+    || yabai -m window --resize left:40:0
+
+###########################################################
+# Display
+###########################################################
+# Navigate
+alt - 0x2B : yabai -m display --focus prev
+alt - 0x2F : yabai -m display --focus next
+
+###########################################################
+# Space
+###########################################################
+# Send window
+shift + alt - 0x2B : yabai -m window --display prev \
+    && yabai -m display --focus prev
+shift + alt - 0x2F : yabai -m window --display next \
+    && yabai -m display --focus next
+
+# Reset split balance
+shift + alt - 0 : yabai -m space --balance
+
+# Toggle mission control
+shift + alt - m : yabai -m space --toggle mission-control

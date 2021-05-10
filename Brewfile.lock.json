@@ -14,13 +14,13 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "homebrew/cask": {
-        "revision": "20418d662b2cfd3ec6adb662b709aaac23d59fd8"
+        "revision": "5a92aad2766b036a2be519cddb1a9d4001d2d6a8"
       },
       "homebrew/cask-fonts": {
-        "revision": "a155399dab71d9d1b3242f3f1cdc704c8ec4cae2"
+        "revision": "9109a71902f61425cbedb59dc796b99e26ee50f8"
       },
       "homebrew/services": {
-        "revision": "afa2516060bcf0594f4914d7af53e33a4f4c5af5"
+        "revision": "01ee8115926aaf78739d9149226c9ccf31e57812"
       },
       "jason0x43/neovim-nightly": {
         "revision": "c5a605b018c05d08b90c4b794c088d25736997c3"
@@ -1155,7 +1155,7 @@
         }
       },
       "postman": {
-        "version": "8.3.0",
+        "version": "8.3.1",
         "options": {
           "full_name": "postman",
           "args": {
@@ -1279,7 +1279,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.1.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "5c7771b58dd87b41f68a5936948b165d196906cb",
+        "Homebrew/homebrew-core": "1220c789207176204e85bb597fe56530da4f503c",
         "CLT": "11.0.0.33.17",
         "Xcode": "12.5",
         "macOS": "11.3.1"

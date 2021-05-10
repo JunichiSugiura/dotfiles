@@ -44,6 +44,11 @@ ensure_dir() {
     fi
 }
 
+if [ "$(defaults read com.apple.finder DisableAllAnimations)" == 0 ]; then
+    log 'Disabling Finder animations'
+    defaults write com.apple.finder DisableAllAnimations -bool true
+fi
+
 if [ -n "$unlink_packages" ]; then
     log 'Unlinking dotfiles...'
     stow -vD -d "$STOW_PACKAGES_PATH" -t ~ "$unlink_packages"
@@ -82,9 +87,6 @@ ensure_dir ~/.config/yarn/global
 
 # shellcheck disable=SC2046
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
-
-# enable key-repeating with vim bindings
-defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 
 if ! is_dir ~/.gnupg || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
     log 'Install gpg signing with git'
@@ -167,4 +169,14 @@ plug_path=~/.local/share/nvim/site/autoload/plug.vim
 if ! is_file "$plug_path"; then
     log 'Setup vim-plug"'
     sh -c "curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+fi
+
+limelight_path=/usr/local/bin/limelight
+if ! is_file "$limelight_path"; then
+    git clone https://github.com/koekeishiya/limelight
+    cd limelight
+    make
+    mv ./bin/limelight /usr/local/bin/limelight
+    cd ../
+    rm -rf limelight
 fi
