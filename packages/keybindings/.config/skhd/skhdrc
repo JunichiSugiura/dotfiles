@@ -37,6 +37,10 @@ alt - s : yabai -m space --mirror y-axis
 # Rotate
 alt - r : yabai -m space --rotate 270
 
+# Warp
+shift + alt - k :yabai -m window --warp prev
+shift + alt - j :yabai -m window --warp next
+
 # Full screen
 alt - return : yabai -m window --toggle zoom-fullscreen
 
