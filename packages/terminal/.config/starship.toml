@@ -8,6 +8,7 @@ error_symbol = "🥺 "
 symbol = "🌱 "
 
 [git_status]
+style = "bold white"
 conflicted = " 🏳"
 ahead = " 🏎💨 "
 behind =" 😰 "
