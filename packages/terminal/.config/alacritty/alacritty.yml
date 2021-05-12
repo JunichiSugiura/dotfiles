@@ -1,13 +1,7 @@
-# shell:
-#   program: /bin/zsh
-#   args:
-#     - --login
 shell:
-  program: /usr/local/bin/tmux
+  program: /bin/zsh
   args:
-    - new-session
-    - -D
-
+    - --login
 live_config_reload: true
 
 
