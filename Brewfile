@@ -44,6 +44,7 @@ brew "yabai"
 brew "ytop"
 brew "zoxide"
 brew "zsh"
+brew "zsh-autosuggestions"
 
 cask "alacritty"
 cask "android-file-transfer"

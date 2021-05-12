@@ -14,13 +14,13 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "homebrew/cask": {
-        "revision": "c7b8bac0fe8e8db42b6051835a1694a2fe13592c"
+        "revision": "9a7b0b2d1ba242f285f32319249afddd43ec3588"
       },
       "homebrew/cask-fonts": {
         "revision": "a89727b5cc1fea4c7630c02248a11050cf19e942"
       },
       "homebrew/services": {
-        "revision": "01ee8115926aaf78739d9149226c9ccf31e57812"
+        "revision": "2621687ec19c29e7fa545c652a4e3e5d394a5429"
       },
       "jason0x43/neovim-nightly": {
         "revision": "c5a605b018c05d08b90c4b794c088d25736997c3"
@@ -998,6 +998,20 @@
             }
           }
         }
+      },
+      "zsh-autosuggestions": {
+        "version": "0.6.4",
+        "bottle": {
+          "rebuild": 1,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "all": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/zsh-autosuggestions/blobs/sha256:e204984ca8abc4d6ca97b0b66acfd0136c3bfac10aba59f55b6f3cc3b189934e",
+              "sha256": "e204984ca8abc4d6ca97b0b66acfd0136c3bfac10aba59f55b6f3cc3b189934e"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -1038,7 +1052,7 @@
         }
       },
       "brave-browser": {
-        "version": "90.1.24.82,124.82",
+        "version": "90.1.24.84,124.84",
         "options": {
           "full_name": "brave-browser",
           "args": {
@@ -1083,7 +1097,7 @@
         }
       },
       "google-chrome": {
-        "version": "90.0.4430.93",
+        "version": "90.0.4430.212",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -1173,7 +1187,7 @@
         }
       },
       "signal": {
-        "version": "5.0.0",
+        "version": "5.1.0",
         "options": {
           "full_name": "signal",
           "args": {
@@ -1182,7 +1196,7 @@
         }
       },
       "slack": {
-        "version": "4.16.0",
+        "version": "4.16.2",
         "options": {
           "full_name": "slack",
           "args": {
@@ -1209,7 +1223,7 @@
         }
       },
       "visual-studio-code": {
-        "version": "1.56.0",
+        "version": "1.56.1",
         "options": {
           "full_name": "visual-studio-code",
           "args": {
@@ -1286,9 +1300,9 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.1.6",
+        "HOMEBREW_VERSION": "3.1.7",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "48521ea1006b6dad48c71b896d5f21e23b89981f",
+        "Homebrew/homebrew-core": "2d08a93bba5bec5d08076f731db90a89459910ef",
         "CLT": "11.0.0.33.17",
         "Xcode": "12.5",
         "macOS": "11.3.1"
