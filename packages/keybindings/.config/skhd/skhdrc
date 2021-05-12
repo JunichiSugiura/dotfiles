@@ -14,8 +14,9 @@ alt - space : [ "$(yabai -m query --spaces --space | jq -r '.type')" = bsp ] \
 # Window
 ###########################################################
 # Open
-alt + shift - return : open -n -a Alacritty
-alt + shift - 0 : open -n -a 'Brave Browser'
+alt + shift - return : open -n /Applications/Alacritty.app
+alt + shift - 0 : open -n /Applications/Brave\ Browser.app
+alt + shift - n : open -n /Applications/Notion.app
 
 # Close
 alt + shift - c : yabai -m window --close
@@ -70,12 +71,11 @@ shift + alt - 0x2B : yabai -m window --display prev \
 shift + alt - 0x2F : yabai -m window --display next \
     && yabai -m display --focus next
 
-# Reset split balance
-shift + alt - 0 : yabai -m space --balance
-
 # Toggle mission control
 shift + alt - m : yabai -m space --toggle mission-control
 
+# Reset split balance
+shift + alt - e : yabai -m space --balance
 
 ###########################################################
 # Stackline
