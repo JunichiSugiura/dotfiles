@@ -1,9 +1,9 @@
 shell:
-  program: /bin/zsh
-  args:
-    - --login
+  program: /usr/local/bin/zsh
+
 live_config_reload: true
 
+background_opacity: 0.85
 
 # Cyber Punk Neon
 # Source: https://github.com/Roboron3042/Cyberpunk-Neon
@@ -53,5 +53,3 @@ font:
     family: Roboto Mono
     style: Light Italic
   size: 16
-
-background_opacity: 0.85
