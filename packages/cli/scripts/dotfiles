@@ -44,11 +44,6 @@ ensure_dir() {
     fi
 }
 
-if [ "$(defaults read com.apple.finder DisableAllAnimations)" == 0 ]; then
-    log 'Disabling Finder animations'
-    defaults write com.apple.finder DisableAllAnimations -bool true
-fi
-
 if [ -n "$unlink_packages" ]; then
     log 'Unlinking dotfiles...'
     stow -vD -d "$STOW_PACKAGES_PATH" -t ~ "$unlink_packages"
@@ -87,6 +82,9 @@ ensure_dir ~/.config/yarn/global
 
 # shellcheck disable=SC2046
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
+
+# configure macOS settings
+~/scripts/macos-defaults
 
 if ! is_dir ~/.gnupg || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
     log 'Install gpg signing with git'

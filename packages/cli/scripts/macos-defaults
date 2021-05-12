@@ -1,0 +1,7 @@
+#!/bin/sh 
+
+echo 📌 Configuring macOS default settings
+
+# Finder
+defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder DisableAllAnimations -bool true
