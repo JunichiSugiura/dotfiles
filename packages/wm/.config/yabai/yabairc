@@ -37,6 +37,6 @@ yabai -m signal --add \
     event=window_destroyed \
     action="\
         yabai -m query --windows \
-            | jq 'map(select(.app == \"Brave Browse\")) | length' \
+            | jq 'map(select(.app == \"Brave Browser\")) | length' \
             | xargs -I {} [ {} == 0 ] && killall 'Brave Browser'
     "
