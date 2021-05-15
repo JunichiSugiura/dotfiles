@@ -4,6 +4,7 @@
 yabai -m config window_gap                   6
 yabai -m config window_placement             second_child
 yabai -m config layout                       bsp
+# yabai -m config bottom_padding               100
 
 # set float layout for MBP display
 space_indices_on_mbp_display="$(
@@ -32,11 +33,3 @@ echo "yabai configuration loaded..."
 killall limelight &> /dev/null
 limelight -c ~/.config/limelight/limelightrc &> /dev/null &
 
-yabai -m signal --add \
-    app="^Brave Browser$" \
-    event=window_destroyed \
-    action="\
-        yabai -m query --windows \
-            | jq 'map(select(.app == \"Brave Browser\")) | length' \
-            | xargs -I {} [ {} == 0 ] && killall 'Brave Browser'
-    "
