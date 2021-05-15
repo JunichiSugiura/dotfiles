@@ -1,27 +1,40 @@
 ###########################################################
 # Layout
 ###########################################################
-alt - t : yabai -m space --layout bsp
-alt - m : yabai -m space --layout stack
-alt - f : yabai -m space --layout float
 
+alt - f : yabai -m space --layout float
 # Toggle between bsp and stack
-alt - space : [ "$(yabai -m query --spaces --space | jq -r '.type')" = bsp ] \
+alt + shift - space : [ "$(yabai -m query --spaces --space | jq -r '.type')" = bsp ] \
     && yabai -m space --layout stack \
     || yabai -m space --layout bsp
 
 ###########################################################
 # Window
 ###########################################################
-# Open
-alt + shift - return : open -n /Applications/Alacritty.app
-alt + shift - 0 : open -n /Applications/Brave\ Browser.app
-alt + shift - n : open -n /Applications/Notion.app
 
-# Close
-alt + shift - c : yabai -m window --close
+# insert mode
+alt - i : yabai -m window --insert east
+alt + shift - i : yabai -m window --insert south
 
-# Navigate
+# Alacritty
+alt - return : yabai -m window --insert east \
+    && alacritty --working-directory $HOME/projects/github.com/JunichiSugiura
+alt + shift - return : yabai -m window --insert south \
+    && alacritty --working-directory $HOME/projects/github.com/JunichiSugiura
+
+# Brave Browser
+alt - 0 : yabai -m window --insert east \
+    && open -n /Applications/Brave\ Browser.app
+alt + shift - 0 : yabai -m window --insert south \
+    && open -n /Applications/Brave\ Browser.app
+
+# Notion
+alt + shift - n : open /Applications/Notion.app
+
+# close
+alt - c : yabai -m window --close
+
+# navigate
 alt - k : [ "$(yabai -m query --spaces --space | jq -r '.type')" = stack ] \
     && yabai -m window --focus stack.prev \
     || yabai -m window --focus prev
@@ -32,49 +45,47 @@ alt - tab : [ "$(yabai -m query --spaces --space | jq -r '.type')" = stack ] \
     && yabai -m window --focus stack.recent \
     || yabai -m window --focus recent
 
-# Mirror
-alt - s : yabai -m space --mirror y-axis
+# mirror
+alt - m : yabai -m space --mirror y-axis
 
-# Rotate
+# rotate
 alt - r : yabai -m space --rotate 270
 
-# Warp
-shift + alt - k :yabai -m window --warp prev
-shift + alt - j :yabai -m window --warp next
+# warp
+alt + shift - k : yabai -m window --warp prev
+alt + shift - j : yabai -m window --warp next
 
-# Full screen
-alt - return : yabai -m window --toggle zoom-fullscreen
+# full screen
+alt - space : yabai -m window --toggle zoom-fullscreen
 
-# Resize
-alt - h : yabai -m window --resize left:-40:0 \
+# resize
+alt + shift - 0x21 : yabai -m window --resize left:-40:0 \
     || yabai -m window --resize right:-40:0
-# alt - j : yabai -m window --resize bottom:0:40 \
-#     || yabai -m window --resize top:0:40
-# alt - k : yabai -m window --resize top:0:-40 \
-#     || yabai -m window --resize bottom:0:-40
-alt - l : yabai -m window --resize right:40:0 \
+alt + shift - 0x1E : yabai -m window --resize right:40:0 \
     || yabai -m window --resize left:40:0
 
 ###########################################################
 # Display
 ###########################################################
-# Navigate
+
+# navigate
 alt - 0x2B : yabai -m display --focus prev
 alt - 0x2F : yabai -m display --focus next
 
 ###########################################################
 # Space
 ###########################################################
-# Send window
+
+# send window
 shift + alt - 0x2B : yabai -m window --display prev \
     && yabai -m display --focus prev
 shift + alt - 0x2F : yabai -m window --display next \
     && yabai -m display --focus next
 
-# Toggle mission control
+# toggle mission control
 shift + alt - m : yabai -m space --toggle mission-control
 
-# Reset split balance
+# reset split balance
 shift + alt - e : yabai -m space --balance
 
 ###########################################################

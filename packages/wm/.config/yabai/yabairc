@@ -31,3 +31,13 @@ echo "yabai configuration loaded..."
 
 killall limelight &> /dev/null
 limelight -c ~/.config/limelight/limelightrc &> /dev/null &
+
+yabai -m signal --add \
+    app="^Brave Browser$" \
+    event=window_destroyed \
+    action="\
+        yabai -m query --windows \
+            | jq 'map(select(.app == \"Brave Browse\")) | length' \
+            | xargs -I {} [ {} == 0 ] && killall 'Brave Browser'\
+    "
+
