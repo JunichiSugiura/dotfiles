@@ -16,19 +16,9 @@ alt + shift - space : [ "$(yabai -m query --spaces --space | jq -r '.type')" = b
 alt - i : yabai -m window --insert east
 alt + shift - i : yabai -m window --insert south
 
-# Alacritty
-alt - return : yabai -m window --insert east \
-    && alacritty --working-directory $HOME/projects/github.com/JunichiSugiura
-alt + shift - return : yabai -m window --insert south \
-    && alacritty --working-directory $HOME/projects/github.com/JunichiSugiura
-
-# Brave Browser
-alt - 0 : yabai -m window --insert east \
-    && open -n /Applications/Brave\ Browser.app
-alt + shift - 0 : yabai -m window --insert south \
-    && open -n /Applications/Brave\ Browser.app
-
-# Notion
+# Applications
+alt - return : alacritty --working-directory $HOME/projects/github.com/JunichiSugiura
+alt - 0 : open -n /Applications/Brave\ Browser.app
 alt + shift - n : open /Applications/Notion.app
 
 # close
