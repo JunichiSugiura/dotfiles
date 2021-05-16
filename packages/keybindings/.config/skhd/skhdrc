@@ -35,18 +35,16 @@ alt + shift - n : open /Applications/Notion.app
 alt - c : yabai -m window --close
 
 # navigate
-alt - k : [ "$(yabai -m query --spaces --space | jq -r '.type')" = stack ] \
-    && yabai -m window --focus stack.prev \
+alt - k : yabai -m window --focus stack.prev \
     || yabai -m window --focus prev
-alt - j : [ "$(yabai -m query --spaces --space | jq -r '.type')" = stack ] \
-    && yabai -m window --focus stack.next \
+alt - j : yabai -m window --focus stack.next \
     || yabai -m window --focus next
-alt - tab : [ "$(yabai -m query --spaces --space | jq -r '.type')" = stack ] \
-    && yabai -m window --focus stack.recent \
+alt - tab : yabai -m window --focus stack.recent \
     || yabai -m window --focus recent
 
 # mirror
-alt - m : yabai -m space --mirror y-axis
+alt - m : yabai -m space --mirror y-axis \
+    && yabai -m window --focus first
 
 # rotate
 alt - r : yabai -m space --rotate 270
