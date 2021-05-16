@@ -25,8 +25,10 @@ yabai -m config focus_follows_mouse          autoraise
 yabai -m config debug_output on
 
 # Rules
-yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Dictionary$"         manage=off
+yabai -m rule --add app="^Disk Utility$"       manage=off
+yabai -m rule --add app="^Postlab$"            manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
 
 echo "yabai configuration loaded..."
 
