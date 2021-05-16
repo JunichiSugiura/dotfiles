@@ -5,6 +5,10 @@ live_config_reload: true
 
 background_opacity: 0.85
 
+key_bindings:
+  - { key: J, mods: Control, action: ScrollPageDown }
+  - { key: K, mods: Control, action: ScrollPageUp }
+
 # Cyber Punk Neon
 # Source: https://github.com/Roboron3042/Cyberpunk-Neon
 colors:
