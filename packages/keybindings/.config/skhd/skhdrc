@@ -57,8 +57,10 @@ alt + shift - 0x1E : yabai -m window --resize right:40:0 \
 ###########################################################
 
 # navigate
-alt - 0x2B : yabai -m display --focus prev
-alt - 0x2F : yabai -m display --focus next
+alt - 0x2B : yabai -m display --focus prev \
+    && yabai -m display --focus stack.prev
+alt - 0x2F : yabai -m display --focus next \
+    && yabai -m display --focus stack.next
 
 ###########################################################
 # Space
