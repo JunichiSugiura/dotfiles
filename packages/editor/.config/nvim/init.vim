@@ -111,16 +111,17 @@ nnoremap <leader>n <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>p <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <c-l> :bn<CR>
 nnoremap <c-h> :bp<CR>
-nnoremap <c-p> :GFiles<CR>
+nnoremap <c-p> :Files<CR>
 nnoremap <c-f> :Rg<CR>
 nnoremap <c-g> :Commits<CR>
 
 " netrw
-let g:netrw_banner       = 0
-let g:netrw_keepdir      = 0
-let g:netrw_liststyle    = 3 " or 3
-let g:netrw_sort_options = 'i'
-let g:netrw_browse_split = 0
+let loaded_netrwPlugin   = 1
+" let g:netrw_banner       = 0
+" let g:netrw_keepdir      = 0
+" let g:netrw_liststyle    = 3
+" let g:netrw_sort_options = 'i'
+" let g:netrw_browse_split = 0
 
 " ALE
 let g:ale_linters_explicit = 1
