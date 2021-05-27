@@ -76,7 +76,6 @@ let g:lightline_buffer_minflen = 16
 let g:lightline_buffer_minfextlen = 3
 let g:lightline_buffer_reservelen = 20
 
-
 function! FilenameForLightline()
     return expand('%')
 endfunction
@@ -148,3 +147,5 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+autocmd BufNewFile,BufRead Podfile set filetype=ruby

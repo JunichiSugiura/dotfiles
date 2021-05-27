@@ -134,6 +134,10 @@ for plugin in $(asdf plugin list); do
     fi
 done
 
+sudo chmod -R a+wr /usr/local/lib/node_modules
+sudo chmod -R a+wr /usr/local/bin
+sudo chmod -R a+wr /Applications/Notion.app/Contents/Resources
+
 system_node_path=/usr/local/bin/node
 if ! is_file "$system_node_path"; then
     log "Create symlink to $system_node_path so that XCode can reference"
