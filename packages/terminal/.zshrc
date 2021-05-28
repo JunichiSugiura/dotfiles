@@ -37,3 +37,4 @@ export FZF_DEFAULT_OPTS="-m --height 100% --border --preview 'cat {}'"
 
 . $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+bindkey '^e' autosuggest-accept
