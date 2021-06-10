@@ -149,11 +149,6 @@ if ! is_dir ~/.config/yarn/global/node_modules; then
     yarn global add
 fi
 
-if ! is_dir /Library/ScriptingAdditions/yabai.osax; then
-    log 'Setup yabai'
-    sudo yabai --install-sa
-fi
-
 if ! is_file ~/prysm/prysm.sh; then
     log 'Setup Ethereum 2.0 client'
     if ! is_dir ~/prysm; then
