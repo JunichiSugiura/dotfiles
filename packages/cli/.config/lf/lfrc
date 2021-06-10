@@ -2,3 +2,7 @@ set preview true
 set hidden false
 set icons true
 set ignorecase true
+
+cmd open $nvim $fx
+
+map <c-c> quit
