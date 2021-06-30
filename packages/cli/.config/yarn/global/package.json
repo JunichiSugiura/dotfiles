@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "ledger-live": "^18.8.1",
+    "ledger-live": "^19.10.0",
     "notion-enhancer": "^0.10.2",
     "typescript": "^4.2.4",
     "typescript-language-server": "^0.5.1",

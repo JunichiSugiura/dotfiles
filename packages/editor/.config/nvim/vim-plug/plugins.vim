@@ -24,6 +24,7 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'yuezk/vim-js'
     Plug 'maxmellon/vim-jsx-pretty'
     Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'fatih/vim-go'
 
     Plug 'rust-lang/rust.vim'
     Plug 'cespare/vim-toml'

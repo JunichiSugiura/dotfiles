@@ -49,13 +49,6 @@ if [ -n "$unlink_packages" ]; then
     stow -vD -d "$STOW_PACKAGES_PATH" -t ~ "$unlink_packages"
     exit
 fi
- 
-if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then 
-    log 'Change default shell to zsh'
-    chsh -s /bin/zsh
-    chmod -R 755 /usr/local/share/zsh
-    chown -R root:staff zsh
-fi 
 
 if ! is_file /usr/local/bin/brew; then
     log 'Setup Homebrew'
@@ -133,10 +126,6 @@ for plugin in $(asdf plugin list); do
         asdf install "$plugin"
     fi
 done
-
-sudo chmod -R a+wr /usr/local/lib/node_modules
-sudo chmod -R a+wr /usr/local/bin
-sudo chmod -R a+wr /Applications/Notion.app/Contents/Resources
 
 system_node_path=/usr/local/bin/node
 if ! is_file "$system_node_path"; then

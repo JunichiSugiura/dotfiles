@@ -37,4 +37,9 @@ export FZF_DEFAULT_OPTS="-m --height 100% --border --preview 'cat {}'"
 
 . $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
 bindkey '^e' autosuggest-accept
+
+export PROJECT_ID=ledger-317521
