@@ -14,13 +14,13 @@
         "revision": "209f59cda890de69b74c224982591642c21323d3"
       },
       "homebrew/cask": {
-        "revision": "00643022f80a6fb52e5d2dd7f1a708b369635dec"
+        "revision": "8aa1c8a480ce644c0aaea902de109669b42689e8"
       },
       "homebrew/cask-fonts": {
-        "revision": "9e12ac096242ce8df03d76e20fea3248f7da2da8"
+        "revision": "08395c17dfe880bf2cbe1e1ebeb95fd970ba8886"
       },
       "homebrew/services": {
-        "revision": "0c32de2ca3cec2a85eebf5e3704af7dc7d650845"
+        "revision": "c8f71846b2ee29c46a9557f9a03f106d5d2778d8"
       },
       "jason0x43/neovim-nightly": {
         "revision": "c5a605b018c05d08b90c4b794c088d25736997c3"
@@ -1166,7 +1166,7 @@
         }
       },
       "brave-browser": {
-        "version": "1.26.74.0,126.74",
+        "version": "1.26.77.0,126.77",
         "options": {
           "full_name": "brave-browser",
           "args": {
@@ -1211,7 +1211,7 @@
         }
       },
       "google-chrome": {
-        "version": "91.0.4472.114",
+        "version": "91.0.4472.164",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -1355,7 +1355,7 @@
         }
       },
       "steam": {
-        "version": "2021-07-14",
+        "version": "2021-07-13",
         "options": {
           "full_name": "steam",
           "args": {
@@ -1373,7 +1373,7 @@
         }
       },
       "visual-studio-code": {
-        "version": "1.58.1",
+        "version": "1.58.2",
         "options": {
           "full_name": "visual-studio-code",
           "args": {
@@ -1426,7 +1426,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.2.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "5187c941f8a26424115ed4e4db6f2422dc2fa050",
+        "Homebrew/homebrew-core": "1b83e85ebd2dd70750517dcb3e3f3c048ca84b0a",
         "CLT": "12.5.1.0.1.1623191612",
         "Xcode": "12.5.1",
         "macOS": "11.4"
