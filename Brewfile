@@ -46,6 +46,7 @@ brew "zoxide"
 brew "zsh"
 brew "zsh-autosuggestions"
 
+cask "1password"
 cask "alacritty"
 cask "alfred"
 cask "android-file-transfer"
