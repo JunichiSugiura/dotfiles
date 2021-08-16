@@ -6,3 +6,10 @@ set ignorecase true
 cmd open $nvim $fx
 
 map <c-c> quit
+
+cmd open ${{
+    case "$f" in
+        *.MP4) open "$f" ;;
+        *)     nvim "$f" ;;
+    esac
+}}
