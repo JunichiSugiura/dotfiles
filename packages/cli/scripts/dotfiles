@@ -64,6 +64,7 @@ if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
 fi
 
 # configure macOS settings
+ensure_dir ~/screenshots
 ~/scripts/macos-defaults
 
 if [ ! "$skip_apps" ]; then
