@@ -9,7 +9,7 @@ unlink_packages=
 verbose=
 for i in "$@"; do
     case "$i" in
-        -s|--skip-apps)
+       -s|--skip-apps)
             skip_apps=1
             shift ;;
         -v|--verbose)
@@ -63,6 +63,9 @@ if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
     git clone https://github.com/JunichiSugiura/dotfiles.git
 fi
 
+# configure macOS settings
+~/scripts/macos-defaults
+
 if [ ! "$skip_apps" ]; then
     log 'Install Apps and CLIs'
     brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile $([ -n "$verbose" ] && echo -v)
@@ -76,9 +79,20 @@ ensure_dir ~/.config/yarn/global
 # shellcheck disable=SC2046
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
-# configure macOS settings
-~/scripts/macos-defaults
+# nvim
+plug_path=~/.local/share/nvim/site/autoload/plug.vim
+if ! is_file "$plug_path"; then
+    log 'Setup vim-plug"'
+    sh -c "curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+fi
 
+plugged_path=~/.local/share/nvim/plugged
+if ! is_dir "$plugged_path"; then
+    log 'Install Neovim Plugins'
+    nvim +PlugInstall +qall
+fi
+
+# git
 if ! is_dir ~/.gnupg || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
     log 'Install gpg signing with git'
     gpg --default-new-key-algo rsa4096 --gen-key
@@ -95,7 +109,7 @@ if ! is_file ~/.ssh/id_rsa.pub; then
     cat ~/.ssh/id_rsa.pub
 fi
 
-### asdf Install Script
+# asdf
 for plugin in $(awk '{print $1}' ~/.tool-versions); do
     if ! is_dir ~/.asdf/plugins/"$plugin"; then
         asdf plugin add "$plugin"
@@ -149,12 +163,6 @@ if ! is_file ~/prysm/prysm.sh; then
         curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh
         chmod +x prysm.sh
     )
-fi
-
-plug_path=~/.local/share/nvim/site/autoload/plug.vim
-if ! is_file "$plug_path"; then
-    log 'Setup vim-plug"'
-    sh -c "curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 fi
 
 limelight_path=/usr/local/bin/limelight
