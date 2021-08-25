@@ -1,6 +1,6 @@
-# Dotfiles
+# dotfiles
 
-Dotfiles managed with
+dotfiles managed with
 - [GNU stow](https://www.gnu.org/software/stow/)
 - [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
 - [asdf](https://asdf-vm.com/#/)
@@ -13,6 +13,16 @@ Dotfiles managed with
 ```sh
 curl -o - https://raw.githubusercontent.com/JunichiSugiura/dotfiles/master/packages/cli/scripts/dotfiles | sh
 ```
+
+3. Start Yabai and skhd
+
+```sh
+brew services start yabai
+brew services start skhd
+# or
+brew services start --all
+```
+Then allow accessibility permissions on `Security & Privacy` inside `System Preferences.app`
 
 ## Installed Apps
 
