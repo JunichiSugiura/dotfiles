@@ -12,9 +12,26 @@ osascript -e 'tell application "System Preferences" to quit'
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 # while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Disable the sound effects on boot
+# sudo nvram SystemAudioVolume=" "
+
+# General Settings
+defaults write "Apple Global Domain" AppleInterfaceStyle -string Dark
+
+# Dock
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock orientation -string right
+defaults write com.apple.dock tilesize -float 16
+
+# Menu Bar
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
 # Finder
 defaults write com.apple.finder QuitMenuItem -bool true
 defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.finder AppleShowAllFiles YES
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
