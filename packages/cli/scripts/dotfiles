@@ -86,7 +86,7 @@ if ! is_file "$plug_path"; then
     sh -c "curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 fi
 
-plugged_path=~/.local/share/nvim/plugged
+plugged_path=~/.local/share/nvim/autoload/plugged
 if ! is_dir "$plugged_path"; then
     log 'Install Neovim Plugins'
     nvim +PlugInstall +qall
