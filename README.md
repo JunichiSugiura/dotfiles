@@ -24,6 +24,12 @@ brew services start --all
 ```
 Then allow accessibility permissions on `Security & Privacy` inside `System Preferences.app`
 
+## Manual operations
+haven't figure out ways to automate
+- add google-japanese-ime to input sources
+- `^space` to switch input source
+- show battery percentage
+
 ## Installed Apps
 
 Check [Brewfile](./Brewfile) for the latest bundle.
