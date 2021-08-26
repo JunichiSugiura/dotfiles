@@ -32,6 +32,11 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
+# Trackpad
+defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
+defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
+defaults write -g com.apple.trackpad.scaling -float 2.5
+
 # Language
 # Show language menu in the top right corner of the boot screen
 # sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
@@ -45,6 +50,9 @@ defaults write com.apple.dock tilesize -float 24
 
 # Menu Bar
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
+# Spaces
+defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
 
 # Finder
 defaults write com.apple.finder QuitMenuItem -bool true
@@ -65,7 +73,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+# chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 
 # Show the /Volumes folder
 # sudo chflags nohidden /Volumes
