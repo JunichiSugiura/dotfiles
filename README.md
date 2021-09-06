@@ -29,6 +29,8 @@ haven't figure out ways to automate
 - add google-japanese-ime to input sources
 - `^space` to switch input source
 - show battery percentage
+- install Recut
+- open `.MP4` files with Iina
 
 ## Installed Apps
 
