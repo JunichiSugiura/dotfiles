@@ -11,6 +11,7 @@ cask_args appdir: "/Applications"
 
 brew "asdf"
 brew "applesimutils"
+brew "bandwhich"
 brew "bat"
 brew "cocoapods"
 brew "coreutils"
