@@ -1,1 +1,2 @@
 prompt = "STARSHIP_SHELL= starship prompt"
+startup = ["zoxide init nushell --hook prompt | save ~/.zoxide.nu", "source ~/.zoxide.nu"]
