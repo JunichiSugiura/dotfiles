@@ -30,3 +30,13 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+[delta]
+    line-numbers = true
+    side-by-side = true
+[interactive]
+    diffFilter = delta --color-only
