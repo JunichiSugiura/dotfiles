@@ -1,4 +1,5 @@
 add_newline = false
+# command_timeout = 3000
 
 [character]
 success_symbol = "🦄 " 
@@ -18,4 +19,10 @@ renamed = " 👅 "
 deleted = " 🗑 "
 
 [gcloud]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ruby]
 disabled = true
