@@ -1,28 +1,27 @@
 shell:
-  program: /usr/local/bin/zsh
+  program: /usr/local/bin/tmux
+  args:
+    - new-session
+    - -D
+    - -c
+    - "#{pane_current_path}"
 
 live_config_reload: true
 
 background_opacity: 0.85
 
 key_bindings:
-  - { key: J, mods: Control, action: ScrollPageDown }
-  - { key: K, mods: Control, action: ScrollPageUp }
+  - { key: Period, mods: Control, mode: ~Search, action: ToggleViMode }
 
 # Cyber Punk Neon
 # Source: https://github.com/Roboron3042/Cyberpunk-Neon
 colors:
-  # Default colors
   primary:
     background: "0x000b1e"
     foreground: "0x0abdc6"
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text:   "0x000b1e"
     cursor: "0x0abdc6"
-
-  # Normal colors
   normal:
     black:   "0x123e7c"
     red:     "0xff0000"
@@ -32,8 +31,6 @@ colors:
     magenta: "0x711c91"
     cyan:    "0x0abdc6"
     white:   "0xd7d7d5"
-
-  # Bright colors
   bright:
     black:   "0x1c61c2"
     red:     "0xff0000"
@@ -46,14 +43,9 @@ colors:
 
 font:
   normal:
-    family: Roboto Mono
+    family: Hack Nerd Font Mono
     style: Regular
-
   bold:
-    family: Roboto Mono
+    family: Hack Nerd Font Mono
     style: Bold
-
-  italic:
-    family: Roboto Mono
-    style: Light Italic
-  size: 16
+  size: 14

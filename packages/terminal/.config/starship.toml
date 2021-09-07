@@ -4,9 +4,6 @@ add_newline = false
 success_symbol = "🦄 " 
 error_symbol = "🥺 "
 
-[git_branch]
-symbol = "🌱 "
-
 [git_status]
 style = "bold white"
 conflicted = " 🏳"
@@ -19,3 +16,6 @@ modified = " 📝 "
 staged = '[++\($count\)](green)'
 renamed = " 👅 "
 deleted = " 🗑 "
+
+[gcloud]
+disabled = true
