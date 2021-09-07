@@ -12,6 +12,8 @@ background_opacity: 0.85
 
 key_bindings:
   - { key: Period, mods: Control, mode: ~Search, action: ToggleViMode }
+  - { key: Q,      mods: Command,            action: None             }
+  - { key: W,      mods: Command,            action: None             }
 
 # Cyber Punk Neon
 # Source: https://github.com/Roboron3042/Cyberpunk-Neon

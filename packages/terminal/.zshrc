@@ -12,15 +12,15 @@ alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulato
 alias keycodes="cat /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Headers/Events.h"
 
 # Override
-alias cat="bat"
-alias cd="z"
-alias du="dust"
-alias ls="exa"
-alias ll="ls -lah --git"
-alias lt="ll -TL 3 --ignore-glob=.git"
-alias ps="procs"
-alias top="ytop"
-alias vi="nvim"
+# alias cat="bat"
+# alias cd="z"
+# alias du="dust"
+# alias ls="exa"
+# alias ll="ls -lah --git"
+# alias lt="ll -TL 3 --ignore-glob=.git"
+# alias ps="procs"
+# alias top="ytop"
+# alias vi="nvim"
 
  . /usr/local/opt/asdf/asdf.sh
 
