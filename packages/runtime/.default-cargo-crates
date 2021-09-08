@@ -1,2 +1,3 @@
 cargo-watch
 cargo-edit
+cargo-workspaces
