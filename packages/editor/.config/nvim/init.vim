@@ -6,6 +6,7 @@ set ts=4 sts=4 sw=4 expandtab
 set wrap
 set nobackup noswapfile noundofile
 set autoread
+set mouse=a
 
 let g:rainbow_active = 1
 
