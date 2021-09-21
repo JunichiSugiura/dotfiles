@@ -10,6 +10,13 @@ live_config_reload: true
 
 background_opacity: 0.85
 
+window:
+  decorations: none
+  dynamic_padding: true
+  padding:
+    x: 2
+    y: 2
+
 key_bindings:
   - { key: Period, mods: Control, mode: ~Search, action: ToggleViMode }
   - { key: Q,      mods: Command,            action: None             }
