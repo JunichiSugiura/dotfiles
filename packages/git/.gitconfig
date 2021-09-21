@@ -19,6 +19,9 @@
 	fup = fetch upstream
 [core]
 	excludesfile = ~/.gitignore
+	editor = nvim
+[init]
+	defaultBranch = main
 [commit]
 	gpgsign = true
 [gpg]
