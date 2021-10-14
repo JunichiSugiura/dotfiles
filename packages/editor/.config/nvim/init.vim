@@ -85,6 +85,9 @@ endfunction
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
+" File Detection
+au BufNewFile,BufRead Fastfile set ft=ruby
+
 " LSP
 lua << EOF
     require'lspconfig'.rust_analyzer.setup{on_attach=require'completion'.on_attach}
