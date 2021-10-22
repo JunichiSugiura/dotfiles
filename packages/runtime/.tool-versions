@@ -1,7 +1,7 @@
 nodejs 14.17.0
 yarn 1.22.10
 golang 1.16.5
-rust 1.54.0
+rust 1.56.0
 deno 1.5.2
 python 3.9.1 2.7.18
 ruby 3.0.1
