@@ -31,6 +31,7 @@ yabai -m rule --add app="^Disk Utility$"       manage=off
 yabai -m rule --add app="^Postlab$"            manage=off
 yabai -m rule --add app="^Simulator$"          manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Electron$"           manage=off
 
 echo "yabai configuration loaded..."
 
