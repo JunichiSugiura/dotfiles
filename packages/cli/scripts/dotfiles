@@ -50,10 +50,22 @@ if [ -n "$unlink_packages" ]; then
     exit
 fi
 
-if ! is_file /opt/homebrew/bin/brew; then
-    log 'Setup Homebrew'
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+arch_name="$(uname -m)"
+
+if [ "${arch_name}" = "x86_64" ]; then
+    if ! is_file /usr/local/bin/brew; then
+        log 'Setup Homebrew'
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    fi
+elif [ "${arch_name}" = "arm64" ]; then
+    if ! is_file /opt/homebrew/bin/brew; then
+        log 'Setup Homebrew'
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+
+        log 'Install Rosetta 2'
+        sudo softwareupdate --install-rosetta
+    fi
 fi
 
 ensure_dir "$GIT_CLONE_PATH"
