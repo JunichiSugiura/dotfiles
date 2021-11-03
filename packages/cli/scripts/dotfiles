@@ -63,10 +63,6 @@ if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
     git clone https://github.com/JunichiSugiura/dotfiles.git
 fi
 
-# configure macOS settings
-ensure_dir ~/screenshots
-~/scripts/macos-defaults
-
 if [ ! "$skip_apps" ]; then
     log 'Install Apps and CLIs'
     brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile $([ -n "$verbose" ] && echo -v)
@@ -79,6 +75,10 @@ ensure_dir ~/.config/yarn/global
 
 # shellcheck disable=SC2046
 stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
+
+# configure macOS settings
+ensure_dir ~/screenshots
+~/scripts/macos-defaults
 
 # nvim
 plug_path=~/.local/share/nvim/site/autoload/plug.vim
