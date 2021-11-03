@@ -82,9 +82,9 @@ cask "semulov"
 cask "signal"
 cask "skype"
 cask "slack"
-cask "soundflower"
+cask "soundflower" if system '[ "$(uname -m)" = "x86_64" ]'
 cask "steam"
-cask "virtualbox"
+cask "virtualbox" if system '[ "$(uname -m)" = "x86_64" ]'
 cask "visual-studio-code"
 cask "zoom"
 
