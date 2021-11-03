@@ -22,7 +22,8 @@ alias ps="procs"
 alias top="ytop"
 alias vi="nvim"
 
- . /usr/local/opt/asdf/asdf.sh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+. $(brew --prefix asdf)/libexec/asdf.sh
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

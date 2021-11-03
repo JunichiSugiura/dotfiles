@@ -64,7 +64,7 @@ defaults write com.apple.dock tilesize -float 24
 ###########################################################
 # Menu Bar
 ###########################################################
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
+# defaults write NSGlobalDomain _HIHideMenuBar -bool true
 
 ###########################################################
 # Spaces
