@@ -3,5 +3,3 @@ yarn 1.22.10
 golang 1.16.5
 rust 1.56.0
 python 3.9.1 2.7.18
-ruby 3.0.1
-java adoptopenjdk-17.0.0+35
