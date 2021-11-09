@@ -56,7 +56,6 @@ brew "zsh-autosuggestions"
 
 cask "1password"
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
-cask "alacritty"
 cask "alfred"
 cask "android-file-transfer"
 cask "android-studio"
