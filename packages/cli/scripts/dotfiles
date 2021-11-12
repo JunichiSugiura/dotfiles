@@ -244,7 +244,7 @@ if ! is_dir "$ALACRITTY_ORG_PATH/alacritty"; then
     )
 fi
 
-if ! is_file ~/Applications/Alacritty.app; then
+if ! is_dir /Applications/Alacritty.app; then
     log "Build alacritty"
     (
         cd "$ALACRITTY_ORG_PATH/alacritty"
