@@ -47,7 +47,7 @@ brew "terminal-notifier"
 brew "tmux"
 brew "tokei"
 brew "watchman"
-# brew "yabai"
+brew "yabai", args: ['HEAD']
 brew "ytop"
 brew "zola"
 brew "zoxide"
