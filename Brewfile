@@ -1,3 +1,4 @@
+tap "adoptopenjdk/openjdk"
 tap "cjbassi/ytop"
 tap "ethereum/ethereum"
 tap "extrawurst/tap"
@@ -5,7 +6,7 @@ tap "github/gh"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
-# tap "koekeishiya/formulae"
+tap "koekeishiya/formulae"
 tap "wix/brew"
 cask_args appdir: "/Applications"
 
@@ -68,7 +69,6 @@ cask "adoptopenjdk/openjdk/adoptopenjdk8"
 cask "alfred"
 cask "android-file-transfer"
 cask "android-studio"
-cask "bitwarden"
 cask "brave-browser"
 cask "discord"
 cask "docker"
@@ -98,3 +98,4 @@ cask "zoom"
 mas "Xcode", id: 497799835
 mas "Final Cut Pro", id: 424389933
 mas "Simple Recorder-Voice Recorder", id: 989175722
+# mas "Bitwarden", id: 1137397744 # this didn't work. manually installed instead.
