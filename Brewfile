@@ -95,7 +95,8 @@ cask "steam"
 cask "visual-studio-code"
 cask "zoom"
 
-mas "Xcode", id: 497799835
+# mas "Bitwarden", id: 1137397744 # this didn't work. manually installed instead.
 mas "Final Cut Pro", id: 424389933
 mas "Simple Recorder-Voice Recorder", id: 989175722
-# mas "Bitwarden", id: 1137397744 # this didn't work. manually installed instead.
+mas "Vimari", id: 1480933944
+mas "Xcode", id: 497799835
