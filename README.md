@@ -29,8 +29,11 @@ haven't figure out ways to automate
 - add google-japanese-ime to input sources
 - `^space` to switch input source
 - show battery percentage
-- install Recut
-- open `.MP4` files with Iina
+- install
+  - [Karabiner Elements](https://karabiner-elements.pqrs.org/)
+  - [Vulkan SDK](https://vulkan.lunarg.com/)
+  - [Postlab](https://hedge.video/postlab)
+- add [Vimari](https://apps.apple.com/us/app/vimari/id1480933944?mt=12) Safari extension
 
 ## Installed Apps
 
