@@ -33,6 +33,7 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'haishanh/night-owl.vim'
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+    Plug 'wojciechkepka/vim-github-dark'
 
 call plug#end()
 

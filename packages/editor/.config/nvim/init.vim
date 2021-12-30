@@ -11,9 +11,7 @@ set mouse=a
 let g:rainbow_active = 1
 
 " Colors
-colorscheme material
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'default'
+colorscheme ghdark
 set noshowmode
 
 if (has("termguicolors"))
@@ -30,7 +28,7 @@ set hidden
 set showtabline=2
 
 let g:lightline = {
-    \ 'colorscheme': 'material_vim',
+    \ 'colorscheme': 'ghdark',
     \ 'component_function': {
     \   'bufferinfo': 'lightline#buffer#bufferinfo',
     \   'filename': 'FilenameForLightline',
