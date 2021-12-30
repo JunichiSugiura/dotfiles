@@ -57,3 +57,5 @@ font:
     family: Hack Nerd Font Mono
     style: Bold
   size: 14
+  offset:
+    y: 10
