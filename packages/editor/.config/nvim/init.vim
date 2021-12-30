@@ -28,7 +28,7 @@ set hidden
 set showtabline=2
 
 let g:lightline = {
-    \ 'colorscheme': 'ghdark',
+    \ 'colorscheme': 'one',
     \ 'component_function': {
     \   'bufferinfo': 'lightline#buffer#bufferinfo',
     \   'filename': 'FilenameForLightline',
