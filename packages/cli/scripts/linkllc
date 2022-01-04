@@ -33,6 +33,7 @@ if [ -n "$unlink" ]; then
     rm -rf .yalc yalc.lock
     yarn
     yarn start
+    exit
 fi
 
 if [ -n "$seconds" ]; then
