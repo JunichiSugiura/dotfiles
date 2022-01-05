@@ -138,9 +138,10 @@ let g:fzf_layout = { 'down': '40%' }
 
 " LF
 let g:lf_map_keys = 0
-
-" TODO: why it opens in split panel?
-map <c-t> :LfWorkingDirectoryExistingOrNewTab<CR>
+let g:lf_width = 1.0
+let g:lf_height = 1.0
+map <c-t> :Lf<CR>
+map <s-t> :LfWorkingDirectory<CR>
 
 function! s:DiffWithSaved()
   let filetype=&ft

@@ -10,7 +10,6 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'taohexxx/lightline-buffer'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-commentary'
-    Plug 'voldikss/vim-floaterm'
 
     " LF
     Plug 'ptzz/lf.vim'
