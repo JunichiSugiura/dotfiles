@@ -134,7 +134,7 @@ let g:ale_sign_warning = 'W'
 
 " FZF
 let g:fzf_buffers_jump = 1
-let g:fzf_layout = { 'down': '40%' }
+let g:fzf_layout = { 'down': '100%' }
 
 " LF
 let g:lf_map_keys = 0

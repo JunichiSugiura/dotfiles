@@ -2,8 +2,9 @@
   "dependencies": {
     "ledger-live": "^20.0.1",
     "notion-enhancer": "^0.10.2",
+    "react-devtools": "^4.23.0",
     "typescript": "^4.2.4",
-    "typescript-language-server": "^0.5.1",
+    "typescript-language-server": "^0.8.1",
     "yalc": "^1.0.0-pre.35",
     "yaml-language-server": "^0.16.0"
   }

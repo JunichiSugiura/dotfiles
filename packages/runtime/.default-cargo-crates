@@ -1,3 +1,5 @@
 cargo-watch
 cargo-edit
 cargo-workspaces
+trunk
+tauri-cli
