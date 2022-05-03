@@ -48,7 +48,7 @@ brew "terminal-notifier"
 brew "tmux"
 brew "tokei"
 brew "watchman"
-brew "yabai", args: ['HEAD']
+brew "yabai"
 brew "ytop"
 brew "zola"
 brew "zoxide"
@@ -66,7 +66,6 @@ brew "librsvg"
 
 cask "1password"
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
-cask "alfred"
 cask "android-file-transfer"
 cask "android-studio"
 cask "blender"
@@ -79,7 +78,6 @@ cask "google-chrome"
 cask "google-cloud-sdk"
 cask "google-japanese-ime"
 cask "gpg-suite"
-cask "hammerspoon"
 cask "insomnia"
 cask "ledger-live"
 cask "minecraft"
@@ -87,9 +85,7 @@ cask "notion"
 cask "obs"
 cask "obs-ndi"
 cask "recut"
-cask "semulov"
 cask "signal"
-cask "skype"
 cask "slack"
 cask "steam"
 cask "visual-studio-code"
@@ -97,6 +93,5 @@ cask "zoom"
 
 # mas "Bitwarden", id: 1137397744 # this didn't work. manually installed instead.
 mas "Final Cut Pro", id: 424389933
-mas "Simple Recorder-Voice Recorder", id: 989175722
 mas "Vimari", id: 1480933944
 mas "Xcode", id: 497799835
