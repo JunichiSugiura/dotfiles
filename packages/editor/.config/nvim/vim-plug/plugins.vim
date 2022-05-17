@@ -10,7 +10,6 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'taohexxx/lightline-buffer'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-commentary'
-    Plug 'voldikss/vim-floaterm'
 
     " LF
     Plug 'ptzz/lf.vim'
@@ -33,6 +32,7 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'haishanh/night-owl.vim'
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+    Plug 'wojciechkepka/vim-github-dark'
 
 call plug#end()
 

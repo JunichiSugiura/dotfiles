@@ -1,5 +1,5 @@
 shell:
-  program: /usr/local/bin/tmux
+  program: /opt/homebrew/bin/tmux
   args:
     - new-session
     - -D
@@ -8,9 +8,8 @@ shell:
 
 live_config_reload: true
 
-background_opacity: 0.85
-
 window:
+  opacity: 0.95
   decorations: none
   dynamic_padding: true
   padding:
@@ -22,33 +21,84 @@ key_bindings:
   - { key: Q,      mods: Command,            action: None             }
   - { key: W,      mods: Command,            action: None             }
 
-# Cyber Punk Neon
-# Source: https://github.com/Roboron3042/Cyberpunk-Neon
-colors:
-  primary:
-    background: "0x000b1e"
-    foreground: "0x0abdc6"
-  cursor:
-    text:   "0x000b1e"
-    cursor: "0x0abdc6"
-  normal:
-    black:   "0x123e7c"
-    red:     "0xff0000"
-    green:   "0xd300c4"
-    yellow:  "0xf57800"
-    blue:    "0x123e7c"
-    magenta: "0x711c91"
-    cyan:    "0x0abdc6"
-    white:   "0xd7d7d5"
-  bright:
-    black:   "0x1c61c2"
-    red:     "0xff0000"
-    green:   "0xd300c4"
-    yellow:  "0xf57800"
-    blue:    "0x00ff00"
-    magenta: "0x711c91"
-    cyan:    "0x0abdc6"
-    white:   "0xd7d7d5"
+schemes:
+  # Cyber Punk Neon
+  # Source: https://github.com/Roboron3042/Cyberpunk-Neon
+  cyberpunk-neon: &cyberpunk-neon
+    primary:
+      background: "0x000b1e"
+      foreground: "0x0abdc6"
+    cursor:
+      text:   "0x000b1e"
+      cursor: "0x0abdc6"
+    normal:
+      black:   "0x123e7c"
+      red:     "0xff0000"
+      green:   "0xd300c4"
+      yellow:  "0xf57800"
+      blue:    "0x123e7c"
+      magenta: "0x711c91"
+      cyan:    "0x0abdc6"
+      white:   "0xd7d7d5"
+    bright:
+      black:   "0x1c61c2"
+      red:     "0xff0000"
+      green:   "0xd300c4"
+      yellow:  "0xf57800"
+      blue:    "0x00ff00"
+      magenta: "0x711c91"
+      cyan:    "0x0abdc6"
+      white:   "0xd7d7d5"
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  tokyo-night: &tokyo-night
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xa9b1d6'
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x787c99'
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+  tokyo-night-storm: &tokyo-night-storm
+    primary:
+      background: '0x24283b'
+      foreground: '0xa9b1d6'
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x9699a8'
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+colors: *tokyo-night
 
 font:
   normal:
@@ -57,4 +107,6 @@ font:
   bold:
     family: Hack Nerd Font Mono
     style: Bold
-  size: 14
+  size: 11
+  offset:
+    y: 3

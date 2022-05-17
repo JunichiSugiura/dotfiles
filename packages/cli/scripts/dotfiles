@@ -2,9 +2,13 @@
  
 set -e 
 
-GIT_CLONE_PATH=~/projects/github.com/JunichiSugiura
+GITHUB_PATH=~/projects/github.com
+GIT_CLONE_PATH="$GITHUB_PATH/JunichiSugiura"
 STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
 
+###########################################################
+# Options
+###########################################################
 unlink_packages=
 verbose=
 for i in "$@"; do
@@ -22,6 +26,9 @@ for i in "$@"; do
     esac
 done
 
+###########################################################
+# Utils
+###########################################################
 log() {
     message=$1
     echo 📌 "$message"
@@ -44,14 +51,19 @@ ensure_dir() {
     fi
 }
 
+###########################################################
+# Stow unlink
+###########################################################
 if [ -n "$unlink_packages" ]; then
     log 'Unlinking dotfiles...'
     stow -vD -d "$STOW_PACKAGES_PATH" -t ~ "$unlink_packages"
     exit
 fi
 
+###########################################################
+# Install Homebrew
+###########################################################
 arch_name="$(uname -m)"
-
 if [ "${arch_name}" = "x86_64" ]; then
     if ! is_file /usr/local/bin/brew; then
         log 'Setup Homebrew'
@@ -81,6 +93,9 @@ if [ ! "$skip_apps" ]; then
     brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile $([ -n "$verbose" ] && echo -v)
 fi
 
+###########################################################
+# Stow link
+###########################################################
 log 'Link dotfiles'
 ensure_dir ~/.config/alacritty
 ensure_dir ~/.config/starship
@@ -93,7 +108,9 @@ stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 ensure_dir ~/screenshots
 ~/scripts/macos-defaults
 
-# nvim
+###########################################################
+# Neovim
+###########################################################
 plug_path=~/.local/share/nvim/site/autoload/plug.vim
 if ! is_file "$plug_path"; then
     log 'Setup vim-plug"'
@@ -106,7 +123,9 @@ if ! is_dir "$plugged_path"; then
     nvim +PlugInstall +qall
 fi
 
-# git
+###########################################################
+# Git
+###########################################################
 if ! is_dir ~/.gnupg || [ -z "$(gpg --list-secret-keys --keyid-format LONG)" ]; then
     log 'Install gpg signing with git'
     gpg --default-new-key-algo rsa4096 --gen-key
@@ -123,7 +142,9 @@ if ! is_file ~/.ssh/id_rsa.pub; then
     cat ~/.ssh/id_rsa.pub
 fi
 
+###########################################################
 # asdf
+###########################################################
 for plugin in $(awk '{print $1}' ~/.tool-versions); do
     if ! is_dir ~/.asdf/plugins/"$plugin"; then
         asdf plugin add "$plugin"
@@ -161,6 +182,9 @@ if ! is_file "$system_node_path"; then
     ln -s ~/.asdf/shims/node "$system_node_path"
 fi
 
+###########################################################
+# Yarn global
+###########################################################
 if ! is_dir ~/.config/yarn/global/node_modules; then
     log 'Setup Yarn global'
     yarn global add
@@ -179,25 +203,25 @@ if ! is_file ~/prysm/prysm.sh; then
     )
 fi
 
-limelight_path=/usr/local/bin/limelight
-if ! is_file "$limelight_path"; then
-    git clone https://github.com/koekeishiya/limelight
-    cd limelight
-    make
-    mv ./bin/limelight /usr/local/bin/limelight
-    cd ../
-    rm -rf limelight
-fi
-
-if ! is_dir ~/.hammerspoon; then
-    mkdir ~/.hammerspoon
-fi
-
-if ! is_dir ~/.hammerspoon/stackline; then
-    git clone https://github.com/AdamWagner/stackline.git ~/.hammerspoon/stackline
+###########################################################
+# Alacritty
+###########################################################
+ALACRITTY_ORG_PATH="$GIT_CLONE_PATH/alacritty"
+ensure_dir "$ALACRITTY_ORG_PATH"
+if ! is_dir "$ALACRITTY_ORG_PATH/alacritty"; then
     (
-        cd ~/.hammerspoon
-        echo 'stackline = require "stackline.stackline.stackline"' >> init.lua
-        echo 'stackline:init()' >> init.lua
+        cd "$ALACRITTY_ORG_PATH"
+        gh repo clone alacritty/alacritty
+    )
+fi
+
+if ! is_dir /Applications/Alacritty.app; then
+    log "Build alacritty"
+    (
+        cd "$ALACRITTY_ORG_PATH/alacritty"
+
+        rustup target add x86_64-apple-darwin aarch64-apple-darwin
+        make app-universal
+        cp -r target/release/osx/Alacritty.app /Applications/
     )
 fi

@@ -1,6 +1,13 @@
 export PATH=$PATH:$HOME/scripts
 export GIT_CLONE_PATH="$HOME"/projects/github.com/JunichiSugiura
 
+# Homebrew, asdf-vm
+if [ -f "/opt/homebrew/bin/brew"  ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    . $(brew --prefix asdf)/libexec/asdf.sh
+fi
+
 alias code="open -a 'Visual Studio Code'"
 alias syncsh=". syncsh"
 alias cdrepo=". cdrepo"
@@ -11,18 +18,28 @@ alias lldlib="open ~/Library/Application\ Support/Electron"
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
 alias keycodes="cat /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Headers/Events.h"
 
+
 # Override
+if [ -n "$(which z)" ]; then
+    alias cd="z"
+fi
+
+if [ -n "$(which exa)" ]; then
+    alias ls="exa"
+fi
+
 alias cat="bat"
-alias cd="z"
-alias du="dust"
-alias ls="exa"
 alias ll="ls -lah --git"
 alias lt="ll -TL 3 --ignore-glob=.git"
 alias ps="procs"
 alias top="ytop"
 alias vi="nvim"
+alias du="dust"
 
- . /usr/local/opt/asdf/asdf.sh
+
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+    export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
+fi
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
@@ -41,8 +58,8 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden -l -g '!.git/*' -g '!node_module
 export FZF_DEFAULT_OPTS="-m --height 100% --border --preview 'cat {}'"
 
 . $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 bindkey '^e' autosuggest-accept
 
 export LF_ICONS="\

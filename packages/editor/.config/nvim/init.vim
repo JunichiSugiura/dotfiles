@@ -11,9 +11,7 @@ set mouse=a
 let g:rainbow_active = 1
 
 " Colors
-colorscheme material
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'default'
+colorscheme ghdark
 set noshowmode
 
 if (has("termguicolors"))
@@ -30,7 +28,7 @@ set hidden
 set showtabline=2
 
 let g:lightline = {
-    \ 'colorscheme': 'material_vim',
+    \ 'colorscheme': 'one',
     \ 'component_function': {
     \   'bufferinfo': 'lightline#buffer#bufferinfo',
     \   'filename': 'FilenameForLightline',
@@ -136,13 +134,14 @@ let g:ale_sign_warning = 'W'
 
 " FZF
 let g:fzf_buffers_jump = 1
-let g:fzf_layout = { 'down': '40%' }
+let g:fzf_layout = { 'down': '100%' }
 
 " LF
 let g:lf_map_keys = 0
-
-" TODO: why it opens in split panel?
-map <c-t> :LfWorkingDirectoryExistingOrNewTab<CR>
+let g:lf_width = 1.0
+let g:lf_height = 1.0
+map <c-t> :Lf<CR>
+map <s-t> :LfWorkingDirectory<CR>
 
 function! s:DiffWithSaved()
   let filetype=&ft

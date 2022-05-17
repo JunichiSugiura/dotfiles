@@ -1,7 +1,7 @@
 [user]
 	name       = JunichiSugiura
 	email      = jun.sugiura.jp@gmail.com
-	signingkey = EF1EFE33C42539F7
+	signingkey = 36E13C2D34E47F45
 [alias]
 	s   = status -sb
 	d   = diff
@@ -43,3 +43,5 @@
     side-by-side = true
 [interactive]
     diffFilter = delta --color-only
+; [url "git@github.com:"]
+;   insteadOf = https://github.com/
