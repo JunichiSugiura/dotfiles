@@ -204,35 +204,6 @@ if ! is_file ~/prysm/prysm.sh; then
 fi
 
 ###########################################################
-# Limelight
-###########################################################
-limelight_path=/usr/local/bin/limelight
-if ! is_file "$limelight_path"; then
-    git clone https://github.com/koekeishiya/limelight
-    cd limelight
-    make
-    mv ./bin/limelight /usr/local/bin/limelight
-    cd ../
-    rm -rf limelight
-fi
-
-###########################################################
-# Hammerspoon
-###########################################################
-if ! is_dir ~/.hammerspoon; then
-    mkdir ~/.hammerspoon
-fi
-
-if ! is_dir ~/.hammerspoon/stackline; then
-    git clone https://github.com/AdamWagner/stackline.git ~/.hammerspoon/stackline
-    (
-        cd ~/.hammerspoon
-        echo 'stackline = require "stackline.stackline.stackline"' >> init.lua
-        echo 'stackline:init()' >> init.lua
-    )
-fi
-
-###########################################################
 # Alacritty
 ###########################################################
 ALACRITTY_ORG_PATH="$GIT_CLONE_PATH/alacritty"
