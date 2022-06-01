@@ -1,5 +1,6 @@
 cargo-watch
 cargo-edit
 cargo-workspaces
+https
 trunk
 tauri-cli
