@@ -1,5 +1,6 @@
-cargo-watch
 cargo-edit
+cargo-expand
+cargo-watch
 cargo-workspaces
 https
 trunk
