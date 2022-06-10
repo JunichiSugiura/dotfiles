@@ -88,6 +88,7 @@ cask "recut"
 cask "signal"
 cask "slack"
 cask "steam"
+cask "utm"
 cask "visual-studio-code"
 cask "zoom"
 
