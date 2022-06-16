@@ -11,8 +11,8 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     Plug 'tpope/vim-commentary'
 
     " LSP
-    Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/nvim-lsp-installer'
+    Plug 'neovim/nvim-lspconfig'
 
     " LF
     Plug 'ptzz/lf.vim'
