@@ -88,9 +88,13 @@ au BufNewFile,BufRead Fastfile set ft=ruby
 
 " LSP
 lua << EOF
-    require("nvim-lsp-installer").setup {}
+    require("nvim-lsp-installer").setup()
     require'lspconfig'.flow.setup{on_attach=require'completion'.on_attach}
     require'lspconfig'.gopls.setup{on_attach=require'completion'.on_attach}
+    require'lspconfig'.tsserver.setup{
+        on_attach=require'completion'.on_attach;
+        filetypes = {"typescript", "typescriptreact", "typescript.tsx"};
+    }
 EOF
 
 " Key Bindings
