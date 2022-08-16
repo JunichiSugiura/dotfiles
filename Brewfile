@@ -69,7 +69,7 @@ brew "giflib"
 brew "librsvg"
 
 cask "1password"
-cask "adoptopenjdk/openjdk/adoptopenjdk8"
+cask "adoptopenjdk/openjdk/adoptopenjdk11"
 cask "android-file-transfer"
 cask "android-studio"
 cask "blender"
