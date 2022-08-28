@@ -1,18 +1,21 @@
 call plug#begin('~/.local/share/nvim/autoload/plugged')
 
-    Plug 'dense-analysis/ale'
     Plug 'frazrepo/vim-rainbow'
     Plug 'itchyny/lightline.vim'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'nvim-lua/completion-nvim'
     Plug 'ruanyl/vim-gh-line'
     Plug 'taohexxx/lightline-buffer'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-commentary'
 
     " LSP
-    Plug 'williamboman/nvim-lsp-installer'
+    Plug 'williamboman/mason.nvim'
+    Plug 'williamboman/mason-lspconfig.nvim'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'jose-elias-alvarez/null-ls.nvim' " depends on 'nvim-lua/plenary.nvim'
+
+    " Lua
+    Plug 'nvim-lua/plenary.nvim'
 
     " LF
     Plug 'ptzz/lf.vim'
@@ -21,15 +24,6 @@ call plug#begin('~/.local/share/nvim/autoload/plugged')
     " FZF
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
-
-    " Language Specific
-    Plug 'yuezk/vim-js'
-    Plug 'maxmellon/vim-jsx-pretty'
-    Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'fatih/vim-go'
-
-    Plug 'rust-lang/rust.vim'
-    Plug 'cespare/vim-toml'
 
     " Color Scheme
     Plug 'drewtempelmeyer/palenight.vim'

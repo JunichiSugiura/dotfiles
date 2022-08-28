@@ -18,7 +18,6 @@ alias lldlib="open ~/Library/Application\ Support/Electron"
 alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
 alias keycodes="cat /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Headers/Events.h"
 
-
 # Override
 if [ -n "$(which z)" ]; then
     alias cd="z"
@@ -33,7 +32,8 @@ alias ll="ls -lah --git"
 alias lt="ll -TL 3 --ignore-glob=.git"
 alias ps="procs"
 alias top="ytop"
-alias vi="nvim"
+# Temporary for neovim v0.8
+alias vi="$HOME/nvim-macos/bin/nvim"
 alias du="dust"
 
 

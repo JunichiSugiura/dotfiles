@@ -88,13 +88,44 @@ au BufNewFile,BufRead Fastfile set ft=ruby
 
 " LSP
 lua << EOF
-    require("nvim-lsp-installer").setup()
-    require'lspconfig'.flow.setup{on_attach=require'completion'.on_attach}
-    require'lspconfig'.gopls.setup{on_attach=require'completion'.on_attach}
-    require'lspconfig'.tsserver.setup{
-        on_attach=require'completion'.on_attach;
-        filetypes = {"typescript", "typescriptreact", "typescript.tsx"};
-    }
+    require("mason").setup()
+    require("mason-lspconfig").setup({
+        ensure_installed = {
+            "rust_analyzer",
+            "solang",
+            "eslint",
+            "tsserver",
+        },
+        automatic_installation = true,
+    })
+
+    require("lspconfig").rust_analyzer.setup{}
+
+    require("null-ls").setup({
+        sources = {
+            require("null-ls").builtins.formatting.rustfmt,
+            require("null-ls").builtins.diagnostics.solhint,
+            require("null-ls").builtins.code_actions.eslint,
+            require("null-ls").builtins.code_actions.shellcheck,
+        },
+        on_attach = function(client, bufnr)
+            if client.supports_method("textDocument/formatting") then
+                vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    group = vim.api.nvim_create_augroup("LspFormatting", {}),
+                    buffer = bufnr,
+                    callback = function()
+                        vim.lsp.buf.format({
+                            filter = function(client)
+                                return client.name == "null-ls"
+                            end,
+                            bufnr = bufnr,
+                        })
+                    end,
+                })
+            end
+        end,
+    })
 EOF
 
 " Key Bindings
@@ -123,13 +154,6 @@ let loaded_netrwPlugin   = 1
 " let g:netrw_liststyle    = 3
 " let g:netrw_sort_options = 'i'
 " let g:netrw_browse_split = 0
-
-" ALE
-let g:ale_linters_explicit = 1
-let g:ale_sign_column_always = 1
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = 'E'
-let g:ale_sign_warning = 'W'
 
 " FZF
 let g:fzf_buffers_jump = 1

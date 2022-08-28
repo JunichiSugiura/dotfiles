@@ -102,11 +102,11 @@ colors: *tokyo-night
 
 font:
   normal:
-    family: Hack Nerd Font Mono
+    family: Hack Nerd Font
     style: Regular
   bold:
-    family: Hack Nerd Font Mono
+    family: Hack Nerd Font
     style: Bold
   size: 11
   offset:
-    y: 3
+    y: 5

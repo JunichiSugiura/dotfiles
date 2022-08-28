@@ -37,7 +37,9 @@ brew "lf"
 brew "mas"
 brew "ncdu"
 brew "nushell"
-brew "nvim"
+
+# Temporary for neovim v0.8
+# brew "neovim"
 brew "pnpm"
 brew "procs"
 brew "ripgrep"
