@@ -32,10 +32,11 @@ alias ll="ls -lah --git"
 alias lt="ll -TL 3 --ignore-glob=.git"
 alias ps="procs"
 alias top="ytop"
-# Temporary for neovim v0.8
-alias vi="$HOME/nvim-macos/bin/nvim"
+alias vi="nvim"
 alias du="dust"
 
+# Temporary for neovim v0.8
+export PATH=$PATH:$HOME/nvim-macos/bin
 
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
     export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
