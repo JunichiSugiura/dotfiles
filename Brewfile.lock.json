@@ -23,13 +23,13 @@
         "revision": "93666603390d6cf91d9a48e164c996442ce06515"
       },
       "homebrew/cask-fonts": {
-        "revision": "25dbb2f9cb60d10f1d206169235ba45f59ac3fa7"
+        "revision": "8683b9b9bd619a79e51916062fc9b362ef16604e"
       },
       "homebrew/services": {
-        "revision": "b28f568bba40794f3751c39cddb715d729d99a2c"
+        "revision": "954801711b1562739176e83bc0ce0a265abdea98"
       },
       "koekeishiya/formulae": {
-        "revision": "d9387995954f3b3ef49798557b440c05395b5744"
+        "revision": "f4ab6cc22abe0df6d18c67f905403594e1e5ad82"
       },
       "wix/brew": {
         "revision": "6f5d99a8adc1158e9d6aec3d92c30f9a2b77c968"
@@ -1609,7 +1609,7 @@
         }
       },
       "yabai": {
-        "version": "4.0.4",
+        "version": "5.0.0",
         "bottle": false
       },
       "ytop": {
@@ -2349,9 +2349,9 @@
         "HOMEBREW_VERSION": "3.6.1",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "c1def0c480b8011ae291984e8f6e2d769aa986a9",
-        "CLT": "13.4.0.0.1.1651278267",
+        "CLT": "14.0.0.0.1.1661618636",
         "Xcode": "14.0",
-        "macOS": "12.5.1"
+        "macOS": "12.6"
       }
     }
   }
