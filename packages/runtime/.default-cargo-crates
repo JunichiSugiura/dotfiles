@@ -2,6 +2,7 @@ cargo-edit
 cargo-expand
 cargo-generate
 cargo-outdated
+cargo-pager
 cargo-watch
 cargo-workspaces
 https

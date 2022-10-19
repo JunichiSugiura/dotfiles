@@ -56,6 +56,9 @@ export PATH=$PATH:$(yarn global bin)
 export FZF_DEFAULT_COMMAND="rg --files --hidden -l -g '!.git/*' -g '!node_modules/*'"
 export FZF_DEFAULT_OPTS="-m --height 100% --border --preview 'cat {}'"
 
+export PNPM_HOME="/Users/js/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
 . $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 # source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
@@ -223,3 +226,8 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
+
+# pnpm
+export PNPM_HOME="/Users/js/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

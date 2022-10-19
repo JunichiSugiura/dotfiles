@@ -1,2 +1,5 @@
 [net]
 git-fetch-with-cli = true
+
+[expand]
+pager = true

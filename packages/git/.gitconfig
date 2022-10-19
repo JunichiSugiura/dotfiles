@@ -19,7 +19,7 @@
 	fup = fetch upstream
 [core]
 	excludesfile = ~/.gitignore
-	editor = nvim
+	editor = code --wait
 [init]
 	defaultBranch = main
 [commit]
