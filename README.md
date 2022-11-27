@@ -1,3 +1,5 @@
+## This is my old dotfiles. Checkout [JunichiSugiura/JunichiSugiura](https://github.com/JunichiSugiura/JunichiSugiura) for the latest bundle.
+
 # dotfiles
 
 dotfiles managed with
